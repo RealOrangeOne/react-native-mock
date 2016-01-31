@@ -36,7 +36,7 @@ const ReactNative = {
   SwitchIOS: createMockComponent('SwitchIOS'),
   TabBarIOS: createMockComponent('TabBarIOS'),
   Text: require('./components/Text'),
-  TextInput: createMockComponent('TextInput'),
+  TextInput: require('./components/TextInput'),
   ToastAndroid: createMockComponent('ToastAndroid'),
   ToolbarAndroid: createMockComponent('ToolbarAndroid'),
   Touchable: createMockComponent('Touchable'),
@@ -102,7 +102,8 @@ const ReactNativeAddons = {
   PureRenderMixin: require('react-addons-pure-render-mixin'),
   TestModule: require('./plugins/NativeModules/TestModule'),
   TestUtils: require('react-addons-test-utils'),
-  //batchedUpdates: require('ReactUpdates').batchedUpdates,
+  // TODO(lmr): not sure where to find this
+  // batchedUpdates: require('ReactUpdates').batchedUpdates,
   cloneWithProps: require('react-addons-clone-with-props'),
   createFragment: require('react-addons-create-fragment'),
   update: require('react-addons-update'),
