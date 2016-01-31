@@ -111,4 +111,4 @@ const ReactNativeAddons = {
 
 Object.assign(ReactNative, React, { addons: ReactNativeAddons });
 
-module.exports = React;
+module.exports = ReactNative;
