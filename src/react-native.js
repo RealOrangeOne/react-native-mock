@@ -108,6 +108,6 @@ const ReactNativeAddons = {
   update: require('react-addons-update'),
 };
 
-Object.assign(React, ReactNative, { addons: ReactNativeAddons });
+Object.assign(ReactNative, React, { addons: ReactNativeAddons });
 
 module.exports = React;
