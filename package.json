@@ -2,9 +2,11 @@
   "name": "react-native-mock",
   "version": "0.1.0",
   "description": "A fully mocked and test-friendly version of react native",
-  "main": "build/index.js",
+  "main": "build/react-native.js",
   "scripts": {
-    "test": "mocha --require babel-core/register test/**/*.js"
+    "test": "mocha --require babel-core/register test/**/*.js",
+    "test:watch": "npm run test -- --watch",
+    "build": "babel src --out-dir build"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
   "homepage": "https://github.com/lelandrichardson/react-native-mock#readme",
   "devDependencies": {
     "babel": "^6.3.26",
+    "babel-cli": "^6.4.5",
     "babel-core": "^6.4.5",
     "babel-plugin-syntax-async-functions": "^6.3.13",
     "babel-plugin-syntax-class-properties": "^6.3.13",
