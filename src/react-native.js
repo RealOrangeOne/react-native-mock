@@ -73,7 +73,7 @@ const ReactNative = {
   NetInfo: require('./api/NetInfo'),
   PanResponder: require('./api/PanResponder'),
   PixelRatio: require('./api/PixelRatio'),
-  //PushNotificationIOS: require('PushNotificationIOS'),
+  PushNotificationIOS: require('./api/PushNotificationIOS'),
   Settings: require('./api/Settings'),
   StatusBarIOS: require('./api/StatusBarIOS'),
   StyleSheet: require('./api/StyleSheet'),
