@@ -8,6 +8,8 @@ const NativeModules = {
   Clipboard: require('./Clipboard'),
   CameraRollManager: require('./CameraRollManager'),
   TestModule: require('./TestModule'),
+  WebViewManager: require('./WebViewManager'),
+  ScrollViewManager: require('./ScrollViewManager'),
 };
 
 module.exports = NativeModules;

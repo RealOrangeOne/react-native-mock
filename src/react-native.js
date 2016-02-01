@@ -24,7 +24,7 @@ const ReactNative = {
   PickerIOS: createMockComponent('PickerIOS'),
   ProgressBarAndroid: createMockComponent('ProgressBarAndroid'),
   ProgressViewIOS: createMockComponent('ProgressViewIOS'),
-  ScrollView: createMockComponent('ScrollView'),
+  ScrollView: require('./components/ScrollView'),
   SegmentedControlIOS: createMockComponent('SegmentedControlIOS'),
   SliderIOS: createMockComponent('SliderIOS'),
   SnapshotViewIOS: createMockComponent('SnapshotViewIOS'),
@@ -46,7 +46,7 @@ const ReactNative = {
   TouchableWithoutFeedback: createMockComponent('TouchableWithoutFeedback'),
   View: require('./components/View'),
   ViewPagerAndroid: createMockComponent('ViewPagerAndroid'),
-  WebView: createMockComponent('WebView'),
+  WebView: require('./components/WebView'),
 
   // APIs
   //ActionSheetIOS: require('ActionSheetIOS'),

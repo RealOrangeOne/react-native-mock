@@ -71,6 +71,7 @@
     "react-addons-test-utils": "^0.14.7",
     "react-addons-update": "^0.14.7",
     "react-native": "^0.18.1",
-    "react-timer-mixin": "^0.13.3"
+    "react-timer-mixin": "^0.13.3",
+    "warning": "^2.1.0"
   }
 }
