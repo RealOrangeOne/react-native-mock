@@ -4,4 +4,10 @@ var ReactNativeMock = require('./build/react-native');
 var key = require.resolve('react-native');
 
 // make sure the cache is filled with our lib
-require.cache[key] = ReactNativeMock;
+require.cache[key] = {
+  id: key,
+  filename: key,
+  loaded: true,
+  exports: ReactNativeMock,
+};
+
