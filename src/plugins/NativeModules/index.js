@@ -12,6 +12,7 @@ const NativeModules = {
   ScrollViewManager: require('./ScrollViewManager'),
   ActionSheetManager: require('./ActionSheetManager'),
   AppState: require('./AppState'),
+  ImagePickerIOS: require('./ImagePickerIOS'),
 };
 
 module.exports = NativeModules;

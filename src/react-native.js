@@ -64,7 +64,7 @@ const ReactNative = {
   //DatePickerAndroid: require('DatePickerAndroid'),
   Dimensions: require('./api/Dimensions'),
   Easing: require('./api/Animated/Easing'),
-  //ImagePickerIOS: require('ImagePickerIOS'),
+  ImagePickerIOS: require('./api/ImagePickerIOS'),
   //IntentAndroid: require('IntentAndroid'),
   InteractionManager: require('./api/InteractionManager'),
   LayoutAnimation: require('./api/LayoutAnimation'),
