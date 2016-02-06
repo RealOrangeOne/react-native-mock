@@ -52,7 +52,7 @@ const ReactNative = {
   ActionSheetIOS: require('./api/ActionSheetIOS'),
   //AdSupportIOS: require('AdSupportIOS'),
   Alert: require('./api/Alert'),
-  //AlertIOS: require('AlertIOS'),
+  AlertIOS: require('./api/AlertIOS'),
   Animated: require('./api/Animated'),
   AppRegistry: require('./api/AppRegistry'),
   AppState: require('./api/AppState'),
