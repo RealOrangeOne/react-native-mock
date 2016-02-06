@@ -49,7 +49,7 @@ const ReactNative = {
   WebView: require('./components/WebView'),
 
   // APIs
-  //ActionSheetIOS: require('ActionSheetIOS'),
+  ActionSheetIOS: require('./api/ActionSheetIOS'),
   //AdSupportIOS: require('AdSupportIOS'),
   Alert: require('./api/Alert'),
   //AlertIOS: require('AlertIOS'),

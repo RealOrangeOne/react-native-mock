@@ -10,6 +10,7 @@ const NativeModules = {
   TestModule: require('./TestModule'),
   WebViewManager: require('./WebViewManager'),
   ScrollViewManager: require('./ScrollViewManager'),
+  ActionSheetManager: require('./ActionSheetManager'),
 };
 
 module.exports = NativeModules;
