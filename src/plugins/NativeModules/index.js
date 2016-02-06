@@ -11,6 +11,7 @@ const NativeModules = {
   WebViewManager: require('./WebViewManager'),
   ScrollViewManager: require('./ScrollViewManager'),
   ActionSheetManager: require('./ActionSheetManager'),
+  AppState: require('./AppState'),
 };
 
 module.exports = NativeModules;

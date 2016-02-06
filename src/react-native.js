@@ -56,7 +56,7 @@ const ReactNative = {
   Animated: require('./api/Animated'),
   AppRegistry: require('./api/AppRegistry'),
   AppState: require('./api/AppState'),
-  //AppStateIOS: require('AppStateIOS'),
+  AppStateIOS: require('./api/AppStateIOS'),
   AsyncStorage: require('./api/AsyncStorage'),
   //BackAndroid: require('BackAndroid'),
   CameraRoll: require('./api/CameraRoll'),
