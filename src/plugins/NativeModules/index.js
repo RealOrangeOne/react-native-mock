@@ -14,6 +14,7 @@ const NativeModules = {
   AppState: require('./AppState'),
   ImagePickerIOS: require('./ImagePickerIOS'),
   DeviceEventManager: require('./DeviceEventManager'),
+  DatePickerAndroid: require('./DatePickerAndroid'),
 };
 
 module.exports = NativeModules;

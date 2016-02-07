@@ -61,7 +61,7 @@ const ReactNative = {
   BackAndroid: require('./api/BackAndroid'),
   CameraRoll: require('./api/CameraRoll'),
   Clipboard: require('./plugins/NativeModules/Clipboard'),
-  //DatePickerAndroid: require('DatePickerAndroid'),
+  DatePickerAndroid: require('./api/DatePickerAndroid'),
   Dimensions: require('./api/Dimensions'),
   Easing: require('./api/Animated/Easing'),
   ImagePickerIOS: require('./api/ImagePickerIOS'),
