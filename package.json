@@ -56,14 +56,15 @@
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
     "eslint-plugin-react": "^3.16.1",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "react": "^0.14.7",
+    "react-native": "^0.18.1"
   },
   "dependencies": {
     "cubic-bezier": "^0.1.2",
     "invariant": "^2.2.0",
     "keymirror": "^0.1.1",
     "raf": "^3.1.0",
-    "react": "^0.14.7",
     "react-addons-clone-with-props": "^0.14.7",
     "react-addons-create-fragment": "^0.14.7",
     "react-addons-linked-state-mixin": "^0.14.7",
@@ -71,8 +72,11 @@
     "react-addons-pure-render-mixin": "^0.14.7",
     "react-addons-test-utils": "^0.14.7",
     "react-addons-update": "^0.14.7",
-    "react-native": "^0.18.1",
     "react-timer-mixin": "^0.13.3",
     "warning": "^2.1.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
   }
 }
