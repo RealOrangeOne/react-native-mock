@@ -1,5 +1,5 @@
 
-import ImagePicker from '../plugins/NativeModules/ImagePickerIOS';
+import ImagePicker from '../NativeModules/ImagePickerIOS';
 
 const ImagePickerIOS = {
   canRecordVideos(callback) {

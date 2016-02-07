@@ -1,5 +1,5 @@
 import DeviceEventEmitter from '../plugins/DeviceEventEmitter';
-import DeviceEventManager from '../plugins/NativeModules/DeviceEventManager';
+import DeviceEventManager from '../NativeModules/DeviceEventManager';
 
 const DEVICE_BACK_EVENT = 'hardwareBackPress';
 

@@ -1,4 +1,4 @@
-import AlertManager from '../plugins/NativeModules/AlertManager';
+import AlertManager from '../NativeModules/AlertManager';
 /**
  * The AlertsIOS utility provides two functions: `alert` and `prompt`. All
  * functionality available through `AlertIOS.alert` is also available in the

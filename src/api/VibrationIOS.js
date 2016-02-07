@@ -1,4 +1,4 @@
-import Vibration from '../plugins/NativeModules/Vibration';
+import Vibration from '../NativeModules/Vibration';
 import invariant from 'invariant';
 
 /**

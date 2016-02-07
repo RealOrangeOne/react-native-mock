@@ -1,4 +1,4 @@
-import DeviceEventEmitter from '../DeviceEventEmitter';
+import DeviceEventEmitter from '../plugins/DeviceEventEmitter';
 
 let app_state = 'active';
 

@@ -59,7 +59,7 @@ const ReactNative = {
   AsyncStorage: require('./api/AsyncStorage'),
   BackAndroid: require('./api/BackAndroid'),
   CameraRoll: require('./api/CameraRoll'),
-  Clipboard: require('./plugins/NativeModules/Clipboard'),
+  Clipboard: require('./NativeModules/Clipboard'),
   DatePickerAndroid: require('./api/DatePickerAndroid'),
   Dimensions: require('./api/Dimensions'),
   Easing: require('./api/Animated/Easing'),
@@ -77,13 +77,13 @@ const ReactNative = {
   StatusBarIOS: require('./api/StatusBarIOS'),
   StyleSheet: require('./api/StyleSheet'),
   TimePickerAndroid: require('./api/TimePickerAndroid'),
-  UIManager: require('./plugins/NativeModules/UIManager'),
+  UIManager: require('./NativeModules/UIManager'),
   VibrationIOS: require('./api/VibrationIOS'),
 
   // Plugins
   DeviceEventEmitter: require('./plugins/DeviceEventEmitter'),
   NativeAppEventEmitter: require('./plugins/NativeAppEventEmitter'),
-  NativeModules: require('./plugins/NativeModules'),
+  NativeModules: require('./NativeModules'),
   Platform: require('./plugins/Platform'),
   processColor: require('./plugins/processColor'),
   requireNativeComponent: require('./plugins/requireNativeComponent'),
@@ -99,7 +99,7 @@ const ReactNativeAddons = {
   LinkedStateMixin: require('react-addons-linked-state-mixin'),
   Perf: require('react-addons-perf'),
   PureRenderMixin: require('react-addons-pure-render-mixin'),
-  TestModule: require('./plugins/NativeModules/TestModule'),
+  TestModule: require('./NativeModules/TestModule'),
   TestUtils: require('react-addons-test-utils'),
   // TODO(lmr): not sure where to find this
   // batchedUpdates: require('ReactUpdates').batchedUpdates,

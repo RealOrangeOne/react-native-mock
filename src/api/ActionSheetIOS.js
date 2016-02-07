@@ -1,5 +1,5 @@
 
-import ActionSheetManager from '../plugins/NativeModules/ActionSheetManager';
+import ActionSheetManager from '../NativeModules/ActionSheetManager';
 import invariant from'invariant';
 import processColor from '../plugins/processColor';
 

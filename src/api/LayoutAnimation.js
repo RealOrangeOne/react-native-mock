@@ -1,5 +1,5 @@
 import React from 'react';
-import UIManager from '../plugins/NativeModules/UIManager';
+import UIManager from '../NativeModules/UIManager';
 import keyMirror from 'keymirror';
 
 const { PropTypes } = React;

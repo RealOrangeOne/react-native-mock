@@ -1,4 +1,4 @@
-import LinkingManager from '../plugins/NativeModules/LinkingManager';
+import LinkingManager from '../NativeModules/LinkingManager';
 import Linking from './Linking';
 import invariant from 'invariant';
 

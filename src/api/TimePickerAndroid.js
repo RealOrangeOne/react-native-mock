@@ -1,4 +1,4 @@
-import TimePickerModule from '../plugins/NativeModules/TimePickerAndroid';
+import TimePickerModule from '../NativeModules/TimePickerAndroid';
 
 /**
  * Opens the standard Android time picker dialog.

@@ -1,6 +1,6 @@
 import invariant from 'invariant';
 import React from 'react';
-import CameraRollManager from '../plugins/NativeModules/CameraRollManager';
+import CameraRollManager from '../NativeModules/CameraRollManager';
 
 const { PropTypes } = React;
 

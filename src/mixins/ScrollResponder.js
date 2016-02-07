@@ -1,4 +1,4 @@
-import ScrollViewManager from '../plugins/NativeModules/ScrollViewManager';
+import ScrollViewManager from '../NativeModules/ScrollViewManager';
 import Platform from '../plugins/Platform';
 import Dimensions from '../api/Dimensions';
 import DeviceEventEmitter from '../plugins/DeviceEventEmitter';
@@ -7,7 +7,7 @@ import invariant from 'invariant';
 import warning from 'warning';
 import TextInputState from '../api/TextInputState';
 import Subscribable from './Subscribable';
-import UIManager from '../plugins/NativeModules/UIManager';
+import UIManager from '../NativeModules/UIManager';
 
 /**
  * Mixin that can be integrated in order to handle scrolling that plays well

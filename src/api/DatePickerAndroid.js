@@ -1,4 +1,4 @@
-import DatePickerModule from '../plugins/NativeModules/DatePickerAndroid';
+import DatePickerModule from '../NativeModules/DatePickerAndroid';
 
 /**
  * Convert a Date to a timestamp.

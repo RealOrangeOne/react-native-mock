@@ -4,7 +4,7 @@ import PointPropType from '../propTypes/PointPropType';
 import ScrollResponder from '../mixins/ScrollResponder';
 import View from './View';
 import ViewStylePropTypes from '../propTypes/ViewStylePropTypes';
-import ScrollViewManager from '../plugins/NativeModules/ScrollViewManager';
+import ScrollViewManager from '../NativeModules/ScrollViewManager';
 import StyleSheetPropType from '../propTypes/StyleSheetPropType';
 
 const { PropTypes } = React;

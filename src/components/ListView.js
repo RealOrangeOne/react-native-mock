@@ -1,7 +1,7 @@
 import React from 'react';
 import ScrollResponder from '../mixins/ScrollResponder';
 import TimerMixin from 'react-timer-mizin';
-import ScrollViewManager from '../plugins/NativeModules/ScrollViewManager';
+import ScrollViewManager from '../NativeModules/ScrollViewManager';
 import ScrollView from './ScrollView';
 
 var ListViewDataSource = require('ListViewDataSource');

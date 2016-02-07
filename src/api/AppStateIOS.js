@@ -1,5 +1,5 @@
 import DeviceEventEmitter from '../plugins/DeviceEventEmitter';
-import AppState from '../plugins/NativeModules/AppState';
+import AppState from '../NativeModules/AppState';
 import invariant from 'invariant';
 
 const logError = (error) => console.error(error);

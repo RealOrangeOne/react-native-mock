@@ -1,4 +1,4 @@
-import NativeAppEventEmitter from '../NativeAppEventEmitter';
+import NativeAppEventEmitter from '../plugins/NativeAppEventEmitter';
 
 const TestModule = {
   verifySnapshot(callback) {
