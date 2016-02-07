@@ -50,7 +50,6 @@ const ReactNative = {
 
   // APIs
   ActionSheetIOS: require('./api/ActionSheetIOS'),
-  //AdSupportIOS: require('AdSupportIOS'),
   Alert: require('./api/Alert'),
   AlertIOS: require('./api/AlertIOS'),
   Animated: require('./api/Animated'),
@@ -69,7 +68,7 @@ const ReactNative = {
   InteractionManager: require('./api/InteractionManager'),
   LayoutAnimation: require('./api/LayoutAnimation'),
   Linking: require('./api/Linking'),
-  //LinkingIOS: require('LinkingIOS'),
+  LinkingIOS: require('./api/LinkingIOS'),
   NetInfo: require('./api/NetInfo'),
   PanResponder: require('./api/PanResponder'),
   PixelRatio: require('./api/PixelRatio'),
