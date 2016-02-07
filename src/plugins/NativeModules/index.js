@@ -13,6 +13,7 @@ const NativeModules = {
   ActionSheetManager: require('./ActionSheetManager'),
   AppState: require('./AppState'),
   ImagePickerIOS: require('./ImagePickerIOS'),
+  DeviceEventManager: require('./DeviceEventManager'),
 };
 
 module.exports = NativeModules;

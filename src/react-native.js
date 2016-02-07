@@ -58,7 +58,7 @@ const ReactNative = {
   AppState: require('./api/AppState'),
   AppStateIOS: require('./api/AppStateIOS'),
   AsyncStorage: require('./api/AsyncStorage'),
-  //BackAndroid: require('BackAndroid'),
+  BackAndroid: require('./api/BackAndroid'),
   CameraRoll: require('./api/CameraRoll'),
   Clipboard: require('./plugins/NativeModules/Clipboard'),
   //DatePickerAndroid: require('DatePickerAndroid'),
