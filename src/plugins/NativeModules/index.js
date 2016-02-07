@@ -17,6 +17,7 @@ const NativeModules = {
   DatePickerAndroid: require('./DatePickerAndroid'),
   LinkingManager: require('./LinkingManager'),
   TimePickerAndroid: require('./TimePickerAndroid'),
+  Vibration: require('./Vibration'),
 };
 
 module.exports = NativeModules;

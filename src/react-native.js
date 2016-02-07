@@ -78,7 +78,7 @@ const ReactNative = {
   StyleSheet: require('./api/StyleSheet'),
   TimePickerAndroid: require('./api/TimePickerAndroid'),
   UIManager: require('./plugins/NativeModules/UIManager'),
-  //VibrationIOS: require('VibrationIOS'),
+  VibrationIOS: require('./api/VibrationIOS'),
 
   // Plugins
   DeviceEventEmitter: require('./plugins/DeviceEventEmitter'),
