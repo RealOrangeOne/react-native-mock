@@ -16,6 +16,7 @@ const NativeModules = {
   DeviceEventManager: require('./DeviceEventManager'),
   DatePickerAndroid: require('./DatePickerAndroid'),
   LinkingManager: require('./LinkingManager'),
+  TimePickerAndroid: require('./TimePickerAndroid'),
 };
 
 module.exports = NativeModules;
