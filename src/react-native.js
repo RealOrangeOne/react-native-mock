@@ -65,7 +65,7 @@ const ReactNative = {
   Dimensions: require('./api/Dimensions'),
   Easing: require('./api/Animated/Easing'),
   ImagePickerIOS: require('./api/ImagePickerIOS'),
-  //IntentAndroid: require('IntentAndroid'),
+  IntentAndroid: require('./api/IntentAndroid'),
   InteractionManager: require('./api/InteractionManager'),
   LayoutAnimation: require('./api/LayoutAnimation'),
   Linking: require('./api/Linking'),
