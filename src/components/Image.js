@@ -117,3 +117,5 @@ var Image = React.createClass({
     return null;
   },
 });
+
+module.exports = Image;
