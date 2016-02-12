@@ -3,7 +3,7 @@ const ActionSheetManager = {
   showActionSheetWithOptions(options, callback) {
 
   },
-  showShareActionSHeetWithOptions(options, failure, success) {
+  showShareActionSheetWithOptions(options, failure, success) {
 
   },
 };
