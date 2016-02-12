@@ -1,4 +1,4 @@
-import keyMirror from 'keyMirror';
+import keyMirror from 'keymirror';
 import invariant from 'invariant';
 
 const { EventEmitter } = require('events');
