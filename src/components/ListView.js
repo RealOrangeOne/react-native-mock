@@ -1,6 +1,6 @@
 import React from 'react';
 import ScrollResponder from '../mixins/ScrollResponder';
-import TimerMixin from 'react-timer-mizin';
+import TimerMixin from 'react-timer-mixin';
 import ScrollViewManager from '../NativeModules/ScrollViewManager';
 import ScrollView from './ScrollView';
 
