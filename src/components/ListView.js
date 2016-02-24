@@ -175,3 +175,5 @@ const ListView = React.createClass({
     return null;
   },
 });
+
+module.exports = ListView;
