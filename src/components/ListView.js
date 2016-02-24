@@ -9,11 +9,11 @@ var ListViewDataSource = require('ListViewDataSource');
 
 //var ScrollView = require('ScrollView');
 //var ScrollResponder = require('ScrollResponder');
-var StaticRenderer = require('StaticRenderer');
+// var StaticRenderer = require('StaticRenderer');  // Unused
 //var TimerMixin = require('react-timer-mixin');
 
-var isEmpty = require('isEmpty');
-var logError = require('logError');
+// var isEmpty = require('isEmpty'); // Doesnt resolve
+// var logError = require('logError'); // Doesnt resolve
 var merge = require('merge');
 
 const { PropTypes } = React;
