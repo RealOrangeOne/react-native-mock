@@ -4,7 +4,7 @@ import TimerMixin from 'react-timer-mixin';
 import ScrollViewManager from '../NativeModules/ScrollViewManager';
 import ScrollView from './ScrollView';
 
-var ListViewDataSource = require('ListViewDataSource');
+var ListViewDataSource = require('../api/ListViewDataSource');
 //var React = require('React');
 
 //var ScrollView = require('ScrollView');
