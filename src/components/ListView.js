@@ -1,19 +1,19 @@
 import React from 'react';
 import ScrollResponder from '../mixins/ScrollResponder';
-import TimerMixin from 'react-timer-mizin';
+import TimerMixin from 'react-timer-mixin';
 import ScrollViewManager from '../NativeModules/ScrollViewManager';
 import ScrollView from './ScrollView';
 
-var ListViewDataSource = require('ListViewDataSource');
+var ListViewDataSource = require('../api/ListViewDataSource');
 //var React = require('React');
 
 //var ScrollView = require('ScrollView');
 //var ScrollResponder = require('ScrollResponder');
-var StaticRenderer = require('StaticRenderer');
+// var StaticRenderer = require('StaticRenderer');  // Unused
 //var TimerMixin = require('react-timer-mixin');
 
-var isEmpty = require('isEmpty');
-var logError = require('logError');
+// var isEmpty = require('isEmpty'); // Doesnt resolve
+// var logError = require('logError'); // Doesnt resolve
 var merge = require('merge');
 
 const { PropTypes } = React;
@@ -175,3 +175,5 @@ const ListView = React.createClass({
     return null;
   },
 });
+
+module.exports = ListView;
