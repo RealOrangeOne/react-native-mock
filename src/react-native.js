@@ -18,7 +18,7 @@ const ReactNative = {
   ListView: require('./components/ListView'),
   MapView: createMockComponent('MapView'),
   Modal: createMockComponent('Modal'),
-  Navigator: createMockComponent('Navigator'),
+  Navigator: require('./components/Navigator'),
   NavigatorIOS: createMockComponent('NavigatorIOS'),
   Picker: createMockComponent('Picker'),
   PickerIOS: createMockComponent('PickerIOS'),
