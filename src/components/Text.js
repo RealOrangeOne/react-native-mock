@@ -45,7 +45,7 @@ const Text = React.createClass({
     allowFontScaling: React.PropTypes.bool,
   },
   render() {
-    return null;
+    return this.props.children;
   },
 });
 
