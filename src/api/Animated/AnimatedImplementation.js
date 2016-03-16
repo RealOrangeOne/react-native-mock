@@ -508,6 +508,8 @@ class AnimatedValue extends AnimatedWithChildren {
   }
 }
 
+var _uniqueId = 1;
+
 class AnimatedValueXY extends AnimatedWithChildren {
   constructor(valueIn) {
     super();
