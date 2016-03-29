@@ -5,6 +5,9 @@ const StyleSheet = {
   create(styles) {
     return styles;
   },
+  flatten(styles) {
+    return styles;
+  }
 };
 
 module.exports = StyleSheet;
