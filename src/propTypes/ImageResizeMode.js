@@ -1,5 +1,5 @@
 module.exports = [
-  'container',
+  'contain',
   'cover',
   'stretch',
 ];
