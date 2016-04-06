@@ -1,6 +1,9 @@
 import invariant from 'invariant';
 import Platform from '../plugins/Platform';
 import DeviceEventEmitter from '../plugins/DeviceEventEmitter';
+import LinkingManager from '../NativeModules/LinkingManager';
+
+const _notifHandlers = new Map();
 
 const DEVICE_NOTIF_EVENT = 'openURL';
 
@@ -45,7 +48,10 @@ class Linking {
       if (!listener) {
         return;
       }
-      listener.remove();
+      listener.removeListener(
+          DEVICE_NOTIF_EVENT,
+          handler
+      );
       _notifHandlers.delete(handler);
     }
   }

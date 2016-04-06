@@ -1,9 +1,9 @@
 let _test = url => true;
 const LinkingManger = {
-  openUrl(url) {
+  openURL(url) {
     return Promise.resolve(true);
   },
-  canOpenUrl(url) {
+  canOpenURL(url) {
     return Promise.resolve(_test(url));
   },
 
