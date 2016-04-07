@@ -20,6 +20,7 @@ const ReactNative = {
   Modal: createMockComponent('Modal'),
   Navigator: require('./components/Navigator'),
   NavigatorIOS: createMockComponent('NavigatorIOS'),
+  NavigationExperimental: createMockComponent('NavigationExperimental'),
   Picker: createMockComponent('Picker'),
   PickerIOS: createMockComponent('PickerIOS'),
   ProgressBarAndroid: createMockComponent('ProgressBarAndroid'),
