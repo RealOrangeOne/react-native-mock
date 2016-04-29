@@ -32,6 +32,7 @@ const ReactNative = {
   PullToRefreshViewAndroid: createMockComponent('PullToRefreshViewAndroid'),
   RecyclerViewBackedScrollView: createMockComponent('RecyclerViewBackedScrollView'),
   RefreshControl: createMockComponent('RefreshControl'),
+  StatusBar: require('./components/StatusBar'),
   SwitchAndroid: createMockComponent('SwitchAndroid'),
   SwitchIOS: createMockComponent('SwitchIOS'),
   TabBarIOS: createMockComponent('TabBarIOS'),
