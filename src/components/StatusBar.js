@@ -10,17 +10,17 @@ let _networkActivityIndicatorVisible = false;
 let _translucent = false;
 
 const StatusBar = React.createClass({
-  statics: {
-    propTypes: {
-      animated: React.PropTypes.bool,
-      barStyle: React.PropTypes.oneOf(['default', 'light-content']),
-      backgroundColor: React.PropTypes.bool,
-      hidden: React.PropTypes.bool,
-      networkActivityIndicatorVisible: React.PropTypes.bool,
-      showHideTransition: React.PropTypes.oneOf(['fade', 'slide']),
-      translucent: React.PropTypes.bool
-    },
+  propTypes: {
+    animated: React.PropTypes.bool,
+    barStyle: React.PropTypes.oneOf(['default', 'light-content']),
+    backgroundColor: React.PropTypes.bool,
+    hidden: React.PropTypes.bool,
+    networkActivityIndicatorVisible: React.PropTypes.bool,
+    showHideTransition: React.PropTypes.oneOf(['fade', 'slide']),
+    translucent: React.PropTypes.bool
+  },
 
+  statics: {
     setBackgroundColor(backgroundColor, animated) {
       _backgroundColor = backgroundColor;
     },
