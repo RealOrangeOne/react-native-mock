@@ -167,6 +167,12 @@ const ListView = React.createClass({
     this.refs[SCROLLVIEW_REF].setNativeProps(props);
   },
 
+  getDefaultProps() {
+    return {
+      renderScrollComponent: (props) => <ScrollView {...props} />
+    };
+  },
+
   getInnerViewNode() {
     return this.refs[SCROLLVIEW_REF].getInnerViewNode();
   },
