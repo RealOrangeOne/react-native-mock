@@ -6,6 +6,10 @@ const StyleSheet = {
     return styles;
   },
   flatten(styles) {
+    if (Array.isArray(styles)) {
+      return Object.assign({}, ...styles);
+    }
+
     return styles;
   }
 };
