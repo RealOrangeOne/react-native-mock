@@ -7,7 +7,7 @@ const StyleSheet = {
   },
   flatten(styles) {
     if (Array.isArray(styles)) {
-      return Object.assign({}, ...styles);
+      return Object.assign({}, ...styles.map(StyleSheet.flatten));
     }
 
     return styles;
