@@ -18,7 +18,7 @@ const ReactNative = {
   ListView: require('./components/ListView'),
   MapView: createMockComponent('MapView'),
   Modal: createMockComponent('Modal'),
-  Navigator: createMockComponent('Navigator'),
+  Navigator: require('./components/Navigator'),
   NavigatorIOS: createMockComponent('NavigatorIOS'),
   Picker: createMockComponent('Picker'),
   PickerIOS: createMockComponent('PickerIOS'),
@@ -32,9 +32,13 @@ const ReactNative = {
   PullToRefreshViewAndroid: createMockComponent('PullToRefreshViewAndroid'),
   RecyclerViewBackedScrollView: createMockComponent('RecyclerViewBackedScrollView'),
   RefreshControl: createMockComponent('RefreshControl'),
+  StatusBar: require('./components/StatusBar'),
   SwitchAndroid: createMockComponent('SwitchAndroid'),
   SwitchIOS: createMockComponent('SwitchIOS'),
-  TabBarIOS: createMockComponent('TabBarIOS'),
+  TabBarIOS: {
+    ...createMockComponent('TabBarIOS'),
+    Item: createMockComponent('TabBarIOS.Item')
+  },
   Text: require('./components/Text'),
   TextInput: require('./components/TextInput'),
   ToastAndroid: createMockComponent('ToastAndroid'),

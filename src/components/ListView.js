@@ -14,7 +14,7 @@ var ListViewDataSource = require('../api/ListViewDataSource');
 
 // var isEmpty = require('isEmpty'); // Doesnt resolve
 // var logError = require('logError'); // Doesnt resolve
-var merge = require('merge');
+//var merge = require('merge');
 
 const { PropTypes } = React;
 
