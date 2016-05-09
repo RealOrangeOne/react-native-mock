@@ -8,7 +8,7 @@ import createMockComponent from './components/createMockComponent';
 // Export React, plus some native additions.
 const ReactNative = {
   // Components
-  ActivityIndicatorIOS: createMockComponent('ActivityIndicatorIOS'),
+  ActivityIndicatorIOS: require('./components/ActivityIndicatorIOS'),
   ART: require('./components/ART'),
   DatePickerIOS: createMockComponent('DatePickerIOS'),
   DrawerLayoutAndroid: createMockComponent('DrawerLayoutAndroid'),
