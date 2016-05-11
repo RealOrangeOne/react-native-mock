@@ -3,10 +3,11 @@
  */
 
 function wrap(value, callback) {
-  return Promise.resolve(value).then(
-    obj => callback(null, obj),
-    err => callback(err)
-  );
+  if(callback) {
+    return callback(null, value);
+  } else {
+    return new Promise(function(resolve) { resolve(value); });
+  }
 }
 
 let db = {};
