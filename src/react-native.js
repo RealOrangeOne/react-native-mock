@@ -96,6 +96,7 @@ const ReactNative = {
   ColorPropType: require('./propTypes/ColorPropType'),
   EdgeInsetsPropType: require('./propTypes/EdgeInsetsPropType'),
   PointPropType: require('./propTypes/PointPropType'),
+  NavigationExperimental: require('./Libraries/NavigationExperimental'),
 };
 
 // See http://facebook.github.io/react/docs/addons.html
