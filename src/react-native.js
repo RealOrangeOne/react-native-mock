@@ -106,8 +106,8 @@ const ReactNativeAddons = {
   TestModule: require('./NativeModules/TestModule'),
   TestUtils: require('react-addons-test-utils'),
   // TODO(lmr): not sure where to find this
-  // batchedUpdates: require('ReactUpdates').batchedUpdates,
-  cloneWithProps: require('react-addons-clone-with-props'),
+  // batchedUpdates: require('ReactUpdates').batchedUpdates, deprecated
+  // cloneWithProps: require('react-addons-clone-with-props'), deprecated
   createFragment: require('react-addons-create-fragment'),
   update: require('react-addons-update'),
 };
