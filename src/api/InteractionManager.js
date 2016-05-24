@@ -66,3 +66,5 @@ const InteractionManager = {
     _deadline = deadline;
   },
 };
+
+module.exports = InteractionManager;
