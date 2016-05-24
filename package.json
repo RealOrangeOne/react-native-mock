@@ -59,8 +59,7 @@
     "eslint-plugin-jsx-a11y": "^1.2.0",
     "eslint-plugin-react": "^5.1.1",
     "mocha": "^2.4.5",
-    "react": "^15.0.2",
-    "react-native": "^0.26.0"
+    "react": "^15.0.2"
   },
   "dependencies": {
     "cubic-bezier": "^0.1.2",
