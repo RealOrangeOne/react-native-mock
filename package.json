@@ -4,7 +4,7 @@
   "description": "A fully mocked and test-friendly version of react native",
   "main": "build/react-native.js",
   "scripts": {
-    "postinstall": "npm run build",
+    "prepublish": "npm run build",
     "test": "mocha --require babel-core/register test/**/*.js",
     "test:watch": "npm run test -- --watch",
     "build": "babel src --out-dir build"
