@@ -7,7 +7,8 @@
     "prepublish": "npm run build",
     "test": "mocha --require babel-core/register test/**/*.js",
     "test:watch": "npm run test -- --watch",
-    "build": "babel src --out-dir build"
+    "build": "babel src --out-dir build",
+    "lint": "eslint 'src/' 'test/'"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "eslint": "2.10.2",
     "eslint-config-airbnb": "=9.0.1",
     "eslint-plugin-react": "=5.1.1",
+    "eslint-plugin-react-native": "=1.0.2",
     "mocha": "=2.5.3"
   },
   "dependencies": {
