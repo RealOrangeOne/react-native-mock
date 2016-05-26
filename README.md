@@ -1,6 +1,11 @@
 # react-native-mock
 A fully mocked and test-friendly version of react native
 
+## Requirements
+- Node.js 4+
+- The latest version of react-native-mock
+
+__Note__: This library is designed to work with the most recent version of react-native. If you aren't using the most recent version, you will need to download an older version of this library, as the API is likely to be different, and the dependencies are likely to break. Details coming soon!
 
 ## How Am I Supposed To Use This?
 
@@ -12,7 +17,7 @@ npm i react-native-mock --save-dev
 /* file-that-runs-before-all-of-my-tests.js */
 
 // This will mutate `react-native`'s require cache with `react-native-mock`'s.
-require('react-native-mock/mock'); // <-- side-effects!!! 
+require('react-native-mock/mock'); // <-- side-effects!!!
 ```
 
 
@@ -20,8 +25,7 @@ require('react-native-mock/mock'); // <-- side-effects!!!
 
 Testing React Native components is *hard*.  I'm hoping this makes it easier.
 
-I wrote a React Testing Library that works really well for React "Web", but didn't really work for
-React "Native" without something like this.
+I wrote a React Testing Library that works really well for React "Web", but didn't really work for React "Native" without something like this.
 
 
 ## Wait... Is this actually a terrible idea?
