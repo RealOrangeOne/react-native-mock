@@ -20,7 +20,6 @@ npm i react-native-mock --save-dev
 require('react-native-mock/mock'); // <-- side-effects!!!
 ```
 
-
 ## Why?
 
 Testing React Native components is *hard*.  I'm hoping this makes it easier.
@@ -33,3 +32,13 @@ I wrote a React Testing Library that works really well for React "Web", but didn
 I don't know. Maybe.
 
 I'd love to figure that out though... feel free to file an issue if you have opinions.
+
+
+## Contributing
+Discovered a bug, got a new feature, or found something that needs improving? __Submit a PR!__
+
+Make sure to read through the CONTRIBUTING.md file before submitting your PR!
+
+### Contributors
+- Leland Richardson (Creator)
+- Jake Howard
