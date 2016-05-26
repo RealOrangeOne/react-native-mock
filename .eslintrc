@@ -1,8 +1,9 @@
 {
   "extends": "airbnb",
-  "ecmaFeatures": {
-    "experimentalObjectRestSpread": true
-  },
+  plugins: [
+    "react",
+    "react-native"
+  ],
   "rules": {
     "comma-dangle": 0
   }
