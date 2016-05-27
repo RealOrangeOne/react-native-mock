@@ -10,3 +10,5 @@ const TimePickerAndroid = {
     _resolver = resolver;
   }
 };
+
+module.exports = TimePickerAndroid;
