@@ -42,3 +42,6 @@ Make sure to read through the CONTRIBUTING.md file before submitting your PR!
 ### Contributors
 - Leland Richardson (Creator)
 - Jake Howard
+
+## What do the labels mean?
+See [this wiki page](https://github.com/lelandrichardson/react-native-mock/wiki/Labels---What-do-they-mean%3F).
