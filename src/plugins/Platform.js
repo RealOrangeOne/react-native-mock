@@ -11,7 +11,10 @@ const Platform = {
   __setOS(os) {
     Platform.OS = os;
   },
-
+  
+  select(objs) {
+    return objs.ios;
+  },
   /**
    * Exposed in react-native-mock for testing purposes. Not part of real API.
    */
