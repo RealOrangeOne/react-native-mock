@@ -92,8 +92,8 @@ class CameraRoll {
    * Returns a Promise which when resolved will be of shape `getPhotosReturnChecker`.
    */
   static getPhotos(params) {
-    if (__DEV__) {
-      getPhotosParamChecker({params}, 'params', 'CameraRoll.getPhotos');
+    if (process.env.NODE_ENV === 'development') {
+      getPhotosParamChecker({ params }, 'params', 'CameraRoll.getPhotos');
     }
     // TODO(lmr):
     // TODO: Add the __DEV__ check back in to verify the Promise result

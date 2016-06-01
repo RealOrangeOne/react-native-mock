@@ -18,7 +18,7 @@ const AppState = {
     if (type === 'change') {
       _eventHandlers[type].set(handler, DeviceEventEmitter.addListener(
         'appStateDidChange',
-        (appStateData) => handler(appStateData.app_state)
+        (appStateData) => handler(appStateData.appState)
       ));
     } else if (type === 'memoryWarning') {
       _eventHandlers[type].set(handler, DeviceEventEmitter.addListener(
@@ -42,14 +42,14 @@ const AppState = {
 
   currentState: 'active',
 
-  __setAppState(app_state) {
-    DeviceEventEmitter.emit('appStateDidChange', { app_state});
+  __setAppState(appState) {
+    DeviceEventEmitter.emit('appStateDidChange', { appState });
   },
 };
 
 DeviceEventEmitter.addListener(
   'appStateDidChange',
-  (appStateData) => AppState.currentState = appStateData.app_state
+  (appStateData) => { AppState.currentState = appStateData.appState; }
 );
 
 module.exports = AppState;

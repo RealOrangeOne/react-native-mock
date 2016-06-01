@@ -1,7 +1,7 @@
 import React from 'react';
 
 function createAnimatedComponent(Component) {
-  var refName = 'node';
+  const refName = 'node';
 
   class AnimatedComponent extends React.Component {
     render() {

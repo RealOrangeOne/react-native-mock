@@ -3,12 +3,12 @@ import DatePickerModule from '../NativeModules/DatePickerAndroid';
 /**
  * Convert a Date to a timestamp.
  */
-function _toMillis(options, key) {
-  const dateVal = options[key];
+function _toMillis(dateVal) {
   // Is it a Date object?
   if (typeof dateVal === 'object' && typeof dateVal.getMonth === 'function') {
-    options[key] = dateVal.getTime();
+    return dateVal.getTime();
   }
+  return null;
 }
 
 /**
@@ -51,11 +51,11 @@ class DatePickerAndroid {
   static open(options) {
     const optionsMs = options;
     if (optionsMs) {
-      _toMillis(options, 'date');
-      _toMillis(options, 'minDate');
-      _toMillis(options, 'maxDate');
+      optionsMs.date = _toMillis(options.date);
+      optionsMs.minDate = _toMillis(options.minDate);
+      optionsMs.maxDate = _toMillis(options.maxDate);
     }
-    return DatePickerModule.open(options);
+    return DatePickerModule.open(optionsMs);
   }
 
   /**

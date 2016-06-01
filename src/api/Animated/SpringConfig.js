@@ -54,16 +54,15 @@ function fromBouncinessAndSpeed(bounciness, speed) {
       return b3Friction1(tension);
     } else if (tension > 18 && tension <= 44) {
       return b3Friction2(tension);
-    } else {
-      return b3Friction3(tension);
     }
+    return b3Friction3(tension);
   }
 
-  var b = normalize(bounciness / 1.7, 0, 20);
+  let b = normalize(bounciness / 1.7, 0, 20);
   b = projectNormal(b, 0, 0.8);
-  var s = normalize(speed / 1.7, 0, 20);
-  var bouncyTension = projectNormal(s, 0.5, 200);
-  var bouncyFriction = quadraticOutInterpolation(
+  const s = normalize(speed / 1.7, 0, 20);
+  const bouncyTension = projectNormal(s, 0.5, 200);
+  const bouncyFriction = quadraticOutInterpolation(
     b,
     b3Nobounce(bouncyTension),
     0.01

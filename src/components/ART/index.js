@@ -2,13 +2,11 @@ import createMockComponent from '../createMockComponent';
 import Transform from './Transform';
 import Path from './Path';
 
-const SOLID_COLOR = 0;
 const LINEAR_GRADIENT = 1;
 const RADIAL_GRADIENT = 2;
 const PATTERN = 3;
 
 function CSSBackgroundPattern() {
-  //return new Color('rgba(0,0,0,0)');
   // TODO(lmr):
   return {};
 }

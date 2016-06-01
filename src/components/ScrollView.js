@@ -5,7 +5,7 @@ import ScrollResponder from '../mixins/ScrollResponder';
 import View from './View';
 import ViewStylePropTypes from '../propTypes/ViewStylePropTypes';
 import ScrollViewManager from '../NativeModules/ScrollViewManager';
-import StyleSheetPropType from '../propTypes/StyleSheetPropType';
+import styleSheetPropType from '../propTypes/StyleSheetPropType';
 
 const { PropTypes } = React;
 
@@ -86,7 +86,7 @@ const ScrollView = React.createClass({
      *     }
      *   });
      */
-    contentContainerStyle: StyleSheetPropType(ViewStylePropTypes),
+    contentContainerStyle: styleSheetPropType(ViewStylePropTypes),
     /**
      * A floating-point number that determines how quickly the scroll view
      * decelerates after the user lifts their finger. You may also use string
@@ -109,8 +109,8 @@ const ScrollView = React.createClass({
     /**
      * The style of the scroll indicators.
      *   - `default` (the default), same as `black`.
-     *   - `black`, scroll indicator is black. This style is good against a white content background.
-     *   - `white`, scroll indicator is white. This style is good against a black content background.
+     *   - `black`, scroll indicator is black.
+     *   - `white`, scroll indicator is white.
      * @platform ios
      */
     indicatorStyle: PropTypes.oneOf([
@@ -236,7 +236,7 @@ const ScrollView = React.createClass({
      * @platform ios
      */
     stickyHeaderIndices: PropTypes.arrayOf(PropTypes.number),
-    style: StyleSheetPropType(ViewStylePropTypes),
+    style: styleSheetPropType(ViewStylePropTypes),
     /**
      * When set, causes the scroll view to stop at multiples of the value of
      * `snapToInterval`. This can be used for paginating through children
@@ -286,12 +286,6 @@ const ScrollView = React.createClass({
     this.refs[SCROLLVIEW].setNativeProps(props);
   },
 
-  endRefreshin() {
-    ScrollViewManager.endRefreshing(
-      React.findNodeHandle(this)
-    );
-  },
-
   /**
    * Returns a reference to the underlying scroll responder, which supports
    * operations like `scrollTo`. All ScrollView-like components should
@@ -306,6 +300,11 @@ const ScrollView = React.createClass({
     return React.findNodeHandle(this.refs[INNERVIEW]);
   },
 
+  endRefreshin() {
+    ScrollViewManager.endRefreshing(
+      React.findNodeHandle(this)
+    );
+  },
 
   scrollTo(destY = 0, destX = 0, animated = true) {
 

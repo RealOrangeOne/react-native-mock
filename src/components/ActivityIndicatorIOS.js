@@ -8,7 +8,6 @@ import View from './View';
 const { PropTypes } = React;
 
 const ActivityIndicatorIOS = React.createClass({
-  mixins: [NativeMethodsMixin],
   propTypes: {
     ...View.propTypes,
     /**
@@ -37,6 +36,9 @@ const ActivityIndicatorIOS = React.createClass({
      */
     onLayout: PropTypes.func,
   },
+
+  mixins: [NativeMethodsMixin],
+
   render() {
     return null;
   },

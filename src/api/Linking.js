@@ -2,6 +2,8 @@ import invariant from 'invariant';
 import Platform from '../plugins/Platform';
 import DeviceEventEmitter from '../plugins/DeviceEventEmitter';
 import LinkingManager from '../NativeModules/LinkingManager';
+import IntentAndroid from './IntentAndroid';
+import LinkingManagerIOS from './LinkingIOS';
 
 const _notifHandlers = new Map();
 
@@ -17,13 +19,15 @@ class Linking {
    */
   static addEventListener(type, handler) {
     if (Platform.OS === 'android') {
-      console.warn('Linking.addEventListener is not supported on Android');
+      console.warn( // eslint-disable-line no-console
+        'Linking.addEventListener is not supported on Android'
+      );
     } else {
       invariant(
         type === 'url',
         'Linking only supports `url` events'
       );
-      var listener = DeviceEventEmitter.addListener(
+      const listener = DeviceEventEmitter.addListener(
         DEVICE_NOTIF_EVENT,
         handler
       );
@@ -38,13 +42,15 @@ class Linking {
    */
   static removeEventListener(type, handler) {
     if (Platform.OS === 'android') {
-      console.warn('Linking.removeEventListener is not supported on Android');
+      console.warn( // eslint-disable-line no-console
+        'Linking.removeEventListener is not supported on Android'
+      );
     } else {
       invariant(
         type === 'url',
         'Linking only supports `url` events'
       );
-      var listener = _notifHandlers.get(handler);
+      const listener = _notifHandlers.get(handler);
       if (!listener) {
         return;
       }
@@ -95,16 +101,15 @@ class Linking {
    */
   static getInitialURL() {
     if (Platform.OS === 'android') {
-        return IntentAndroid.getInitialURL();
-    } else {
-      return Promise.resolve(LinkingManagerIOS.initialURL);
+      return IntentAndroid.getInitialURL();
     }
+    return Promise.resolve(LinkingManagerIOS.initialURL);
   }
 
   static _validateURL(url) {
     invariant(
       typeof url === 'string',
-      'Invalid URL: should be a string. Was: ' + url
+      `Invalid URL: should be a string. Was: ${url}`
     );
     invariant(
       url,

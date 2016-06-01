@@ -10,17 +10,17 @@ class ListViewDataSource {
   }
 
   cloneWithRows(data) {
-    var newSource = new ListViewDataSource();
+    const newSource = new ListViewDataSource();
     newSource._dataBlob = data;
 
     return newSource;
   }
-  
+
   cloneWithRowsAndSections(data) {
-      var newSource = new ListViewDataSource();
-      newSource._dataBlob = data;
-  
-      return newSource;
+    const newSource = new ListViewDataSource();
+    newSource._dataBlob = data;
+
+    return newSource;
   }
 }
 

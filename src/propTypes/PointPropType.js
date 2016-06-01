@@ -5,7 +5,7 @@ import React from 'react';
 
 const { PropTypes } = React;
 
-var PointPropType = PropTypes.shape({
+const PointPropType = PropTypes.shape({
   x: PropTypes.number,
   y: PropTypes.number,
 });

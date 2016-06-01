@@ -5,19 +5,19 @@ import React from 'react';
 
 const { PropTypes } = React;
 
-var ArrayOfNumberPropType = PropTypes.arrayOf(PropTypes.number);
+const arrayOfNumberPropType = PropTypes.arrayOf(PropTypes.number);
 
-var TransformMatrixPropType = function(props, propName, componentName) {
+const transformMatrixPropType = function (props, propName, componentName) {
   if (props.transform && props.transformMatrix) {
     return new Error(
       'transformMatrix and transform styles cannot be used on the same ' +
       'component'
     );
   }
-  return ArrayOfNumberPropType(props, propName, componentName);
+  return arrayOfNumberPropType(props, propName, componentName);
 };
 
-var TransformPropTypes = {
+const transformPropTypes = {
   transform: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.shape({ perspective: PropTypes.number }),
@@ -34,7 +34,7 @@ var TransformPropTypes = {
       PropTypes.shape({ skewY: PropTypes.string }),
     ])
   ),
-  transformMatrix: TransformMatrixPropType,
+  transformMatrix: transformMatrixPropType,
 };
 
-module.exports = TransformPropTypes;
+module.exports = transformPropTypes;

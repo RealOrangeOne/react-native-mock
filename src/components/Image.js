@@ -2,8 +2,7 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/Image/Image.ios.js
  */
 import React from 'react';
-import StyleSheetPropType from '../propTypes/StyleSheetPropType';
-import ViewStylePropTypes from '../propTypes/ViewStylePropTypes';
+import styleSheetPropType from '../propTypes/StyleSheetPropType';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import ImageStylePropTypes from '../propTypes/ImageStylePropTypes';
@@ -11,9 +10,9 @@ import ImageResizeMode from '../propTypes/ImageResizeMode';
 
 const { PropTypes } = React;
 
-var Image = React.createClass({
+const Image = React.createClass({
   propTypes: {
-    style: StyleSheetPropType(ImageStylePropTypes),
+    style: styleSheetPropType(ImageStylePropTypes),
     /**
      * `uri` is a string representing the resource identifier for the image, which
      * could be an http address, a local file path, or the name of a static image

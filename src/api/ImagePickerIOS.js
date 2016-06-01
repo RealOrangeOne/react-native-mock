@@ -9,19 +9,19 @@ const ImagePickerIOS = {
     return ImagePicker.canUseCamera(callback);
   },
   openCameraDialog(config, successCallback, cancelCallback) {
-    config = {
+    const newConfig = {
       videoMode: false,
       ...config,
     };
-    return ImagePicker.openCameraDialog(config, successCallback, cancelCallback);
+    return ImagePicker.openCameraDialog(newConfig, successCallback, cancelCallback);
   },
   openSelectDialog(config, successCallback, cancelCallback) {
-    config = {
+    const newConfig = {
       showImages: true,
       showVideos: false,
       ...config,
     };
-    return ImagePicker.openSelectDialog(config, successCallback, cancelCallback);
+    return ImagePicker.openSelectDialog(newConfig, successCallback, cancelCallback);
   },
 };
 

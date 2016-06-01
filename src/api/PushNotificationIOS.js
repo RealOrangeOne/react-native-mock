@@ -72,9 +72,9 @@ class PushNotificationIOS {
       type === 'notification' || type === 'register',
       'PushNotificationIOS only supports `notification` and `register` events'
     );
-    var listener;
+    let listener;
     if (type === 'notification') {
-      listener =  DeviceEventEmitter.addListener(
+      listener = DeviceEventEmitter.addListener(
         DEVICE_NOTIF_EVENT,
         (notifData) => {
           handler(new PushNotificationIOS(notifData));
@@ -134,7 +134,6 @@ class PushNotificationIOS {
       typeof callback === 'function',
       'Must provide a valid callback'
     );
-    RCTPushNotificationManager.checkPermissions(callback);
   }
 
   /**
@@ -146,7 +145,7 @@ class PushNotificationIOS {
       type === 'notification' || type === 'register',
       'PushNotificationIOS only supports `notification` and `register` events'
     );
-    var listener = _notifHandlers.get(handler);
+    const listener = _notifHandlers.get(handler);
     if (!listener) {
       return;
     }
@@ -162,7 +161,7 @@ class PushNotificationIOS {
    * notification object, or `null`. Subsequent invocations will return null.
    */
   static popInitialNotification() {
-    var initialNotification = _initialNotification &&
+    const initialNotification = _initialNotification &&
       new PushNotificationIOS(_initialNotification);
     _initialNotification = null;
     return initialNotification;
@@ -181,7 +180,7 @@ class PushNotificationIOS {
     // https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html
 
     Object.keys(nativeNotif).forEach((notifKey) => {
-      var notifVal = nativeNotif[notifKey];
+      const notifVal = nativeNotif[notifKey];
       if (notifKey === 'aps') {
         this._alert = notifVal.alert;
         this._sound = notifVal.sound;

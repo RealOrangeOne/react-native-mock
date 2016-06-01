@@ -5,9 +5,8 @@ const { EventEmitter } = require('events');
 
 const _emitter = new EventEmitter();
 
-let _nextUpdateHandle = 0;
 let _inc = 0;
-let _deadline = -1;
+let _deadline = -1; // eslint-disable-line no-unused-vars
 
 const InteractionManager = {
   Events: keyMirror({
@@ -22,11 +21,11 @@ const InteractionManager = {
     return new Promise(resolve => {
       // TODO(lmr):
       // _scheduleUpdate();
-      //if (task) {
+      // if (task) {
       //  _taskQueue.enqueue(task);
-      //}
-      //const name = task && task.name || '?';
-      //_taskQueue.enqueue({ run: resolve, name: 'resolve ' + name });
+      // }
+      // const name = task && task.name || '?';
+      // _taskQueue.enqueue({ run: resolve, name: 'resolve ' + name });
     });
   },
 
@@ -36,8 +35,8 @@ const InteractionManager = {
   createInteractionHandle() {
     // TODO(lmr):
     // _scheduleUpdate();
-    var handle = ++_inc;
-    //_addInteractionSet.add(handle);
+    const handle = ++_inc;
+    // _addInteractionSet.add(handle);
     return handle;
   },
 
@@ -51,8 +50,8 @@ const InteractionManager = {
     );
     // TODO(lmr):
     // _scheduleUpdate();
-    //_addInteractionSet.delete(handle);
-    //_deleteInteractionSet.add(handle);
+    // _addInteractionSet.delete(handle);
+    // _deleteInteractionSet.add(handle);
   },
 
   addListener: _emitter.addListener.bind(_emitter),

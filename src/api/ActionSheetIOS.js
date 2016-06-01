@@ -1,6 +1,5 @@
-
 import ActionSheetManager from '../NativeModules/ActionSheetManager';
-import invariant from'invariant';
+import invariant from 'invariant';
 import processColor from '../plugins/processColor';
 
 const ActionSheetIOS = {
@@ -14,7 +13,7 @@ const ActionSheetIOS = {
       'Must provide a valid callback'
     );
     ActionSheetManager.showActionSheetWithOptions(
-      {...options, tintColor: processColor(options.tintColor)},
+      { ...options, tintColor: processColor(options.tintColor) },
       callback
     );
   },
@@ -37,7 +36,7 @@ const ActionSheetIOS = {
       'Must provide a valid successCallback'
     );
     ActionSheetManager.showShareActionSheetWithOptions(
-      {...options, tintColor: processColor(options.tintColor)},
+      { ...options, tintColor: processColor(options.tintColor) },
       failureCallback,
       successCallback
     );

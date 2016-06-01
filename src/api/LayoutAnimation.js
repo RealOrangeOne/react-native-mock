@@ -42,7 +42,7 @@ const configChecker = PropTypes.shape({
   delete: animChecker,
 });
 
-const nop = () =>{};
+const nop = () => {};
 
 function configureNext(config, onAnimationDidEnd) {
   configChecker({ config }, 'config', 'LayoutAnimation.configureNext');

@@ -17,7 +17,7 @@ const { PropTypes } = React;
  * These properties are a subset of our styles that are consumed by the layout
  * algorithm and affect the positioning and sizing of views.
  */
-var LayoutPropTypes = {
+const LayoutPropTypes = {
   width: PropTypes.number,
   height: PropTypes.number,
   top: PropTypes.number,

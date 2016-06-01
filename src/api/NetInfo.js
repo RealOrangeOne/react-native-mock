@@ -4,10 +4,7 @@
 import Platform from '../plugins/Platform';
 import DeviceEventEmitter from '../plugins/DeviceEventEmitter';
 
-//const RCTNetInfo = NativeModules.NetInfo;
-
 const DEVICE_CONNECTIVITY_EVENT = 'networkStatusDidChange';
-const _isConnectedSubscriptions = new Map();
 const _subscriptions = new Map();
 
 let isExpensive = false;

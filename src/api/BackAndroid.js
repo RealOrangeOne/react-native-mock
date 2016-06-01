@@ -5,18 +5,6 @@ const DEVICE_BACK_EVENT = 'hardwareBackPress';
 
 const _backPressSubscriptions = new Set();
 
-DeviceEventEmitter.addListener(DEVICE_BACK_EVENT, function() {
-  let invokeDefault = true;
-  _backPressSubscriptions.forEach((subscription) => {
-    if (subscription()) {
-      invokeDefault = false;
-    }
-  });
-  if (invokeDefault) {
-    BackAndroid.exitApp();
-  }
-});
-
 /**
  * Detect hardware back button presses, and programmatically invoke the default back button
  * functionality to exit the app if there are no listeners or if none of the listeners return true.
@@ -51,5 +39,17 @@ const BackAndroid = {
   },
 
 };
+
+DeviceEventEmitter.addListener(DEVICE_BACK_EVENT, function () {
+  let invokeDefault = true;
+  _backPressSubscriptions.forEach((subscription) => {
+    if (subscription()) {
+      invokeDefault = false;
+    }
+  });
+  if (invokeDefault) {
+    BackAndroid.exitApp();
+  }
+});
 
 module.exports = BackAndroid;

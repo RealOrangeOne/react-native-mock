@@ -2,7 +2,7 @@ import DeviceEventEmitter from '../plugins/DeviceEventEmitter';
 import AppState from '../NativeModules/AppState';
 import invariant from 'invariant';
 
-const logError = (error) => console.error(error);
+const logError = (error) => console.error(error); // eslint-disable-line no-console
 
 const _eventHandlers = {
   change: new Map(),

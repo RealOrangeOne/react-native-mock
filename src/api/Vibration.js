@@ -1,4 +1,4 @@
-import Vibration from '../NativeModules/Vibration';
+import NativeVibration from '../NativeModules/Vibration';
 import invariant from 'invariant';
 
 /**
@@ -12,14 +12,14 @@ import invariant from 'invariant';
  * Vibration patterns are currently unsupported.
  */
 
-const VibrationIOS = {
+const Vibration = {
   vibrate() {
     invariant(
       arguments[0] === undefined,
       'Vibration patterns not supported.'
     );
-    Vibration.vibrate();
+    NativeVibration.vibrate();
   }
 };
 
-module.exports = VibrationIOS;
+module.exports = Vibration;

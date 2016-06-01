@@ -1,7 +1,7 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/AppRegistry/AppRegistry.js
  */
-let runnables = {};
+const runnables = {};
 
 const AppRegistry = {
   registerConfig(configs) {
