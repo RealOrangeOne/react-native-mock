@@ -1,6 +1,6 @@
 {
   "extends": "airbnb",
-  plugins: [
+  "plugins": [
     "react",
     "react-native"
   ],
