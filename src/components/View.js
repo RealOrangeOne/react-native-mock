@@ -84,10 +84,6 @@ const View = React.createClass({
       'polite',
       'assertive',
     ]),
-    mixins: [NativeMethodsMixin],
-    statics: {
-      ...statics,
-    },
 
     /**
      * Controls how view is important for accessibility which is if it
@@ -277,6 +273,13 @@ const View = React.createClass({
      */
     needsOffscreenAlphaCompositing: PropTypes.bool,
   },
+
+  mixins: [NativeMethodsMixin],
+
+  statics: {
+    ...statics,
+  },
+
   render() {
     return null;
   },
