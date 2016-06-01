@@ -4,8 +4,18 @@
 
 function wrap(value, callback) {
   return Promise.resolve(value).then(
-    obj => callback && callback(null, obj),
-    err => callback && callback(err)
+    obj => {
+      if (callback) {
+        callback(null, obj);
+      }
+      return obj;
+    },
+    err => {
+      if (callback) {
+        callback(err);
+      }
+      throw err;
+    }
   );
 }
 
