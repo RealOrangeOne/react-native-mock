@@ -9,7 +9,7 @@
     "mocha": "mocha --require babel-core/register test/**/*.js",
     "mocha:watch": "npm run test -- --watch",
     "build": "babel src --out-dir build",
-    "lint": "eslint 'src/' 'test/'"
+    "lint": "eslint 'src/' 'test/' 'mock.js'"
   },
   "repository": {
     "type": "git",
