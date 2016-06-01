@@ -229,7 +229,7 @@ class SpringAnimation extends Animation {
     if (config.bounciness !== undefined || config.speed !== undefined) {
       invariant(
         config.tension === undefined && config.friction === undefined,
-        'You can only define bounciness/speed or tension/friction but not both',
+        'You can only define bounciness/speed or tension/friction but not both'
       );
       springConfig = SpringConfig.fromBouncinessAndSpeed(
         withDefault(config.bounciness, 8),
