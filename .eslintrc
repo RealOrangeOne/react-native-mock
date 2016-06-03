@@ -4,6 +4,9 @@
     "react",
     "react-native"
   ],
+  "env": {
+    "mocha": true
+  },
   "parser": "babel-eslint",
   "rules": {
     "no-unused-vars": [2, {"vars": "all", "args": "none"}],
@@ -17,10 +20,5 @@
     "guard-for-in": 0,
     "no-restricted-syntax": 0,
     "prefer-template": 0
-  },
-  "globals": {
-    "describe": true,
-    "it": true,
-    "beforeEach": true
   }
 }
