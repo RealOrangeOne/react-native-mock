@@ -97,6 +97,7 @@ const ReactNative = {
   EdgeInsetsPropType: require('./propTypes/EdgeInsetsPropType'),
   PointPropType: require('./propTypes/PointPropType'),
 };
+  ReactNative.PickerIOS.Item = createMockComponent('PickerIOS.Item');
 
 // See http://facebook.github.io/react/docs/addons.html
 const ReactNativeAddons = {
