@@ -2,6 +2,8 @@ import _bezier from 'cubic-bezier';
 
 let _ease = () => {};
 
+const EPSILON = (1000 / 60 / 500) / 4;
+
 /**
  * This class implements common easing functions. The math is pretty obscure,
  * but this cool website has nice visual illustrations of what they represent:
@@ -87,7 +89,7 @@ class Easing {
     return 7.5625 * t * t + 0.984375;
   }
 
-  static bezier(x1, y1, x2, y2, epsilon = 0.008333) {
+  static bezier(x1, y1, x2, y2, epsilon = EPSILON) {
     return _bezier(x1, y1, x2, y2, epsilon);
   }
 
