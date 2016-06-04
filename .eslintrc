@@ -20,6 +20,14 @@
     "guard-for-in": 0,
     "no-restricted-syntax": 0,
     "prefer-template": 0,
-    "prefer-template": 0
+    "no-console": 0,
+    "max-len": [
+      2,
+      120,
+      2,
+      {
+        "ignoreComments": true
+      }
+    ]
   }
 }
