@@ -35,6 +35,13 @@ class AlertIOS {
    * ```
    */
   static alert(title, message, callbackOrButtons, type) {
+    if (typeof type !== 'undefined') {
+      console.warn(
+        'AlertIOS.alert() with a 4th "type" parameter is deprecated and will be removed. Use AlertIOS.prompt() instead.'
+      );
+      this.prompt(title, message, callbackOrButtons, type);
+      return;
+    }
     this.prompt(title, message, callbackOrButtons, 'default');
   }
 
