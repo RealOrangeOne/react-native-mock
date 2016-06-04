@@ -20,7 +20,7 @@ class IntentAndroid {
    * @deprecated
    */
   static openURL(url) {
-    console.warn(  // eslint-disable-line no-console
+    console.warn(
       '"IntentAndroid" is deprecated. Use the promise based "Linking" instead.'
     );
     Linking.openURL(url);

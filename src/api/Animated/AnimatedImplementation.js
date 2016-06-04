@@ -44,7 +44,7 @@ class AnimatedWithChildren extends Animated {
   __removeChild(child) {
     const index = this._children.indexOf(child);
     if (index === -1) {
-      console.warn( // eslint-disable-line no-console
+      console.warn(
         'Trying to remove a child that doesn\'t exist'
       );
       return;

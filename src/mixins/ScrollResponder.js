@@ -419,7 +419,7 @@ const ScrollResponderMixin = {
   },
 
   scrollResponderTextInputFocusError(e) {
-    console.error('Error measuring text field: ', e);  // eslint-disable-line no-console
+    console.error('Error measuring text field: ', e);
   },
 
   /**

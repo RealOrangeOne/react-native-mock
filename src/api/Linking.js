@@ -19,7 +19,7 @@ class Linking {
    */
   static addEventListener(type, handler) {
     if (Platform.OS === 'android') {
-      console.warn( // eslint-disable-line no-console
+      console.warn(
         'Linking.addEventListener is not supported on Android'
       );
     } else {
@@ -42,7 +42,7 @@ class Linking {
    */
   static removeEventListener(type, handler) {
     if (Platform.OS === 'android') {
-      console.warn( // eslint-disable-line no-console
+      console.warn(
         'Linking.removeEventListener is not supported on Android'
       );
     } else {

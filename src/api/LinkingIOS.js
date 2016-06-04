@@ -12,7 +12,7 @@ class LinkingIOS {
    * @deprecated
    */
   static addEventListener(type, handler) {
-    console.warn(  // eslint-disable-line no-console
+    console.warn(
       '"LinkingIOS.addEventListener" is deprecated. Use "Linking.addEventListener" instead.'
     );
     Linking.addEventListener(type, handler);
@@ -24,7 +24,7 @@ class LinkingIOS {
    * @deprecated
    */
   static removeEventListener(type, handler) {
-    console.warn( // eslint-disable-line no-console
+    console.warn(
       '"LinkingIOS.removeEventListener" is deprecated. Use "Linking.removeEventListener" instead.'
     );
     Linking.removeEventListener(type, handler);
@@ -36,7 +36,7 @@ class LinkingIOS {
    * @deprecated
    */
   static openURL(url) {
-    console.warn( // eslint-disable-line no-console
+    console.warn(
       '"LinkingIOS.openURL" is deprecated. Use the promise based "Linking.openURL" instead.'
     );
     Linking.openURL(url);
@@ -52,7 +52,7 @@ class LinkingIOS {
    * @deprecated
    */
   static canOpenURL(url, callback) {
-    console.warn( // eslint-disable-line no-console
+    console.warn(
       '"LinkingIOS.canOpenURL" is deprecated. Use the promise based "Linking.canOpenURL" instead.'
     );
     invariant(
