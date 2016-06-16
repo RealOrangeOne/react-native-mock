@@ -12,5 +12,5 @@ The API should be as close to the API of `react-native` as possible. If there ar
 ## Incrementing the version number
 In simple: __Don't__. Leave that for us to manage when deploying!
 
-## Tests (Ignore for now!)
+## Tests
 When adding a new mock, make sure it's got some in-depth tests, and that the linter passes. PRs with failing tests or tests that arent in-depth enough won't be merged. This keeps the mock as stable as possible.
