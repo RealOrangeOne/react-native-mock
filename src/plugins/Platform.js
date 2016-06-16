@@ -12,6 +12,10 @@ const Platform = {
     Platform.OS = os;
   },
 
+  select(objs) {
+    return objs[Platform.OS];
+  },
+
   /**
    * Exposed in react-native-mock for testing purposes. Not part of real API.
    */
