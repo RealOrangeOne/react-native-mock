@@ -3,11 +3,10 @@
  *
  * Next steps: utilize RN's packager transform in order to parse the code.
  */
-var path = require('path');
-var fs = require('fs');
-var absolutePathToRN = require.resolve('react-native');
-var relativePathToRN = path.relative(__filename, absolutePathToRN);
-var pathToLibraries = path.join(relativePathToRN, '../../');
+const path = require('path');
+const absolutePathToRN = require.resolve('react-native');
+const relativePathToRN = path.relative(__filename, absolutePathToRN);
+const pathToLibraries = path.join(relativePathToRN, '../../');
 
 
 function requireLibrary(lib) {

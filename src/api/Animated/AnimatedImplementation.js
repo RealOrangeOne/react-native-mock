@@ -20,9 +20,11 @@ class Animation {
   start(fromValue, onUpdate, onEnd, previousAnimation) {}
   stop() {}
   __debouncedOnEnd(result) {
-    var onEnd = this.__onEnd;
+    const onEnd = this.__onEnd;
     this.__onEnd = null;
-    onEnd && onEnd(result);
+    if (onEnd) {
+      onEnd(result);
+    }
   }
 }
 
@@ -40,9 +42,11 @@ class AnimatedWithChildren extends Animated {
   }
 
   __removeChild(child) {
-    var index = this._children.indexOf(child);
+    const index = this._children.indexOf(child);
     if (index === -1) {
-      console.warn('Trying to remove a child that doesn\'t exist');
+      console.warn(
+        'Trying to remove a child that doesn\'t exist'
+      );
       return;
     }
     this._children.splice(index, 1);
@@ -109,10 +113,10 @@ class TimingAnimation extends Animation {
     this._onUpdate = onUpdate;
     this.__onEnd = onEnd;
 
-    var start = () => {
+    const start = () => {
       if (this._duration === 0) {
         this._onUpdate(this._toValue);
-        this.__debouncedOnEnd({finished: true});
+        this.__debouncedOnEnd({ finished: true });
       } else {
         this._startTime = Date.now();
         this._animationFrame = requestAnimationFrame(this.onUpdate.bind(this));
@@ -126,7 +130,7 @@ class TimingAnimation extends Animation {
   }
 
   onUpdate() {
-    var now = Date.now();
+    const now = Date.now();
     if (now >= this._startTime + this._duration) {
       if (this._duration === 0) {
         this._onUpdate(this._toValue);
@@ -135,7 +139,7 @@ class TimingAnimation extends Animation {
           this._fromValue + this._easing(1) * (this._toValue - this._fromValue)
         );
       }
-      this.__debouncedOnEnd({finished: true});
+      this.__debouncedOnEnd({ finished: true });
       return;
     }
 
@@ -153,7 +157,7 @@ class TimingAnimation extends Animation {
     this.__active = false;
     clearTimeout(this._timeout);
     window.cancelAnimationFrame(this._animationFrame);
-    this.__debouncedOnEnd({finished: false});
+    this.__debouncedOnEnd({ finished: false });
   }
 }
 
@@ -176,9 +180,9 @@ class DecayAnimation extends Animation {
   }
 
   onUpdate() {
-    var now = Date.now();
+    const now = Date.now();
 
-    var value = this._fromValue +
+    const value = this._fromValue +
       (this._velocity / (1 - this._deceleration)) *
       (1 - Math.exp(-(1 - this._deceleration) * (now - this._startTime)));
 
@@ -221,11 +225,11 @@ class SpringAnimation extends Animation {
     this._toValue = config.toValue;
     this.__isInteraction = config.isInteraction !== undefined ? config.isInteraction : true;
 
-    var springConfig;
+    let springConfig;
     if (config.bounciness !== undefined || config.speed !== undefined) {
       invariant(
         config.tension === undefined && config.friction === undefined,
-        'You can only define bounciness/speed or tension/friction but not both',
+        'You can only define bounciness/speed or tension/friction but not both'
       );
       springConfig = SpringConfig.fromBouncinessAndSpeed(
         withDefault(config.bounciness, 8),
@@ -251,7 +255,7 @@ class SpringAnimation extends Animation {
     this._lastTime = Date.now();
 
     if (previousAnimation instanceof SpringAnimation) {
-      var internalState = previousAnimation.getInternalState();
+      const internalState = previousAnimation.getInternalState();
       this._lastPosition = internalState.lastPosition;
       this._lastVelocity = internalState.lastVelocity;
       this._lastTime = internalState.lastTime;
@@ -271,18 +275,18 @@ class SpringAnimation extends Animation {
   }
 
   onUpdate() {
-    var position = this._lastPosition;
-    var velocity = this._lastVelocity;
+    let position = this._lastPosition;
+    let velocity = this._lastVelocity;
 
-    var tempPosition = this._lastPosition;
-    var tempVelocity = this._lastVelocity;
+    let tempPosition = this._lastPosition;
+    let tempVelocity = this._lastVelocity;
 
     // If for some reason we lost a lot of frames (e.g. process large payload or
     // stopped in the debugger), we only advance by 4 frames worth of
     // computation and will continue on the next frame. It's better to have it
     // running at faster speed than jumping to the end.
-    var MAX_STEPS = 64;
-    var now = Date.now();
+    const MAX_STEPS = 64;
+    let now = Date.now();
     if (now > this._lastTime + MAX_STEPS) {
       now = this._lastTime + MAX_STEPS;
     }
@@ -290,37 +294,41 @@ class SpringAnimation extends Animation {
     // We are using a fixed time step and a maximum number of iterations.
     // The following post provides a lot of thoughts into how to build this
     // loop: http://gafferongames.com/game-physics/fix-your-timestep/
-    var TIMESTEP_MSEC = 1;
-    var numSteps = Math.floor((now - this._lastTime) / TIMESTEP_MSEC);
+    const TIMESTEP_MSEC = 1;
+    const numSteps = Math.floor((now - this._lastTime) / TIMESTEP_MSEC);
 
-    for (var i = 0; i < numSteps; ++i) {
+    for (let i = 0; i < numSteps; ++i) {
       // Velocity is based on seconds instead of milliseconds
-      var step = TIMESTEP_MSEC / 1000;
+      const step = TIMESTEP_MSEC / 1000;
 
       // This is using RK4. A good blog post to understand how it works:
       // http://gafferongames.com/game-physics/integration-basics/
-      var aVelocity = velocity;
-      var aAcceleration = this._tension * (this._toValue - tempPosition) - this._friction * tempVelocity;
-      var tempPosition = position + aVelocity * step / 2;
-      var tempVelocity = velocity + aAcceleration * step / 2;
+      const aVelocity = velocity;
+      const aAcceleration =
+        this._tension * (this._toValue - tempPosition) - this._friction * tempVelocity;
+      tempPosition = position + aVelocity * step / 2;
+      tempVelocity = velocity + aAcceleration * step / 2;
 
-      var bVelocity = tempVelocity;
-      var bAcceleration = this._tension * (this._toValue - tempPosition) - this._friction * tempVelocity;
+      const bVelocity = tempVelocity;
+      const bAcceleration =
+        this._tension * (this._toValue - tempPosition) - this._friction * tempVelocity;
       tempPosition = position + bVelocity * step / 2;
       tempVelocity = velocity + bAcceleration * step / 2;
 
-      var cVelocity = tempVelocity;
-      var cAcceleration = this._tension * (this._toValue - tempPosition) - this._friction * tempVelocity;
+      const cVelocity = tempVelocity;
+      const cAcceleration =
+        this._tension * (this._toValue - tempPosition) - this._friction * tempVelocity;
       tempPosition = position + cVelocity * step / 2;
       tempVelocity = velocity + cAcceleration * step / 2;
 
-      var dVelocity = tempVelocity;
-      var dAcceleration = this._tension * (this._toValue - tempPosition) - this._friction * tempVelocity;
+      const dVelocity = tempVelocity;
+      const dAcceleration =
+        this._tension * (this._toValue - tempPosition) - this._friction * tempVelocity;
       tempPosition = position + cVelocity * step / 2;
       tempVelocity = velocity + cAcceleration * step / 2;
 
-      var dxdt = (aVelocity + 2 * (bVelocity + cVelocity) + dVelocity) / 6;
-      var dvdt = (aAcceleration + 2 * (bAcceleration + cAcceleration) + dAcceleration) / 6;
+      const dxdt = (aVelocity + 2 * (bVelocity + cVelocity) + dVelocity) / 6;
+      const dvdt = (aAcceleration + 2 * (bAcceleration + cAcceleration) + dAcceleration) / 6;
 
       position += dxdt * step;
       velocity += dvdt * step;
@@ -336,7 +344,7 @@ class SpringAnimation extends Animation {
     }
 
     // Conditions for stopping the spring animation
-    var isOvershooting = false;
+    let isOvershooting = false;
     if (this._overshootClamping && this._tension !== 0) {
       if (this._startPosition < this._toValue) {
         isOvershooting = position > this._toValue;
@@ -344,8 +352,9 @@ class SpringAnimation extends Animation {
         isOvershooting = position < this._toValue;
       }
     }
-    var isVelocity = Math.abs(velocity) <= this._restSpeedThreshold;
-    var isDisplacement = true;
+
+    const isVelocity = Math.abs(velocity) <= this._restSpeedThreshold;
+    let isDisplacement = true;
     if (this._tension !== 0) {
       isDisplacement = Math.abs(this._toValue - position) <= this._restDisplacementThreshold;
     }
@@ -356,7 +365,7 @@ class SpringAnimation extends Animation {
         this._onUpdate(this._toValue);
       }
 
-      this.__debouncedOnEnd({finished: true});
+      this.__debouncedOnEnd({ finished: true });
       return;
     }
     this._animationFrame = requestAnimationFrame(this.onUpdate.bind(this));
@@ -365,12 +374,44 @@ class SpringAnimation extends Animation {
   stop() {
     this.__active = false;
     window.cancelAnimationFrame(this._animationFrame);
-    this.__debouncedOnEnd({finished: false});
+    this.__debouncedOnEnd({ finished: false });
   }
 }
 
+let _uniqueId = 1;
+
+class AnimatedInterpolation extends AnimatedWithChildren {
+  constructor(parent, interpolation) {
+    super();
+    this._parent = parent;
+    this._interpolation = interpolation;
+  }
+
+  __getValue() {
+    const parentValue = this._parent.__getValue();
+    invariant(
+      typeof parentValue === 'number',
+      'Cannot interpolate an input which is not a number.'
+    );
+    return this._interpolation(parentValue);
+  }
+
+  interpolate(config) {
+    return new AnimatedInterpolation(this, Interpolation.create(config));
+  }
+
+  __attach() {
+    this._parent.__addChild(this);
+  }
+
+  __detach() {
+    this._parent.__removeChild(this);
+  }
+}
+
+
 class AnimatedValue extends AnimatedWithChildren {
-  constructor(value: number) {
+  constructor(value) {
     super();
     this._value = value;
     this._offset = 0;
@@ -422,7 +463,7 @@ class AnimatedValue extends AnimatedWithChildren {
    * synchronously read the value because it might be driven natively.
    */
   addListener(callback) {
-    var id = String(_uniqueId++);
+    const id = String(_uniqueId++);
     this._listeners[id] = callback;
     return id;
   }
@@ -442,9 +483,13 @@ class AnimatedValue extends AnimatedWithChildren {
    */
   stopAnimation(callback) {
     this.stopTracking();
-    this._animation && this._animation.stop();
+    if (this._animation) {
+      this._animation.stop();
+    }
     this._animation = null;
-    callback && callback(this.__getValue());
+    if (callback) {
+      callback(this.__getValue());
+    }
   }
 
   /**
@@ -460,12 +505,14 @@ class AnimatedValue extends AnimatedWithChildren {
    * class.
    */
   animate(animation, callback) {
-    var handle = null;
+    let handle = null;
     if (animation.__isInteraction) {
       handle = InteractionManager.createInteractionHandle();
     }
-    var previousAnimation = this._animation;
-    this._animation && this._animation.stop();
+    const previousAnimation = this._animation;
+    if (this._animation) {
+      this._animation.stop();
+    }
     this._animation = animation;
     animation.start(
       this._value,
@@ -477,7 +524,9 @@ class AnimatedValue extends AnimatedWithChildren {
         if (handle !== null) {
           InteractionManager.clearInteractionHandle(handle);
         }
-        callback && callback(result);
+        if (callback) {
+          callback(result);
+        }
       },
       previousAnimation
     );
@@ -487,7 +536,9 @@ class AnimatedValue extends AnimatedWithChildren {
    * Typically only used internally.
    */
   stopTracking() {
-    this._tracking && this._tracking.__detach();
+    if (this._tracking) {
+      this._tracking.__detach();
+    }
     this._tracking = null;
   }
 
@@ -502,18 +553,17 @@ class AnimatedValue extends AnimatedWithChildren {
   _updateValue(value) {
     this._value = value;
     _flush(this);
-    for (var key in this._listeners) {
+    for (const key in this._listeners) {
       this._listeners[key]({ value: this.__getValue() });
     }
   }
 }
 
-var _uniqueId = 1;
 
 class AnimatedValueXY extends AnimatedWithChildren {
   constructor(valueIn) {
     super();
-    var value = valueIn || { x: 0, y: 0 };  // @flowfixme: shouldn't need `: any`
+    const value = valueIn || { x: 0, y: 0 };  // @flowfixme: shouldn't need `: any`
     if (typeof value.x === 'number' && typeof value.y === 'number') {
       this.x = new AnimatedValue(value.x);
       this.y = new AnimatedValue(value.y);
@@ -555,12 +605,14 @@ class AnimatedValueXY extends AnimatedWithChildren {
   stopAnimation(callback) {
     this.x.stopAnimation();
     this.y.stopAnimation();
-    callback && callback(this.__getValue());
+    if (callback) {
+      callback(this.__getValue());
+    }
   }
 
   addListener(callback) {
-    var id = String(_uniqueId++);
-    var jointCallback = ({ value }) => {
+    const id = String(_uniqueId++);
+    const jointCallback = ({ value }) => {
       callback(this.__getValue());
     };
     this._listeners[id] = {
@@ -601,40 +653,12 @@ class AnimatedValueXY extends AnimatedWithChildren {
    */
   getTranslateTransform() {
     return [
-      {translateX: this.x},
-      {translateY: this.y}
+      { translateX: this.x },
+      { translateY: this.y }
     ];
   }
 }
 
-class AnimatedInterpolation extends AnimatedWithChildren {
-  constructor(parent, interpolation) {
-    super();
-    this._parent = parent;
-    this._interpolation = interpolation;
-  }
-
-  __getValue() {
-    var parentValue = this._parent.__getValue();
-    invariant(
-      typeof parentValue === 'number',
-      'Cannot interpolate an input which is not a number.'
-    );
-    return this._interpolation(parentValue);
-  }
-
-  interpolate(config) {
-    return new AnimatedInterpolation(this, Interpolation.create(config));
-  }
-
-  __attach() {
-    this._parent.__addChild(this);
-  }
-
-  __detach() {
-    this._parent.__removeChild(this);
-  }
-}
 
 class AnimatedAddition extends AnimatedWithChildren {
   constructor(a, b) {
@@ -696,9 +720,9 @@ class AnimatedTransform extends AnimatedWithChildren {
 
   __getValue() {
     return this._transforms.map(transform => {
-      var result = {};
-      for (var key in transform) {
-        var value = transform[key];
+      const result = {};
+      for (const key in transform) {
+        const value = transform[key];
         if (value instanceof Animated) {
           result[key] = value.__getValue();
         } else {
@@ -711,9 +735,9 @@ class AnimatedTransform extends AnimatedWithChildren {
 
   __getAnimatedValue() {
     return this._transforms.map(transform => {
-      var result = {};
-      for (var key in transform) {
-        var value = transform[key];
+      const result = {};
+      for (const key in transform) {
+        const value = transform[key];
         if (value instanceof Animated) {
           result[key] = value.__getAnimatedValue();
         } else {
@@ -727,8 +751,8 @@ class AnimatedTransform extends AnimatedWithChildren {
 
   __attach() {
     this._transforms.forEach(transform => {
-      for (var key in transform) {
-        var value = transform[key];
+      for (const key in transform) {
+        const value = transform[key];
         if (value instanceof Animated) {
           value.__addChild(this);
         }
@@ -738,8 +762,8 @@ class AnimatedTransform extends AnimatedWithChildren {
 
   __detach() {
     this._transforms.forEach(transform => {
-      for (var key in transform) {
-        var value = transform[key];
+      for (const key in transform) {
+        const value = transform[key];
         if (value instanceof Animated) {
           value.__removeChild(this);
         }
@@ -751,20 +775,21 @@ class AnimatedTransform extends AnimatedWithChildren {
 class AnimatedStyle extends AnimatedWithChildren {
   constructor(style) {
     super();
-    style = flattenStyle(style) || {};
-    if (style.transform) {
-      style = {
-        ...style,
-        transform: new AnimatedTransform(style.transform),
+    let newStyle;
+    newStyle = flattenStyle(style) || {};
+    if (newStyle.transform) {
+      newStyle = {
+        ...newStyle,
+        transform: new AnimatedTransform(newStyle.transform),
       };
     }
-    this._style = style;
+    this._style = newStyle;
   }
 
   __getValue() {
-    var style = {};
-    for (var key in this._style) {
-      var value = this._style[key];
+    const style = {};
+    for (const key in this._style) {
+      const value = this._style[key];
       if (value instanceof Animated) {
         style[key] = value.__getValue();
       } else {
@@ -775,9 +800,9 @@ class AnimatedStyle extends AnimatedWithChildren {
   }
 
   __getAnimatedValue() {
-    var style = {};
-    for (var key in this._style) {
-      var value = this._style[key];
+    const style = {};
+    for (const key in this._style) {
+      const value = this._style[key];
       if (value instanceof Animated) {
         style[key] = value.__getAnimatedValue();
       }
@@ -786,8 +811,8 @@ class AnimatedStyle extends AnimatedWithChildren {
   }
 
   __attach() {
-    for (var key in this._style) {
-      var value = this._style[key];
+    for (const key in this._style) {
+      const value = this._style[key];
       if (value instanceof Animated) {
         value.__addChild(this);
       }
@@ -795,8 +820,8 @@ class AnimatedStyle extends AnimatedWithChildren {
   }
 
   __detach() {
-    for (var key in this._style) {
-      var value = this._style[key];
+    for (const key in this._style) {
+      const value = this._style[key];
       if (value instanceof Animated) {
         value.__removeChild(this);
       }
@@ -807,21 +832,21 @@ class AnimatedStyle extends AnimatedWithChildren {
 class AnimatedProps extends Animated {
   constructor(props, callback) {
     super();
-    if (props.style) {
-      props = {
-        ...props,
-        style: new AnimatedStyle(props.style),
+    this._props = props;
+    if (this._props.style) {
+      this._props = {
+        ...this._props,
+        style: new AnimatedStyle(this._props.style),
       };
     }
-    this._props = props;
     this._callback = callback;
     this.__attach();
   }
 
   __getValue() {
-    var props = {};
-    for (var key in this._props) {
-      var value = this._props[key];
+    const props = {};
+    for (const key in this._props) {
+      const value = this._props[key];
       if (value instanceof Animated) {
         props[key] = value.__getValue();
       } else {
@@ -832,9 +857,9 @@ class AnimatedProps extends Animated {
   }
 
   __getAnimatedValue() {
-    var props = {};
-    for (var key in this._props) {
-      var value = this._props[key];
+    const props = {};
+    for (const key in this._props) {
+      const value = this._props[key];
       if (value instanceof Animated) {
         props[key] = value.__getAnimatedValue();
       }
@@ -843,8 +868,8 @@ class AnimatedProps extends Animated {
   }
 
   __attach() {
-    for (var key in this._props) {
-      var value = this._props[key];
+    for (const key in this._props) {
+      const value = this._props[key];
       if (value instanceof Animated) {
         value.__addChild(this);
       }
@@ -852,8 +877,8 @@ class AnimatedProps extends Animated {
   }
 
   __detach() {
-    for (var key in this._props) {
-      var value = this._props[key];
+    for (const key in this._props) {
+      const value = this._props[key];
       if (value instanceof Animated) {
         value.__removeChild(this);
       }
@@ -904,31 +929,84 @@ function multiply(a, b) {
   return new AnimatedMultiplication(a, b);
 }
 
-var maybeVectorAnim = function(value, config, anim) {
+function parallel(animations, config) {
+  let doneCount = 0;
+  // Make sure we only call stop() at most once for each animation
+  const hasEnded = {};
+  const stopTogether = !(config && config.stopTogether === false);
+
+  const result = {
+    start(callback) {
+      if (doneCount === animations.length) {
+        if (callback) {
+          callback({ finished: true });
+        }
+        return;
+      }
+
+      animations.forEach((animation, idx) => {
+        const cb = function (endResult) {
+          hasEnded[idx] = true;
+          doneCount++;
+          if (doneCount === animations.length) {
+            doneCount = 0;
+            if (callback) {
+              callback(endResult);
+            }
+            return;
+          }
+
+          if (!endResult.finished && stopTogether) {
+            result.stop();
+          }
+        };
+
+        if (!animation) {
+          cb({ finished: true });
+        } else {
+          animation.start(cb);
+        }
+      });
+    },
+
+    stop() {
+      animations.forEach((animation, idx) => {
+        if (!hasEnded[idx]) {
+          animation.stop();
+        }
+        hasEnded[idx] = true;
+      });
+    }
+  };
+
+  return result;
+}
+
+function maybeVectorAnim(value, config, anim) {
   if (value instanceof AnimatedValueXY) {
-    var configX = {...config};
-    var configY = {...config};
-    for (var key in config) {
-      var {x, y} = config[key];
+    const configX = { ...config };
+    const configY = { ...config };
+    for (const key in config) {
+      const { x, y } = config[key];
       if (x !== undefined && y !== undefined) {
         configX[key] = x;
         configY[key] = y;
       }
     }
-    var aX = anim(value.x, configX);
-    var aY = anim(value.y, configY);
+    const aX = anim(value.x, configX);
+    const aY = anim(value.y, configY);
     // We use `stopTogether: false` here because otherwise tracking will break
     // because the second animation will get stopped before it can update.
     return parallel([aX, aY], { stopTogether: false });
   }
   return null;
-};
+}
 
 function spring(value, config) {
   return maybeVectorAnim(value, config, spring) || {
     start(callback) {
-      var singleValue = value;
-      var singleConfig = config;
+      const singleValue = value;
+      const singleConfig = config;
       singleValue.stopTracking();
       if (config.toValue instanceof Animated) {
         singleValue.track(new AnimatedTracking(
@@ -952,8 +1030,8 @@ function spring(value, config) {
 function timing(value, config) {
   return maybeVectorAnim(value, config, timing) || {
     start(callback) {
-      var singleValue = value;
-      var singleConfig = config;
+      const singleValue = value;
+      const singleConfig = config;
       singleValue.stopTracking();
       if (config.toValue instanceof Animated) {
         singleValue.track(new AnimatedTracking(
@@ -977,8 +1055,8 @@ function timing(value, config) {
 function decay(value, config) {
   return maybeVectorAnim(value, config, decay) || {
     start(callback) {
-      var singleValue = value;
-      var singleConfig = config;
+      const singleValue = value;
+      const singleConfig = config;
       singleValue.stopTracking();
       singleValue.animate(new DecayAnimation(singleConfig), callback);
     },
@@ -990,19 +1068,23 @@ function decay(value, config) {
 }
 
 function sequence(animations) {
-  var current = 0;
+  let current = 0;
   return {
     start(callback) {
-      var onComplete = function(result) {
+      const onComplete = function (result) {
         if (!result.finished) {
-          callback && callback(result);
+          if (callback) {
+            callback(result);
+          }
           return;
         }
 
         current++;
 
         if (current === animations.length) {
-          callback && callback(result);
+          if (callback) {
+            callback(result);
+          }
           return;
         }
 
@@ -1010,7 +1092,9 @@ function sequence(animations) {
       };
 
       if (animations.length === 0) {
-        callback && callback({finished: true});
+        if (callback) {
+          callback({ finished: true });
+        }
       } else {
         animations[current].start(onComplete);
       }
@@ -1024,60 +1108,13 @@ function sequence(animations) {
   };
 }
 
-function parallel(animations, config) {
-  var doneCount = 0;
-  // Make sure we only call stop() at most once for each animation
-  var hasEnded = {};
-  var stopTogether = !(config && config.stopTogether === false);
-
-  var result = {
-    start(callback) {
-      if (doneCount === animations.length) {
-        callback && callback({finished: true});
-        return;
-      }
-
-      animations.forEach((animation, idx) => {
-        var cb = function(endResult) {
-          hasEnded[idx] = true;
-          doneCount++;
-          if (doneCount === animations.length) {
-            doneCount = 0;
-            callback && callback(endResult);
-            return;
-          }
-
-          if (!endResult.finished && stopTogether) {
-            result.stop();
-          }
-        };
-
-        if (!animation) {
-          cb({finished: true});
-        } else {
-          animation.start(cb);
-        }
-      });
-    },
-
-    stop() {
-      animations.forEach((animation, idx) => {
-        !hasEnded[idx] && animation.stop();
-        hasEnded[idx] = true;
-      });
-    }
-  };
-
-  return result;
-}
-
 function delay(time) {
   // Would be nice to make a specialized implementation
   return timing(new AnimatedValue(0), { toValue: 0, delay: time, duration: 0 });
 }
 
 function stagger(time, animations) {
-  return parallel(animations.map((animation, i) => {
+  return parallel(animations.map(function (animation, i) {
     return sequence([
       delay(time * i),
       animation,
@@ -1086,8 +1123,8 @@ function stagger(time, animations) {
 }
 
 function event(argMapping, config) {
-  return function(...args) {
-    var traverse = function(recMapping, recEvt, key) {
+  return function (...args) {
+    const traverse = function (recMapping, recEvt, key) {
       if (typeof recEvt === 'number') {
         invariant(
           recMapping instanceof AnimatedValue,
@@ -1105,8 +1142,8 @@ function event(argMapping, config) {
         typeof recEvt === 'object',
         'Bad event of type ' + typeof recEvt + ' for key ' + key
       );
-      for (var key in recMapping) {
-        traverse(recMapping[key], recEvt[key], key);
+      for (const i in recMapping) {
+        traverse(recMapping[i], recEvt[i], i);
       }
     };
     argMapping.forEach((mapping, idx) => {

@@ -10,7 +10,7 @@ import ImageResizeMode from './ImageResizeMode';
 
 const { PropTypes } = React;
 
-var ImageStylePropTypes = {
+const ImageStylePropTypes = {
   ...LayoutPropTypes,
   ...ShadowPropTypesIOS,
   ...TransformPropTypes,

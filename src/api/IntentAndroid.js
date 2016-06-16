@@ -1,69 +1,6 @@
 import invariant from 'invariant';
 import Linking from './Linking';
 
-/**
- * NOTE: `IntentAndroid` is being deprecated. Use `Linking` instead.
- *
- * `IntentAndroid` gives you a general interface to handle external links.
- *
- * ### Basic Usage
- *
- * #### Handling deep links
- *
- * If your app was launched from an external url registered to your app you can
- * access and handle it from any component you want with
- *
- * ```
- * componentDidMount() {
- *   var url = IntentAndroid.getInitialURL(url => {
- *     if (url) {
- *       console.log('Initial url is: ' + url);
- *     }
- *   });
- * }
- * ```
- *
- * Example to add support for deep linking inside your React Native app.
- * More Info: [Enabling Deep Links for App Content - Add Intent Filters for Your Deep Links](http://developer.android.com/training/app-indexing/deep-linking.html#adding-filters).
- *
- * Edit in `android/app/src/main/AndroidManifest.xml`
- *
- * ```
- *  <intent-filter>
- *    <action android:name="android.intent.action.VIEW" />
- *    <category android:name="android.intent.category.DEFAULT" />
- *    <category android:name="android.intent.category.BROWSABLE" />
- *
- *    <!-- Accepts URIs that begin with "http://www.facebook.com/react -->
- *    <data android:scheme="http"
- *       android:host="www.facebook.com"
- *       android:pathPrefix="/react" />
- *    <!-- note that the leading "/" is required for pathPrefix-->
- *
- *    <!-- Accepts URIs that begin with "facebook://react -->
- *    <!-- <data android:scheme="facebook" android:host="react" /> -->
- *  </intent-filter>
- * ```
- *
- * #### Opening external links
- *
- * To start the corresponding activity for a link (web URL, email, contact etc.), call
- *
- * ```
- * IntentAndroid.openURL(url)
- * ```
- *
- * If you want to check if any installed app can handle a given URL beforehand you can call
- * ```
- * IntentAndroid.canOpenURL(url, (supported) => {
- *   if (!supported) {
- *     console.log('Can\'t handle url: ' + url);
- *   } else {
- *     IntentAndroid.openURL(url);
- *   }
- * });
- * ```
- */
 class IntentAndroid {
 
   /**
@@ -83,7 +20,9 @@ class IntentAndroid {
    * @deprecated
    */
   static openURL(url) {
-    console.warn('"IntentAndroid.openURL" is deprecated. Use the promise based "Linking.openURL" instead.');
+    console.warn(
+      '"IntentAndroid" is deprecated. Use the promise based "Linking" instead.'
+    );
     Linking.openURL(url);
   }
 
@@ -100,7 +39,6 @@ class IntentAndroid {
    * @deprecated
    */
   static canOpenURL(url, callback) {
-    console.warn('"IntentAndroid.canOpenURL" is deprecated. Use the promise based "Linking.canOpenURL" instead.');
     invariant(
       typeof callback === 'function',
       'A valid callback function is required'
@@ -117,7 +55,6 @@ class IntentAndroid {
    * @deprecated
    */
   static getInitialURL(callback) {
-    console.warn('"IntentAndroid.getInitialURL" is deprecated. Use the promise based "Linking.getInitialURL" instead.');
     invariant(
       typeof callback === 'function',
       'A valid callback function is required'

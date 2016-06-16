@@ -1,6 +1,8 @@
 import _bezier from 'cubic-bezier';
 
-let _ease;
+let _ease = () => {};
+
+const EPSILON = (1000 / 60 / 500) / 4;
 
 /**
  * This class implements common easing functions. The math is pretty obscure,
@@ -59,18 +61,16 @@ class Easing {
    *   http://tiny.cc/elastic_b_3 (bounciness = 3)
    */
   static elastic(bounciness = 1) {
-    var p = bounciness * Math.PI;
+    const p = bounciness * Math.PI;
     return (t) => 1 - Math.pow(Math.cos(t * Math.PI / 2), 3) * Math.cos(t * p);
   }
 
-  static back(s) {
-    if (s === undefined) {
-      s = 1.70158;
-    }
+  static back(s = 1.70158) {
     return (t) => t * t * ((s + 1) * t - s);
   }
 
-  static bounce(t) {
+  static bounce(argT) {
+    let t = argT;
     if (t < 1 / 2.75) {
       return 7.5625 * t * t;
     }
@@ -89,14 +89,7 @@ class Easing {
     return 7.5625 * t * t + 0.984375;
   }
 
-  static bezier(x1, y1, x2, y2, epsilon) {
-    if (epsilon === undefined) {
-      // epsilon determines the precision of the solved values
-      // a good approximation is:
-      var duration = 500; // duration of animation in milliseconds.
-      epsilon = (1000 / 60 / duration) / 4;
-    }
-
+  static bezier(x1, y1, x2, y2, epsilon = EPSILON) {
     return _bezier(x1, y1, x2, y2, epsilon);
   }
 

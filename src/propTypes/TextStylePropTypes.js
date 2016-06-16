@@ -8,7 +8,7 @@ import ViewStylePropTypes from './ViewStylePropTypes';
 const { PropTypes } = React;
 
 // TODO: use spread instead of Object.assign/create after #6560135 is fixed
-var TextStylePropTypes = Object.assign(Object.create(ViewStylePropTypes), {
+const TextStylePropTypes = Object.assign(Object.create(ViewStylePropTypes), {
   color: ColorPropType,
   fontFamily: PropTypes.string,
   fontSize: PropTypes.number,
@@ -19,11 +19,14 @@ var TextStylePropTypes = Object.assign(Object.create(ViewStylePropTypes), {
    * in that case the closest one is chosen.
    */
   fontWeight: PropTypes.oneOf(
-    ['normal' /*default*/, 'bold',
+    ['normal', 'bold',
      '100', '200', '300', '400', '500', '600', '700', '800', '900']
   ),
   textShadowOffset: PropTypes.shape(
-    {width: PropTypes.number, height: PropTypes.number}
+    {
+      width: PropTypes.number,
+      height: PropTypes.number
+    }
   ),
   textShadowRadius: PropTypes.number,
   textShadowColor: ColorPropType,
@@ -36,25 +39,25 @@ var TextStylePropTypes = Object.assign(Object.create(ViewStylePropTypes), {
    * Specifies text alignment. The value 'justify' is only supported on iOS.
    */
   textAlign: PropTypes.oneOf(
-    ['auto' /*default*/, 'left', 'right', 'center', 'justify']
+    ['auto', 'left', 'right', 'center', 'justify']
   ),
   /**
    * @platform android
    */
   textAlignVertical: PropTypes.oneOf(
-    ['auto' /*default*/, 'top', 'bottom', 'center']
+    ['auto', 'top', 'bottom', 'center']
   ),
   /**
    * @platform ios
    */
   textDecorationLine: PropTypes.oneOf(
-    ['none' /*default*/, 'underline', 'line-through', 'underline line-through']
+    ['none', 'underline', 'line-through', 'underline line-through']
   ),
   /**
    * @platform ios
    */
   textDecorationStyle: PropTypes.oneOf(
-    ['solid' /*default*/, 'double', 'dotted','dashed']
+    ['solid', 'double', 'dotted', 'dashed']
   ),
   /**
    * @platform ios
@@ -64,7 +67,7 @@ var TextStylePropTypes = Object.assign(Object.create(ViewStylePropTypes), {
    * @platform ios
    */
   writingDirection: PropTypes.oneOf(
-    ['auto' /*default*/, 'ltr', 'rtl']
+    ['auto', 'ltr', 'rtl']
   ),
 });
 

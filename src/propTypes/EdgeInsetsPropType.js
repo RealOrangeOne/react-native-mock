@@ -5,7 +5,7 @@ import React from 'react';
 
 const { PropTypes } = React;
 
-var EdgeInsetsPropType = PropTypes.shape({
+const EdgeInsetsPropType = PropTypes.shape({
   top: PropTypes.number,
   left: PropTypes.number,
   bottom: PropTypes.number,

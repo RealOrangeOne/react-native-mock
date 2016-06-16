@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-import TouchableWithoutFeedback from  './TouchableWithoutFeedback';
+import TouchableWithoutFeedback from './TouchableWithoutFeedback';
 
 const TouchableOpacity = React.createClass({
   propTypes: {

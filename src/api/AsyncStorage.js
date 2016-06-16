@@ -5,11 +5,15 @@
 function wrap(value, callback) {
   return Promise.resolve(value).then(
     obj => {
-      callback && callback(null, obj);
+      if (callback) {
+        callback(null, obj);
+      }
       return obj;
     },
     err => {
-      callback && callback(err);
+      if (callback) {
+        callback(err);
+      }
       throw err;
     }
   );

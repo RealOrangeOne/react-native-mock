@@ -2,11 +2,11 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/View/View.js
  */
 import React from 'react';
-import StyleSheetPropType from '../propTypes/StyleSheetPropType';
+import styleSheetPropType from '../propTypes/StyleSheetPropType';
 import ViewStylePropTypes from '../propTypes/ViewStylePropTypes';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 
-const stylePropType = StyleSheetPropType(ViewStylePropTypes);
+const stylePropType = styleSheetPropType(ViewStylePropTypes);
 
 const { PropTypes } = React;
 
@@ -51,10 +51,6 @@ const statics = {
 };
 
 const View = React.createClass({
-  mixins: [NativeMethodsMixin],
-  statics: {
-    ...statics,
-  },
   propTypes: {
     /**
      * When true, indicates that the view is an accessibility element. By default,
@@ -277,6 +273,13 @@ const View = React.createClass({
      */
     needsOffscreenAlphaCompositing: PropTypes.bool,
   },
+
+  mixins: [NativeMethodsMixin],
+
+  statics: {
+    ...statics,
+  },
+
   render() {
     return null;
   },

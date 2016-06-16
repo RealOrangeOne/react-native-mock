@@ -1,38 +1,14 @@
 import React from 'react';
 import ScrollResponder from '../mixins/ScrollResponder';
 import TimerMixin from 'react-timer-mixin';
-import ScrollViewManager from '../NativeModules/ScrollViewManager';
 import ScrollView from './ScrollView';
-
-var ListViewDataSource = require('../api/ListViewDataSource');
-//var React = require('React');
-
-//var ScrollView = require('ScrollView');
-//var ScrollResponder = require('ScrollResponder');
-// var StaticRenderer = require('StaticRenderer');  // Unused
-//var TimerMixin = require('react-timer-mixin');
-
-// var isEmpty = require('isEmpty'); // Doesnt resolve
-// var logError = require('logError'); // Doesnt resolve
-//var merge = require('merge');
+import ListViewDataSource from '../api/ListViewDataSource';
 
 const { PropTypes } = React;
-
-const DEFAULT_PAGE_SIZE = 1;
-const DEFAULT_INITIAL_ROWS = 10;
-const DEFAULT_SCROLL_RENDER_AHEAD = 1000;
-const DEFAULT_END_REACHED_THRESHOLD = 1000;
-const DEFAULT_SCROLL_CALLBACK_THROTTLE = 50;
 const SCROLLVIEW_REF = 'listviewscroll';
 
 
 const ListView = React.createClass({
-  mixins: [ScrollResponder.Mixin, TimerMixin],
-
-  statics: {
-    DataSource: ListViewDataSource,
-  },
-
   propTypes: {
     ...ScrollView.propTypes,
 
@@ -136,17 +112,27 @@ const ListView = React.createClass({
      */
     stickyHeaderIndices: PropTypes.arrayOf(PropTypes.number),
   },
+  mixins: [ScrollResponder.Mixin, TimerMixin],
+
+  statics: {
+    DataSource: ListViewDataSource,
+  },
 
   /**
    * Exports some data, e.g. for perf investigations or analytics.
    */
-  getMetrics() {
+  getMetrics() {  // eslint-disable-line react/sort-comp
+    // It's fixed, but the linter doesnt want to recognise it...
     return {
       contentLength: this.scrollProperties.contentLength,
       totalRows: this.props.dataSource.getRowCount(),
       renderedRows: this.state.curRenderedRowsCount,
       visibleRows: Object.keys(this._visibleRows).length,
     };
+  },
+
+  scrollTo(destY, destX) {
+    this.getScrollResponder().scrollResponderScrollTo(destX || 0, destY || 0);
   },
 
   /**
@@ -157,10 +143,6 @@ const ListView = React.createClass({
     return this.refs[SCROLLVIEW_REF] &&
       this.refs[SCROLLVIEW_REF].getScrollResponder &&
       this.refs[SCROLLVIEW_REF].getScrollResponder();
-  },
-
-  scrollTo(destY, destX) {
-    this.getScrollResponder().scrollResponderScrollTo(destX || 0, destY || 0);
   },
 
   setNativeProps(props) {

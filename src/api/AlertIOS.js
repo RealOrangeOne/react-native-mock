@@ -36,9 +36,11 @@ class AlertIOS {
    */
   static alert(title, message, callbackOrButtons, type) {
     if (typeof type !== 'undefined') {
-      console.warn('AlertIOS.alert() with a 4th "type" parameter is deprecated and will be removed. Use AlertIOS.prompt() instead.');
-        this.prompt(title, message, callbackOrButtons, type);
-        return;
+      console.warn(
+        'AlertIOS.alert() with a 4th "type" parameter is deprecated and will be removed. Use AlertIOS.prompt() instead.'
+      );
+      this.prompt(title, message, callbackOrButtons, type);
+      return;
     }
     this.prompt(title, message, callbackOrButtons, 'default');
   }
@@ -85,32 +87,24 @@ class AlertIOS {
    */
   static prompt(title, message, callbackOrButtons, type, defaultValue) {
     if (typeof type === 'function') {
-      console.warn(
-        'You passed a callback function as the "type" argument to AlertIOS.prompt(). React Native is ' +
-        'assuming  you want to use the deprecated AlertIOS.prompt(title, defaultValue, buttons, callback) ' +
-        'signature. The current signature is AlertIOS.prompt(title, message, callbackOrButtons, type, defaultValue) ' +
-        'and the old syntax will be removed in a future version.');
-
-      var callback = type;
-      var defaultValue = message;
+      const callback = type;
       AlertManager.alertWithArgs({
         title: title || undefined,
         type: 'plain-text',
-        defaultValue,
+        message,
       }, (id, value) => {
         callback(value);
       });
       return;
     }
 
-    var callbacks = [];
-    var buttons = [];
-    var cancelButtonKey;
-    var destructiveButtonKey;
+    let callbacks = [];
+    const buttons = [];
+    let cancelButtonKey;
+    let destructiveButtonKey;
     if (typeof callbackOrButtons === 'function') {
       callbacks = [callbackOrButtons];
-    }
-    else if (callbackOrButtons instanceof Array) {
+    } else if (callbackOrButtons instanceof Array) {
       callbackOrButtons.forEach((btn, index) => {
         callbacks[index] = btn.onPress;
         if (btn.style === 'cancel') {
@@ -119,7 +113,7 @@ class AlertIOS {
           destructiveButtonKey = String(index);
         }
         if (btn.text || index < (callbackOrButtons || []).length - 1) {
-          var btnDef = {};
+          const btnDef = {};
           btnDef[index] = btn.text || '';
           buttons.push(btnDef);
         }
@@ -135,9 +129,12 @@ class AlertIOS {
         defaultValue,
         cancelButtonKey,
         destructiveButtonKey,
-      }, (id, value) => {
-        var cb = callbacks[id];
-        cb && cb(value);
+      },
+      (id, value) => {
+        const cb = callbacks[id];
+        if (cb) {
+          cb(value);
+        }
       }
     );
   }

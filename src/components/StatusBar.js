@@ -67,6 +67,6 @@ const StatusBar = React.createClass({
   render() {
     return null;
   }
-})
+});
 
 module.exports = StatusBar;

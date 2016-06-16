@@ -1,7 +1,7 @@
-var ReactNativeMock = require('./build/react-native');
+const ReactNativeMock = require('./build/react-native');
 
 // the cache key that real react native would get
-var key = require.resolve('react-native');
+const key = require.resolve('react-native');
 
 // make sure the cache is filled with our lib
 require.cache[key] = {
@@ -10,4 +10,3 @@ require.cache[key] = {
   loaded: true,
   exports: ReactNativeMock,
 };
-

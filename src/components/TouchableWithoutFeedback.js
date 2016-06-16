@@ -4,15 +4,8 @@
 import React from 'react';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import View from './View';
-// import Touchable from './Touchable';
-import TimerMixin from 'react-timer-mixin';
-
-const { PropTypes } = React;
-
-const PRESS_RETENTION_OFFSET = {top: 20, left: 20, right: 20, bottom: 30};
 
 const TouchableWithoutFeedback = React.createClass({
-  // mixins: [Touchable.Mixin],
   propTypes: {
     accessible: React.PropTypes.bool,
     accessibilityComponentType: React.PropTypes.oneOf(View.AccessibilityComponentType),

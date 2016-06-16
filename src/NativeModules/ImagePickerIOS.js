@@ -1,5 +1,5 @@
-let _canRecordVideos = true;
-let _canUseCamera = true;
+const _canRecordVideos = true;
+const _canUseCamera = true;
 
 const ImagePickerIOS = {
   canRecordVideos(callback) {

@@ -3,7 +3,7 @@ import ColorPropType from './ColorPropType';
 
 const { PropTypes } = React;
 
-var ShadowPropTypesIOS = {
+const ShadowPropTypesIOS = {
   /**
    * Sets the drop shadow color
    * @platform ios

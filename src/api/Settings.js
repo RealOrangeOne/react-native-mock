@@ -15,17 +15,18 @@ const Settings = {
   },
 
   watchKeys(keys, callback) {
+    let newKeys = keys;
     if (typeof keys === 'string') {
-      keys = [keys];
+      newKeys = [keys];
     }
 
     invariant(
-      Array.isArray(keys),
+      Array.isArray(newKeys),
       'keys should be a string or array of strings'
     );
 
     const sid = subscriptions.length;
-    subscriptions.push({ keys, callback });
+    subscriptions.push({ keys: newKeys, callback });
     return sid;
   },
 

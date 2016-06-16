@@ -1,18 +1,18 @@
 import DeviceEventEmitter from '../plugins/DeviceEventEmitter';
 
-let app_state = 'active';
+let _appState = 'active';
 
 DeviceEventEmitter.on('appStateDidChange', data => {
-  app_state = data.app_state;
+  _appState = data._appState;
 });
 
 const AppState = {
   getCurrentAppState(callback, error) {
-    Promise.resolve({ app_state }).then(callback);
+    Promise.resolve({ _appState }).then(callback);
   },
 
   __setAppState(appState) {
-    DeviceEventEmitter.emit('appStateDidChange', { app_state: appState });
+    DeviceEventEmitter.emit('appStateDidChange', { _appState: appState });
   },
 };
 
