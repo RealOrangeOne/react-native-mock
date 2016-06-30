@@ -4,6 +4,7 @@
 import React from 'react';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
+import ColorPropType from '../propTypes/ColorPropType';
 
 const { PropTypes } = React;
 
@@ -17,7 +18,7 @@ const ActivityIndicator = React.createClass({
     /**
      * The foreground color of the spinner (default is gray).
      */
-    color: PropTypes.string,
+    color: ColorPropType,
     /**
      * Whether the indicator should hide when not animating (true by default).
      */
