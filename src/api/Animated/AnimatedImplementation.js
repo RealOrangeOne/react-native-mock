@@ -156,8 +156,8 @@ class TimingAnimation extends Animation {
   stop() {
     this.__active = false;
     clearTimeout(this._timeout);
-    if (window) {
-      window.cancelAnimationFrame(this._animationFrame); 
+    if (global && global.cancelAnimationFrame) {
+      global.cancelAnimationFrame(this._animationFrame); 
     }
     this.__debouncedOnEnd({ finished: false });
   }
@@ -203,8 +203,8 @@ class DecayAnimation extends Animation {
 
   stop() {
     this.__active = false;
-    if (window) {
-      window.cancelAnimationFrame(this._animationFrame);
+    if (global && global.cancelAnimationFrame) {
+      global.cancelAnimationFrame(this._animationFrame);
     }
     this.__debouncedOnEnd({ finished: false });
   }
