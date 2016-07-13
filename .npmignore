@@ -1,1 +1,6 @@
 .babelrc
+CONTRIBUTING.md
+.eslintrc
+.gitignore
+test/
+.travis.yml
