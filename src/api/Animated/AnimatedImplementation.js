@@ -157,7 +157,7 @@ class TimingAnimation extends Animation {
     this.__active = false;
     clearTimeout(this._timeout);
     if (global && global.cancelAnimationFrame) {
-      global.cancelAnimationFrame(this._animationFrame); 
+      global.cancelAnimationFrame(this._animationFrame);
     }
     this.__debouncedOnEnd({ finished: false });
   }
