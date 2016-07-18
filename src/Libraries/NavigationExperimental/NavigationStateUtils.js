@@ -11,7 +11,7 @@ function has(state, key) {
 }
 
 function push(state, route) {
-  if (indexOf(state, route.key) === -1) {
+  if (indexOf(state, route.key) !== -1) {
     throw new Error('should not push route with duplicated key ' + route.key);
   }
 
