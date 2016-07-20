@@ -88,6 +88,7 @@ const ReactNative = {
   // Plugins
   DeviceEventEmitter: require('./plugins/DeviceEventEmitter'),
   NativeAppEventEmitter: require('./plugins/NativeAppEventEmitter'),
+  NativeEventEmitter: require('./Libraries/EventEmitter/NativeEventEmitter'),
   NativeModules: require('./NativeModules'),
   Platform: require('./plugins/Platform'),
   processColor: require('./plugins/processColor'),
