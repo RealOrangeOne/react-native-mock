@@ -1,7 +1,7 @@
 const invariant = require('invariant');
-const EventEmitter = require('./EventEmitter');
-const EmitterSubscription = require('./EmitterSubscription');
-const EventSubscriptionVender = require('./EventSubscriptionVendor');
+const EventEmitter = require('fbemitter').EventEmitter;
+const EmitterSubscription = require('fbemitter/lib/EmitterSubscription');
+const EventSubscriptionVender = require('fbemitter/lib/EventSubscriptionVendor');
 
 const sharedSubscriber = new EventSubscriptionVender();
 
