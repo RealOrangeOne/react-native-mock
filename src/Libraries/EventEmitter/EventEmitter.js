@@ -50,7 +50,6 @@ class EventEmitter {
    *   listener
    */
   addListener(eventType, listener, context) {
-
     return (this._subscriber.addSubscription(
       eventType,
       new EmitterSubscription(this, this._subscriber, listener, context)
@@ -135,7 +134,7 @@ class EventEmitter {
    */
   listeners(eventType) {
     const subscriptions = (this._subscriber.getSubscriptionsForType(eventType));
-    return subscriptions ? subscriptions.map(s => subscription.listener) : [];
+    return subscriptions ? subscriptions.map(subscription => subscription.listener) : [];
   }
 
   /**
