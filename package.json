@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "cubic-bezier": "=0.1.2",
+    "fbemitter": "^2.0.2",
     "invariant": "=2.2.1",
     "keymirror": "=0.1.1",
     "raf": "=3.2.0",
