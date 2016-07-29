@@ -71,6 +71,7 @@ const ReactNative = {
   ImagePickerIOS: require('./api/ImagePickerIOS'),
   IntentAndroid: require('./api/IntentAndroid'),
   InteractionManager: require('./api/InteractionManager'),
+  Keyboard: require('./api/Keyboard'),
   LayoutAnimation: require('./api/LayoutAnimation'),
   Linking: require('./api/Linking'),
   LinkingIOS: require('./api/LinkingIOS'),
