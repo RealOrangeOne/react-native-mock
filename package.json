@@ -1,6 +1,6 @@
 {
   "name": "react-native-mock",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "A fully mocked and test-friendly version of react native",
   "main": "build/react-native.js",
   "scripts": {
