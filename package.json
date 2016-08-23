@@ -6,7 +6,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "test": "npm run lint && npm run mocha",
-    "mocha": "mocha --require babel-core/register test/**/*.js",
+    "mocha": "mocha --require babel-core/register ./test/**/*.js ./test/*.js",
     "mocha:watch": "npm run test -- --watch",
     "build": "babel src --out-dir build",
     "lint": "eslint 'src/' 'test/' 'mock.js'"
