@@ -12,7 +12,7 @@ const ReactNative = {
   ActivityIndicatorIOS: require('./components/ActivityIndicatorIOS'),
   ART: require('./components/ART'),
   DatePickerIOS: createMockComponent('DatePickerIOS'),
-  DrawerLayoutAndroid: createMockComponent('DrawerLayoutAndroid'),
+  DrawerLayoutAndroid: require('./components/DrawerLayoutAndroid'),
   Image: require('./components/Image'),
   ImageEditor: createMockComponent('ImageEditor'),
   ImageStore: createMockComponent('ImageStore'),

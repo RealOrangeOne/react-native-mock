@@ -61,6 +61,11 @@ const UIManager = {
   configureNextLayoutAnimation(callback, errorCallback) {
 
   },
+  AndroidDrawerLayout: {
+    Constants: {
+      DrawerPosition: { Left: 8388611, Right: 8388613 },
+    },
+  },
 };
 
 module.exports = UIManager;
