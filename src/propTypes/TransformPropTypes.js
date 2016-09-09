@@ -7,14 +7,14 @@ const { PropTypes } = React;
 
 const arrayOfNumberPropType = PropTypes.arrayOf(PropTypes.number);
 
-const transformMatrixPropType = function (props, propName, componentName) {
+const transformMatrixPropType = function (props, propName, componentName, ...rest) {
   if (props.transform && props.transformMatrix) {
     return new Error(
       'transformMatrix and transform styles cannot be used on the same ' +
       'component'
     );
   }
-  return arrayOfNumberPropType(props, propName, componentName);
+  return arrayOfNumberPropType(props, propName, componentName, ...rest);
 };
 
 const transformPropTypes = {
