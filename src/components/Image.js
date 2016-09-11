@@ -75,7 +75,7 @@ const Image = React.createClass({
      * image will keep it's size and aspect ratio. (iOS only)
      *
      */
-    resizeMode: PropTypes.oneOf(['cover', 'contain', 'stretch', 'repeat', 'center']),
+    resizeMode: PropTypes.oneOf(ImageResizeMode),
     /**
      * A unique identifier for this element to be used in UI Automation
      * testing scripts.
