@@ -115,6 +115,9 @@ const Image = React.createClass({
     getSize(uri, success, failure) {
 
     },
+    prefetch(uri) {
+
+    }
   },
   render() {
     return null;
