@@ -47,7 +47,7 @@ const ReactNative = {
   ToolbarAndroid: createMockComponent('ToolbarAndroid'),
   Touchable: createMockComponent('Touchable'),
   TouchableHighlight: createMockComponent('TouchableHighlight'),
-  TouchableNativeFeedback: createMockComponent('TouchableNativeFeedback'),
+  TouchableNativeFeedback: require('./components/TouchableNativeFeedback'),
   TouchableOpacity: require('./components/TouchableOpacity'),
   TouchableWithoutFeedback: require('./components/TouchableWithoutFeedback'),
   View: require('./components/View'),
