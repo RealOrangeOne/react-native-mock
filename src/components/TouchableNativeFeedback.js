@@ -10,8 +10,8 @@ const TouchableNativeFeedback = React.createClass({
     background: React.PropTypes.object
   },
   statics: {
-    SelectableBackground () {},
-    SelectableBackgroundBorderless () {},
+    SelectableBackground() {},
+    SelectableBackgroundBorderless() {},
     Ripple(color, borderless) {}
   },
   render() {
