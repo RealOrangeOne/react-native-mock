@@ -1,20 +1,25 @@
 
 class Path {
   constructor(path) {
+    [
+      'push',
+      'reset',
+      'move',
+      'moveTo',
+      'line',
+      'lineTo',
+      'curve',
+      'curveTo',
+      'arc',
+      'arcTo',
+      'counterArc',
+      'counterArcTo',
+      'close'
+    ].forEach((methodName) => { this[methodName] = () => this });
+
     this.path = path || [];
   }
-  move() {
-    return this;
-  }
-  moveTo() {
-    return this;
-  }
-  line() {
-    return this;
-  }
-  close() {
-    return this;
-  }
+
   toJSON() {
     return JSON.stringify(this.path);
   }
