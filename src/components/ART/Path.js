@@ -15,7 +15,7 @@ class Path {
       'counterArc',
       'counterArcTo',
       'close'
-    ].forEach((methodName) => { this[methodName] = () => this });
+    ].forEach((methodName) => { this[methodName] = () => this; });
 
     this.path = path || [];
   }
