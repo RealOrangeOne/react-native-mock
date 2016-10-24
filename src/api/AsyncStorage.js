@@ -23,7 +23,7 @@ let db = {};
 
 const AsyncStorage = {
   getItem(key, callback) {
-    return wrap(db[key], callback);
+    return wrap(db[key] || null, callback);
   },
 
   setItem(key, value, callback) {
@@ -55,7 +55,7 @@ const AsyncStorage = {
   },
 
   multiGet(keys, callback) {
-    return wrap(keys.map(k => [k, db[k]]), callback);
+    return wrap(keys.map(k => [k, db[k] || null]), callback);
   },
 
   multiSet(keyValuePairs, callback) {
