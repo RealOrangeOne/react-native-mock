@@ -1,5 +1,3 @@
-import React from 'react';
-
 import createMockComponent from '../../components/createMockComponent';
 
 class CardStackPanResponder {
