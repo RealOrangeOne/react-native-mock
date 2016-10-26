@@ -1,4 +1,4 @@
-import createMockComponent from '../../components/createMockComponent';
+import React from 'react';
 
 class CardStackPanResponder {
 }
@@ -6,7 +6,8 @@ class CardStackPanResponder {
 class PagerPanResponder {
 }
 
-const NavigationCard = createMockComponent('NavigationCard');
+class NavigationCard extends React.Component {
+}
 
 NavigationCard.CardStackPanResponder = CardStackPanResponder;
 NavigationCard.CardStackStyleInterpolator = {
