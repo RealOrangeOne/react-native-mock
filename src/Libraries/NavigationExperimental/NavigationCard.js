@@ -1,13 +1,10 @@
-import React from 'react';
-
 class CardStackPanResponder {
 }
 
 class PagerPanResponder {
 }
 
-class NavigationCard extends React.Component {
-}
+const NavigationCard = (props) => null;
 
 NavigationCard.CardStackPanResponder = CardStackPanResponder;
 NavigationCard.CardStackStyleInterpolator = {
