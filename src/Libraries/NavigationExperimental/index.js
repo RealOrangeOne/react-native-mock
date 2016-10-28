@@ -3,6 +3,7 @@
  */
 import createMockComponent from '../../components/createMockComponent';
 import StateUtils from './NavigationStateUtils';
+import Card from './NavigationCard';
 import PropTypes from './NavigationPropTypes';
 
 module.exports = {
@@ -11,7 +12,7 @@ module.exports = {
   AnimatedView: createMockComponent('NavigationAnimatedView'),
   Transitioner: createMockComponent('NavigationTransitioner'),
 
-  Card: createMockComponent('NavigationCard'),
+  Card,
   CardStack: createMockComponent('NavigationCardStack'),
   Header: createMockComponent('NavigationHeader'),
 
