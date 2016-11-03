@@ -3,7 +3,10 @@ const Keyboard = {
     return {
       remove: () => {}
     };
-  }
+  },
+  removeListener: () => {},
+  removeAllListeners: () => {},
+  dismiss: () => {}
 };
 
 module.exports = Keyboard;
