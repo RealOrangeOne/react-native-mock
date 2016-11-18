@@ -5,7 +5,7 @@ A fully mocked and test-friendly version of react native
 - Node.js 4+
 - The latest version of react-native-mock
 
-__Note__: This library is designed to work with the most recent version of react-native. If you aren't using the most recent version, you will need to download an older version of this library, as the API is likely to be different, and the dependencies are likely to break. Details coming soon!
+__Note__: This library is designed to work with the most recent version of react-native. If you aren't using the most recent version, you will need to download an older version of this library, as the API is likely to be different, and the dependencies are likely to break.
 
 ## How Am I Supposed To Use This?
 
@@ -39,9 +39,9 @@ Discovered a bug, got a new feature, or found something that needs improving? __
 
 Make sure to read through the CONTRIBUTING.md file before submitting your PR!
 
-### Contributors
-- Leland Richardson (Creator)
-- Jake Howard
+### Core Contributors
+- [Jake Howard](https://github.com/RealOrangeOne)
+- [Leland Richardson](https://github.com/lelandrichardson) (Original Creator)
 
 ## What do the labels mean?
-See [this wiki page](https://github.com/lelandrichardson/react-native-mock/wiki/Labels---What-do-they-mean%3F).
+See [this wiki page](https://github.com/RealOrangeOne/react-native-mock/wiki/Labels---What-do-they-mean%3F).
