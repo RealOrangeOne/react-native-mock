@@ -1,4 +1,4 @@
-# react-native-mock [![Build Status](https://travis-ci.org/lelandrichardson/react-native-mock.svg?branch=master)](https://travis-ci.org/lelandrichardson/react-native-mock)
+# react-native-mock [![Build Status](https://travis-ci.org/RealOrangeOne/react-native-mock.svg?branch=master)](https://travis-ci.org/RealOrangeOne/react-native-mock)
 A fully mocked and test-friendly version of react native
 
 ## Requirements
