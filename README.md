@@ -1,4 +1,6 @@
 # react-native-mock [![Build Status](https://travis-ci.org/RealOrangeOne/react-native-mock.svg?branch=master)](https://travis-ci.org/RealOrangeOne/react-native-mock)
+
+[![Join the chat at https://gitter.im/RealOrangeOne/react-native-mock](https://badges.gitter.im/RealOrangeOne/react-native-mock.svg)](https://gitter.im/RealOrangeOne/react-native-mock?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A fully mocked and test-friendly version of react native
 
 ## Requirements
