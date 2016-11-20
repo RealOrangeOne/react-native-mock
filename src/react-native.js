@@ -107,7 +107,7 @@ const ReactNative = {
 
 // See http://facebook.github.io/react/docs/addons.html
 const ReactNativeAddons = {
-  LinkedStateMixin: require('react-addons-linked-state-mixin'),
+  // LinkedStateMixin: require('react-addons-linked-state-mixin') deprecated,
   Perf: require('react-addons-perf'),
   PureRenderMixin: require('react-addons-pure-render-mixin'),
   TestModule: require('./NativeModules/TestModule'),
