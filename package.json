@@ -28,7 +28,6 @@
   },
   "homepage": "https://github.com/RealOrangeOne/react-native-mock#readme",
   "devDependencies": {
-    "babel": "6.5.2",
     "babel-cli": "6.9.0",
     "babel-core": "6.9.0",
     "babel-eslint": "6.0.4",
