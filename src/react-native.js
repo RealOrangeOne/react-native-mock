@@ -4,6 +4,7 @@
 import React from 'react';
 
 import createMockComponent from './components/createMockComponent';
+import defineGlobalProperty from './defineGlobalProperty';
 
 // Export React, plus some native additions.
 const ReactNative = {
@@ -120,5 +121,11 @@ const ReactNativeAddons = {
 };
 
 Object.assign(ReactNative, React, { addons: ReactNativeAddons });
+
+// Global properties defined in https://github.com/facebook/react-native/blob/master/Libraries/Core/InitializeCore.js
+defineGlobalProperty('XMLHttpRequest', () => require('./Libraries/Network/XMLHttpRequest'));
+defineGlobalProperty('FormData', () => require('./Libraries/Network/FormData'));
+defineGlobalProperty('Headers', () => require('./Libraries/Network/Headers'));
+defineGlobalProperty('Response', () => require('./Libraries/Network/Response'));
 
 module.exports = ReactNative;
