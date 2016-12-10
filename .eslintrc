@@ -7,7 +7,6 @@
   "env": {
     "mocha": true
   },
-  "parser": "babel-eslint",
   "rules": {
     "no-unused-vars": [2, {"vars": "all", "args": "none"}],
     "comma-dangle": 0,
