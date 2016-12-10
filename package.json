@@ -4,6 +4,7 @@
   "description": "A fully mocked and test-friendly version of react native",
   "main": "build/react-native.js",
   "scripts": {
+    "postinstall": "node src/haste.js",
     "test": "npm run lint",
     "lint": "eslint 'src/' 'test/' 'mock.js'",
     "build": "babel src --out-dir build"
