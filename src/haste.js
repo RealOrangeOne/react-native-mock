@@ -1,20 +1,21 @@
-import glob from 'glob';
-import path from 'path';
-import fs from 'fs';
+var fs = require('fs');
+var glob = require('glob');
+var path = require('path');
+var _ = require('underscore');
 
-const providesRegex = /\r?\n \* @providesModule (\S+)(?=\r?\n)/;
-const validName = /^[a-z0-9-_].+$/i;
-const CWD = process.cwd();
+var providesRegex = /\r?\n \* @providesModule (\S+)(?=\r?\n)/;
+var validName = /^[a-z0-9-_].+$/i;
+var CWD = process.cwd();
 
-const data = {
+var data = {
   hasteMap: {},
   version: require('./react-native-version')
 };
 
-const files = glob.sync('node_modules/**/*.js');
+var files = glob.sync('node_modules/**/*.js');
 
-files.forEach(function (file) {
-  const matches = providesRegex.exec(fs.readFileSync(file).toString());
+_.forEach(files, function (file) {
+  var matches = providesRegex.exec(fs.readFileSync(file).toString());
   if (matches && validName.test(matches[1])) {
     data.hasteMap[matches[1]] = file.replace(CWD, '');
   }
