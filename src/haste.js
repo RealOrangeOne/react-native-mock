@@ -1,6 +1,6 @@
-const glob = require('glob');
-const path = require('path');
-const fs = require('fs');
+import glob from 'glob';
+import path from 'path'
+import fs from 'fs'
 
 const providesRegex = /\r?\n \* @providesModule (\S+)(?=\r?\n)/;
 const validName = /^[a-z0-9-_].+$/i;
