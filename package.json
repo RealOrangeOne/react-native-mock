@@ -5,7 +5,8 @@
   "main": "build/react-native.js",
   "scripts": {
     "test": "npm run lint",
-    "lint": "eslint 'src/' 'test/' 'mock.js'"
+    "lint": "eslint 'src/' 'test/' 'mock.js'",
+    "build": "babel src --out-dir build"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,7 @@
   },
   "homepage": "https://github.com/RealOrangeOne/react-native-mock#readme",
   "dependencies": {
-    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
     "babel-preset-react-native": "^1.6.0",
     "mockery": "=2.0.0",
     "node-glob": "=1.2.0",
@@ -33,6 +34,7 @@
     "underscore": "=1.8.3"
   },
   "devDependencies": {
+    "babel-cli": "=6.9.0",
     "chai": "=3.5.0",
     "enzyme": "=2.6.0",
     "eslint": "2.10.2",
