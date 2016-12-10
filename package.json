@@ -29,8 +29,8 @@
   "dependencies": {
     "babel-core": "^6.9.0",
     "babel-preset-react-native": "^1.6.0",
+    "glob": "^7.1.1",
     "mockery": "=2.0.0",
-    "node-glob": "=1.2.0",
     "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.4.1",
     "underscore": "=1.8.3"
