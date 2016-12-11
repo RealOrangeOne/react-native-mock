@@ -19,7 +19,7 @@ var files = glob.sync('node_modules/**/*.js');
 _.forEach(files, function (file) {
   var matches = providesRegex.exec(fs.readFileSync(file).toString());
   if (matches && validName.test(matches[1])) {
-    data.hasteMap[matches[1]] = file.replace(CWD, '');
+    data.hasteMap[matches[1]] = file.replace('node_modules/', '');
   }
 });
 
