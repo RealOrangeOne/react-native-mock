@@ -14,5 +14,5 @@ mockery.registerMock('ErrorUtils', {
   guard: callback => callback,
   inGuard: () => true,
   reportError,
-  setGlobalHandler: () => undefined,
+  setGlobalHandler: () => undefined
 });
