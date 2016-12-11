@@ -113,3 +113,5 @@ _.forEach(Object.keys(mockNativeModules), function (mod) {
 });
 
 mockery.registerMock('NativeModules', mockNativeModules);
+
+export default mockNativeModules;
