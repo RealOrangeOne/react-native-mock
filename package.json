@@ -31,8 +31,10 @@
     "babel-preset-react-native": "^1.6.0",
     "glob": "^7.1.1",
     "mockery": "=2.0.0",
+    "promise": "^7.1.1",
     "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.4.1",
+    "regenerator-runtime": "^0.10.1",
     "underscore": "=1.8.3"
   },
   "devDependencies": {
