@@ -1,3 +1,5 @@
+/* eslint-disable no-var */
+
 var fs = require('fs');
 var glob = require('glob');
 var path = require('path');
