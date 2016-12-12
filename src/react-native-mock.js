@@ -1,7 +1,7 @@
 import mockery from 'mockery';
 import _ from 'underscore';
 import defineGlobalProperty from './defineGlobalProperty';
-import createMockCompunent from './createMockComponent';
+import createMockComponent from './createMockComponent';
 
 require('./babel');
 
@@ -40,10 +40,10 @@ const MOCK_COMPONENTS = [
 ];
 
 _.forEach(MOCK_COMPONENTS, function (component) {
-  mockery.registerMock(component, createMockCompunent(component));
+  mockery.registerMock(component, createMockComponent(component));
 });
 
-mockery.registerMock('requireNativeComponent', createMockCompunent());
+mockery.registerMock('requireNativeComponent', createMockComponent);
 
 require('./mocks/ListViewDataSource');
 require('./mocks/ErrorUtils');
