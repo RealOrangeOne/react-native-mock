@@ -6,9 +6,10 @@
   "scripts": {
     "prepublish": "npm run build",
     "postinstall": "node src/haste.js",
-    "test": "npm run lint && npm run mocha",
+    "test": "npm run lint && npm run coverage",
     "mocha": "mocha --require mock.js --bail 'tests/**/*.test.js'",
     "lint": "eslint 'src/' 'tests/' 'mock.js'",
+    "coverage": "nyc mocha --require mock.js --bail --recursive 'tests/**/*.test.js'",
     "build": "babel src --out-dir build"
   },
   "repository": {
@@ -50,6 +51,7 @@
     "eslint-plugin-react-native": "1.0.2",
     "mocha": "3.2.0",
     "mocka": "0.0.1",
+    "nyc": "10.0.0",
     "react": "^15.4.1",
     "react-addons-test-utils": "^15.4.1",
     "react-dom": "^15.4.1",
