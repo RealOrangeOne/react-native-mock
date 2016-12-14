@@ -18,12 +18,11 @@ describe('Haste Map', function () {
   });
 
   describe('Haste Map Builder', function () {
-    it('Should build the map', function (done) {
+    it('Should build the map', function () {
       fs.unlinkSync(MAP_LOCATION);
       require('../src/haste');
       const stat = fs.statSync(MAP_LOCATION);
       expect(stat.isFile()).to.be.true;
-      done();
     });
   });
 });
