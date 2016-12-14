@@ -11,9 +11,19 @@ describe('Haste Map', function () {
   });
 
   it('should contain correct data', function () {
-    const HasteMap = require('../haste-map');
+    const HasteMap = require(MAP_LOCATION);
     expect(HasteMap).to.have.all.keys('hasteMap', 'version');
     expect(HasteMap.hasteMap).to.be.an('object');
     expect(HasteMap.version).to.be.a('string');
+  });
+
+  describe('Haste Map Builder', function () {
+    it('Should build the map', function (done) {
+      fs.unlinkSync(MAP_LOCATION);
+      require('../src/haste');
+      const stat = fs.statSync(MAP_LOCATION);
+      expect(stat.isFile()).to.be.true;
+      done();
+    });
   });
 });
