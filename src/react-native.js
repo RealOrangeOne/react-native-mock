@@ -24,7 +24,7 @@ const ReactNative = {
   Modal: createMockComponent('Modal'),
   Navigator: require('./components/Navigator'),
   NavigatorIOS: createMockComponent('NavigatorIOS'),
-  Picker: createMockComponent('Picker'),
+  Picker: require('./components/Picker'),
   PickerIOS: createMockComponent('PickerIOS'),
   ProgressBarAndroid: createMockComponent('ProgressBarAndroid'),
   ProgressViewIOS: createMockComponent('ProgressViewIOS'),
@@ -39,10 +39,7 @@ const ReactNative = {
   StatusBar: require('./components/StatusBar'),
   SwitchAndroid: createMockComponent('SwitchAndroid'),
   SwitchIOS: createMockComponent('SwitchIOS'),
-  TabBarIOS: {
-    ...createMockComponent('TabBarIOS'),
-    Item: createMockComponent('TabBarIOS.Item')
-  },
+  TabBarIOS: require('./components/TabBarIOS'),
   Text: require('./components/Text'),
   TextInput: require('./components/TextInput'),
   ToastAndroid: createMockComponent('ToastAndroid'),
