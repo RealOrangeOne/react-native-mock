@@ -37,7 +37,8 @@ const MOCK_COMPONENTS = [
   'View',
   'ScrollView',
   'ActivityIndicator',
-  'ListView'
+  'ListView',
+  'RefreshControl'
 ];
 
 _.forEach(MOCK_COMPONENTS, function (component) {
