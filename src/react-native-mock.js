@@ -48,7 +48,7 @@ _.forEach(MOCK_COMPONENTS, function (component) {
 mockery.registerMock('requireNativeComponent', viewName => props => React.createElement(
   viewName,
   props,
-  props.children,
+  props.children  // eslint-disable-line react/prop-types
 ));
 
 
