@@ -1,17 +1,16 @@
 import React from 'react';
 
 export default name => {
-  class Component extends React.Component {  // eslint-disable-line react/prefer-stateless-function
+  const RealComponent = require(name);
+  const componentName = (RealComponent.displayName || RealComponent.name || name).replace(/^(RCT|RK)/, '');
+  class Component extends RealComponent {  // eslint-disable-line react/prefer-stateless-function
     render() {
       return React.createElement(
-        name.replace(/^(RCT|RK)/, ''),
+        componentName,
         this.props,
         this.props.children
       );
     }
   }
-  Component.propTypes = {
-    children: React.PropTypes.any
-  };
   return Component;
 };

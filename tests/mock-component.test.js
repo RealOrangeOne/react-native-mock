@@ -1,9 +1,21 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+import mockery from 'mockery';
 import createMockComponent from '../src/createMockComponent';
 
 describe('Mock Component', function () {
+  const testComponent = React.Component;
+
+  beforeEach(function () {
+    testComponent.name = testComponent.displayName = 'test';
+    mockery.registerMock('test', testComponent);
+  });
+
+  afterEach(function () {
+    mockery.deregisterMock('test');
+  });
+
   it('Should render correctly', function () {
     const Component = createMockComponent('test');
     const instance = shallow(<Component />);
@@ -11,13 +23,17 @@ describe('Mock Component', function () {
   });
 
   it('Should replace RCT in name', function () {
-    const Component = createMockComponent('RCTtest');
+    testComponent.name = testComponent.displayName = 'RCTtest';
+    mockery.registerMock('test', testComponent);
+    const Component = createMockComponent('test');
     const instance = shallow(<Component />);
     expect(instance.html()).to.equal('<test></test>');
   });
 
   it('Should replace RK in name', function () {
-    const Component = createMockComponent('RKtest');
+    testComponent.name = testComponent.displayName = 'RKtest';
+    mockery.registerMock('test', testComponent);
+    const Component = createMockComponent('test');
     const instance = shallow(<Component />);
     expect(instance.html()).to.equal('<test></test>');
   });
