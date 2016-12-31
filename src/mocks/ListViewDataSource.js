@@ -1,5 +1,3 @@
-import mockery from 'mockery';
-
 const DataSource = require('ListViewDataSource');  // eslint-disable-line import/no-unresolved
 
 DataSource.prototype.toJSON = function () {
@@ -17,4 +15,4 @@ DataSource.prototype.toJSON = function () {
   return new ListViewDataSource(this._dataBlob);
 };
 
-mockery.registerMock('ListViewDataSource', DataSource);
+module.exports = DataSource;

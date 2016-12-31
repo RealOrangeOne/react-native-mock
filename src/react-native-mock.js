@@ -45,5 +45,6 @@ _.forEach(MOCK_COMPONENTS, function (component) {
 
 mockery.registerMock('requireNativeComponent', createMockComponent);
 
-require('./mocks/ListViewDataSource');
-require('./mocks/ErrorUtils');
+
+mockery.registerMock('ListViewDataSource', require('./mocks/ListViewDataSource'));
+mockery.registerMock('ErrorUtils', require('./mocks/ErrorUtils'));
