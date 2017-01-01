@@ -1,3 +1,5 @@
+import sinon from 'sinon';
+
 function execute(fun, context, args) {
   return fun.apply(context, args);
 }
@@ -9,8 +11,8 @@ function reportError(error) {
 module.exports = {
   apply: execute,
   applyWithGuard: execute,
-  guard: callback => callback,
-  inGuard: () => true,
+  guard: sinon.spy(callback => callback),
+  inGuard: sinon.spy(() => true),
   reportError,
-  setGlobalHandler: () => undefined
+  setGlobalHandler: sinon.spy(() => undefined)
 };

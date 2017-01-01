@@ -1,40 +1,41 @@
 import _ from 'underscore';
 import mockery from 'mockery';
+import sinon from 'sinon';
 
 
 const mockNativeModules = {
   AlertManager: {
-    alertWithArgs: _.noop
+    alertWithArgs: sinon.spy()
   },
   AppState: {
-    addEventListener: _.noop
+    addEventListener: sinon.spy()
   },
   AsyncLocalStorage: {
-    clear: _.noop,
-    getItem: _.noop,
-    removeItem: _.noop,
-    setItem: _.noop
+    clear: sinon.spy(),
+    getItem: sinon.spy(),
+    removeItem: sinon.spy(),
+    setItem: sinon.spy()
   },
   BuildInfo: {
     appVersion: '0',
     buildVersion: '0'
   },
   Clipboard: {
-    setString: _.noop
+    setString: sinon.spy()
   },
   DataManager: {
-    queryData: _.noop
+    queryData: sinon.spy()
   },
   FacebookSDK: {
-    login: _.noop,
-    logout: _.noop,
-    queryGraphPath: (path, method, params, callback) => callback()
+    login: sinon.spy(),
+    logout: sinon.spy(),
+    queryGraphPath: sinon.spy((path, method, params, callback) => callback())
   },
   FbRelayNativeAdapter: {
-    updateCLC: _.noop
+    updateCLC: sinon.spy()
   },
   GraphPhotoUpload: {
-    upload: _.noop
+    upload: sinon.spy()
   },
   I18n: {
     translationsDictionary: JSON.stringify({
@@ -42,39 +43,37 @@ const mockNativeModules = {
     })
   },
   ImageLoader: {
-    getSize: (uri, success) => process.nextTick(() => success(320, 240)
-    ),
-    prefetchImage: _.noop
+    getSize: sinon.spy((uri, success) => process.nextTick(() => success(320, 240))),
+    prefetchImage: sinon.spy()
   },
   ImageViewManager: {
-    getSize: (uri, success) => process.nextTick(() => success(320, 240)
-    ),
-    prefetchImage: _.noop
+    getSize: sinon.spy((uri, success) => process.nextTick(() => success(320, 240))),
+    prefetchImage: sinon.spy()
   },
   KeyboardObserver: {
-    addListener: _.noop,
-    removeListeners: _.noop
+    addListener: sinon.spy(),
+    removeListeners: sinon.spy()
   },
   ModalFullscreenViewManager: {},
   Networking: {
-    sendRequest: _.noop,
-    abortRequest: _.noop,
-    addListener: _.noop,
-    removeListeners: _.noop
+    sendRequest: sinon.spy(),
+    abortRequest: sinon.spy(),
+    addListener: sinon.spy(),
+    removeListeners: sinon.spy()
   },
   SourceCode: {
     scriptURL: null
   },
   StatusBarManager: {
-    setStyle: _.noop,
-    setHidden: _.noop,
-    setNetworkActivityIndicatorVisible: _.noop,
-    setBackgroundColor: _.noop,
-    setTranslucent: _.noop
+    setStyle: sinon.spy(),
+    setHidden: sinon.spy(),
+    setNetworkActivityIndicatorVisible: sinon.spy(),
+    setBackgroundColor: sinon.spy(),
+    setTranslucent: sinon.spy()
   },
   Timing: {
-    createTimer: _.noop,
-    deleteTimer: _.noop
+    createTimer: sinon.spy(),
+    deleteTimer: sinon.spy()
   },
   UIManager: {
     customBubblingEventTypes: {},
@@ -98,13 +97,13 @@ const mockNativeModules = {
     }
   },
   WebSocketModule: {
-    connect: _.noop,
-    send: _.noop,
-    sendBinary: _.noop,
-    ping: _.noop,
-    close: _.noop,
-    addListener: _.noop,
-    removeListeners: _.noop
+    connect: sinon.spy(),
+    send: sinon.spy(),
+    sendBinary: sinon.spy(),
+    ping: sinon.spy(),
+    close: sinon.spy(),
+    addListener: sinon.spy(),
+    removeListeners: sinon.spy()
   }
 };
 

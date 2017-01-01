@@ -3,6 +3,7 @@ import _ from 'underscore';
 import defineGlobalProperty from './defineGlobalProperty';
 import createMockComponent from './createMockComponent';
 import React from 'react';
+import sinon from 'sinon';
 
 require('./babel');
 
@@ -26,7 +27,7 @@ require('./NativeModules');
 const mockPropRegistry = {};
 mockery.registerMock('ReactNativePropRegistry', {
   register: id => id,
-  getByID: () => mockPropRegistry
+  getByID: sinon.spy(() => mockPropRegistry)
 });
 
 const MOCK_COMPONENTS = [
