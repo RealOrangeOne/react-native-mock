@@ -26,11 +26,11 @@ require('./NativeModules');
 
 const mockPropRegistry = {};
 mockery.registerMock('ReactNativePropRegistry', {
-  register: id => id,
+  register: sinon.spy(id => id),
   getByID: sinon.spy(() => mockPropRegistry)
 });
 
-const MOCK_COMPONENTS = [
+export const MOCK_COMPONENTS = [
   'Image',
   'Text',
   'TextInput',
@@ -46,11 +46,11 @@ _.forEach(MOCK_COMPONENTS, function (component) {
   mockery.registerMock(component, createMockComponent(component));
 });
 
-mockery.registerMock('requireNativeComponent', viewName => props => React.createElement(
+mockery.registerMock('requireNativeComponent', sinon.spy(viewName => props => React.createElement(
   viewName,
   props,
   props.children  // eslint-disable-line react/prop-types
-));
+)));
 
 
 mockery.registerMock('ListViewDataSource', require('./mocks/ListViewDataSource'));

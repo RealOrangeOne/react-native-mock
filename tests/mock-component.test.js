@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import mockery from 'mockery';
 import createMockComponent from '../src/createMockComponent';
+import { MOCK_COMPONENTS } from '../src/react-native-mock';
 
 describe('Mock Component', function () {
   const testComponent = React.Component;
@@ -48,5 +49,17 @@ describe('Mock Component', function () {
     const RequiredComponent = require('requireNativeComponent')('test');  // eslint-disable-line import/no-unresolved
     const Component = createMockComponent('test');
     expect(shallow(<Component />).html()).to.equal(shallow(<RequiredComponent />).html());
+  });
+
+  describe('Native Components', function () {
+    const componentRegex = /<(.*?)><\/.*?>/i;
+    MOCK_COMPONENTS.forEach(function (component) {
+      it('should require ' + component, function () {
+        const Component = require(component);
+        expect(Component).to.be.a('function');
+        const instance = shallow(<Component />);
+        expect([component, 'Component']).to.include(componentRegex.exec(instance.html())[1]);
+      });
+    });
   });
 });
