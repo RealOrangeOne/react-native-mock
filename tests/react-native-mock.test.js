@@ -1,9 +1,11 @@
+import { expect } from 'chai';
+
 describe('React Native Mock', function () {
   it('shouldnt break when mocking', function () {
-    require('../src/react-native-mock');
+    expect(require('../src/react-native-mock')).to.be.ok;
   });
 
   it('Should allow requiring of react-native', function () {
-    require('react-native');
+    expect(require('react-native')).to.be.ok;
   });
 });
