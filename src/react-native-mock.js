@@ -55,3 +55,5 @@ mockery.registerMock('requireNativeComponent', sinon.spy(viewName => props => Re
 
 mockery.registerMock('ListViewDataSource', require('./mocks/ListViewDataSource'));
 mockery.registerMock('ErrorUtils', require('./mocks/ErrorUtils'));
+
+require('./image-compiler');
