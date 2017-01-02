@@ -94,6 +94,14 @@ const mockNativeModules = {
     },
     View: {
       Constants: {}
+    },
+    AndroidDrawerLayout: {
+      Constants: {
+        DrawerPosition: {
+          Right: 'RIGHT',
+          Left: 'LEFT'
+        }
+      }
     }
   },
   WebSocketModule: {
@@ -104,6 +112,11 @@ const mockNativeModules = {
     close: sinon.spy(),
     addListener: sinon.spy(),
     removeListeners: sinon.spy()
+  },
+  Platform: { // https://github.com/facebook/react-native/pull/11651
+    OS: 'ios',
+    Version: () => '',
+    select: (obj) => obj.ios
   }
 };
 

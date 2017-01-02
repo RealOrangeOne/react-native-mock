@@ -20,6 +20,7 @@
     "no-restricted-syntax": 0,
     "prefer-template": 0,
     "no-unused-expressions": 0,
+    "vars-on-top": 0,
     "max-len": [
       2,
       120,
