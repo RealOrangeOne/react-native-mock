@@ -95,7 +95,7 @@ describe('Native Modules', function () {
 
       it('should have queryGraphPath as spy', function () {
         expect(NativeModules.FacebookSDK.queryGraphPath).to.be.a('function');
-        const callback = sinon.spy()
+        const callback = sinon.spy();
         NativeModules.FacebookSDK.queryGraphPath('', '', '', callback);
         expect(NativeModules.FacebookSDK.queryGraphPath).to.have.been.calledOnce;
         expect(callback).to.have.been.calledOnce;
@@ -140,7 +140,7 @@ describe('Native Modules', function () {
       it('should have prefetchImage as spy', function () {
         expect(NativeModules.ImageLoader.prefetchImage).to.be.a('function');
         NativeModules.ImageLoader.prefetchImage();
-        expect(NativeModules.ImageLoader.prefetchImage).to.have.been.calledOnc
+        expect(NativeModules.ImageLoader.prefetchImage).to.have.been.calledOnce;
       });
     });
 
@@ -158,7 +158,7 @@ describe('Native Modules', function () {
       it('should have prefetchImage as spy', function () {
         expect(NativeModules.ImageViewManager.prefetchImage).to.be.a('function');
         NativeModules.ImageViewManager.prefetchImage();
-        expect(NativeModules.ImageViewManager.prefetchImage).to.have.been.calledOnc
+        expect(NativeModules.ImageViewManager.prefetchImage).to.have.been.calledOnce;
       });
     });
 
@@ -172,7 +172,7 @@ describe('Native Modules', function () {
       it('should have removeListeners as spy', function () {
         expect(NativeModules.KeyboardObserver.removeListeners).to.be.a('function');
         NativeModules.KeyboardObserver.removeListeners();
-        expect(NativeModules.KeyboardObserver.removeListeners).to.have.been.calledOnc
+        expect(NativeModules.KeyboardObserver.removeListeners).to.have.been.calledOnce;
       });
     });
 
@@ -306,7 +306,7 @@ describe('Native Modules', function () {
       it('should have connect as spy', function () {
         expect(NativeModules.WebSocketModule.connect).to.be.a('function');
         NativeModules.WebSocketModule.connect();
-        expect(NativeModules.WebSocketModule.connect).to.have.been.calledOnce;
+        expect(NativeModules.WebSocketModule.connect).to.have.been.called;
       });
 
       it('should have send as spy', function () {
@@ -336,7 +336,7 @@ describe('Native Modules', function () {
       it('should have addListener as spy', function () {
         expect(NativeModules.WebSocketModule.addListener).to.be.a('function');
         NativeModules.WebSocketModule.addListener();
-        expect(NativeModules.WebSocketModule.addListener).to.have.been.calledOnce;
+        expect(NativeModules.WebSocketModule.addListener).to.have.been.called;
       });
 
       it('should have removeListeners as spy', function () {
