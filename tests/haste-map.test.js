@@ -25,4 +25,24 @@ describe('Haste Map', function () {
       expect(stat.isFile()).to.be.true;
     });
   });
+
+  describe('Modules', function () {
+    const HasteMap = require(MAP_LOCATION).hasteMap;
+
+    it('shouldnt import android version of ios components', function () {
+      Object.keys(HasteMap).forEach(function (mod) {
+        if (mod.match(/ios/gi)) {
+          expect(HasteMap[mod].endsWith('.android.js')).to.be.false;
+        }
+      });
+    });
+
+    it('shouldnt import ios version of android components', function () {
+      Object.keys(HasteMap).forEach(function (mod) {
+        if (mod.match(/android/gi)) {
+          expect(HasteMap[mod].endsWith('.ios.js')).to.be.false;
+        }
+      });
+    });
+  });
 });
