@@ -11,8 +11,6 @@ const COMPONENTS = [
   'Modal',
   'View',
   'ScrollView',
-  'ActivityIndicator',
-  'ListView',
   'RefreshControl'
 ];
 
@@ -25,6 +23,12 @@ describe('Components', function () {
       const instance = shallow(<Component />);
       expect(instance.html()).to.equal(buildComponentHTML(component));
     });
+  });
+
+  it('should render ActivityIndicator', function () {
+    const { ActivityIndicator } = ReactNative;
+    const instance = shallow(<ActivityIndicator />);
+    expect(instance.html()).to.include('ActivityIndicator');
   });
 
   it('should render Button', function () {
@@ -45,6 +49,16 @@ describe('Components', function () {
     const instance = shallow(<DrawerLayoutAndroid renderNavigationView={handleRenderNavigationView} />);
     expect(instance.html()).to.include('AndroidDrawerLayout');
     expect(handleRenderNavigationView).to.have.been.calledOnce;
+  });
+
+  it('should render ListView', function () {
+    const { ListView } = ReactNative;
+    const dataSource = new ListView.DataSource({
+      rowHasChanged: (r1, r2) => r1 !== r2
+    }).cloneWithRows([]);
+    const instance = shallow(<ListView dataSource={dataSource} />);
+    expect(instance.html()).to.include('<ScrollView');
+    expect(instance.html()).to.include('<View');
   });
 
   it('should render KeyboardAvoidingView', function () {
