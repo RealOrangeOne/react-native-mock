@@ -22,6 +22,12 @@ _.mapObject(require('../haste-map.json').hasteMap, function (val, key) {
   mockery.registerSubstitute(key, val);
 });
 
+mockery.registerMock('requireNativeComponent', sinon.spy(viewName => props => React.createElement(
+  viewName,
+  props,
+  props.children  // eslint-disable-line react/prop-types
+)));
+
 require('./NativeModules');
 
 const mockPropRegistry = {};
@@ -30,30 +36,24 @@ mockery.registerMock('ReactNativePropRegistry', {
   getByID: sinon.spy(() => mockPropRegistry)
 });
 
+mockery.registerMock('ErrorUtils', require('./mocks/ErrorUtils'));
+
 export const MOCK_COMPONENTS = [
   'Image',
   'Text',
   'TextInput',
   'Modal',
   'View',
-  'ScrollView',
   'ActivityIndicator',
-  'ListView',
-  'RefreshControl'
+  'RefreshControl',
+  'ScrollView'
 ];
 
 _.forEach(MOCK_COMPONENTS, function (component) {
   mockery.registerMock(component, createMockComponent(component));
 });
 
-mockery.registerMock('requireNativeComponent', sinon.spy(viewName => props => React.createElement(
-  viewName,
-  props,
-  props.children  // eslint-disable-line react/prop-types
-)));
-
-
 mockery.registerMock('ListViewDataSource', require('./mocks/ListViewDataSource'));
-mockery.registerMock('ErrorUtils', require('./mocks/ErrorUtils'));
+mockery.registerMock('ListView', require('./mocks/ListView'));
 
 require('./image-compiler');
