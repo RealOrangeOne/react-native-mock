@@ -11,7 +11,9 @@ const COMPONENTS = [
   'Modal',
   'View',
   'ScrollView',
-  'RefreshControl'
+  'RefreshControl',
+
+  'ToolbarAndroid'
 ];
 
 describe('Components', function () {
@@ -28,7 +30,7 @@ describe('Components', function () {
   it('should render ActivityIndicator', function () {
     const { ActivityIndicator } = ReactNative;
     const instance = shallow(<ActivityIndicator />);
-    expect(instance.html()).to.include('ActivityIndicator');
+    expect(instance.html()).to.include('<ActivityIndicator');
   });
 
   it('should render Button', function () {
@@ -47,7 +49,7 @@ describe('Components', function () {
     const { DrawerLayoutAndroid } = ReactNative;
     const handleRenderNavigationView = sinon.spy();
     const instance = shallow(<DrawerLayoutAndroid renderNavigationView={handleRenderNavigationView} />);
-    expect(instance.html()).to.include('AndroidDrawerLayout');
+    expect(instance.html()).to.include('<AndroidDrawerLayout');
     expect(handleRenderNavigationView).to.have.been.calledOnce;
   });
 
@@ -65,5 +67,123 @@ describe('Components', function () {
     const { KeyboardAvoidingView } = ReactNative;
     const instance = shallow(<KeyboardAvoidingView />);
     expect(instance.html()).to.equal(buildComponentHTML('View'));
+  });
+
+  it('should render Navigator', function () {
+    const { Navigator, Text } = ReactNative;
+    const renderScene = sinon.spy((route, navigator) => <Text>Hello!</Text>);
+    const instance = shallow(<Navigator initialRoute={{}} renderScene={renderScene} />);
+    expect(instance.html()).to.include('View');
+    expect(instance.html()).to.include('<Text>Hello!</Text>');
+    expect(renderScene).to.have.been.called;
+  });
+
+  it('should render NavigatorIOS', function () {
+    const { NavigatorIOS, Text } = ReactNative;
+    const initialRoute = {
+      component: Text,
+      title: 'Title'
+    };
+    const instance = shallow(<NavigatorIOS initialRoute={initialRoute} />);
+    expect(instance.html()).to.include('Title');
+    expect(instance.html()).to.include('<Text');
+  });
+
+  it('should render Picker', function () {
+    const { Picker } = ReactNative;
+    const instance = shallow(<Picker />);
+    expect(instance.html()).to.include('Picker');
+  });
+
+  it('should render PickerIOS', function () {
+    const { PickerIOS } = ReactNative;
+    const instance = shallow(<PickerIOS />);
+    expect(instance.html()).to.include('Picker');
+  });
+
+  it('should render ProgressBarAndroid', function () {
+    const { ProgressBarAndroid } = ReactNative;
+    const instance = shallow(<ProgressBarAndroid />);
+    expect(instance.html()).to.include('<AndroidProgressBar');
+  });
+
+  it('should render ProgressViewIOS', function () {
+    const { ProgressViewIOS } = ReactNative;
+    const instance = shallow(<ProgressViewIOS />);
+    expect(instance.html()).to.include('ProgressView');
+  });
+
+  it('should render SegmentedControlIOS', function () {
+    const { SegmentedControlIOS } = ReactNative;
+    const instance = shallow(<SegmentedControlIOS />);
+    expect(instance.html()).to.include('SegmentedControl');
+  });
+
+  it('should render Slider', function () {
+    const { Slider } = ReactNative;
+    const instance = shallow(<Slider />);
+    expect(instance.html()).to.include('Slider');
+  });
+
+  it('should render SnapshotViewIOS', function () {
+    const { SnapshotViewIOS } = ReactNative;
+    const instance = shallow(<SnapshotViewIOS />);
+    expect(instance.html()).to.include('<View');
+  });
+
+  it('should render StatusBar', function () {
+    const { StatusBar } = ReactNative;
+    const instance = shallow(<StatusBar />);
+    expect(instance.html()).to.be.null;
+  });
+
+  it('should render Switch', function () {
+    const { Switch } = ReactNative;
+    const instance = shallow(<Switch />);
+    expect(instance.html()).to.include('Switch');
+  });
+
+  it('should render TabBarIOS', function () {
+    const { TabBarIOS } = ReactNative;
+    const instance = shallow(<TabBarIOS />);
+    expect(instance.html()).to.include('TabBar');
+  });
+
+  it('should render TouchableHighlight', function () {
+    const { TouchableHighlight, Text } = ReactNative;
+    const instance = shallow(<TouchableHighlight><Text /></TouchableHighlight>);
+    expect(instance.html()).to.include('<View');
+  });
+
+  it('should render TouchableNativeFeedback', function () {
+    const { TouchableNativeFeedback, Text } = ReactNative;
+    const instance = shallow(<TouchableNativeFeedback><Text /></TouchableNativeFeedback>);
+    expect(instance.html()).to.include('<View');
+  });
+
+  it('should render TouchableOpacity', function () {
+    const { TouchableOpacity, Text } = ReactNative;
+    const instance = shallow(<TouchableOpacity><Text /></TouchableOpacity>);
+    expect(instance.html()).to.include('<View');
+    expect(instance.html()).to.include(buildComponentHTML('Text'));
+  });
+
+  it('should render TouchableWithoutFeedback', function () {
+    const { TouchableWithoutFeedback, Text } = ReactNative;
+    const instance = shallow(<TouchableWithoutFeedback><Text /></TouchableWithoutFeedback>);
+    expect(instance.html()).to.equal(buildComponentHTML('Text'));
+  });
+
+  it('should render ViewPagerAndroid', function () {
+    const { ViewPagerAndroid } = ReactNative;
+    const instance = shallow(<ViewPagerAndroid />);
+    expect(instance.html()).to.equal(buildComponentHTML('AndroidViewPager'));
+  });
+
+  it('should render WebView', function () {
+    const { WebView } = ReactNative;
+    const instance = shallow(<WebView />);
+    expect(instance.html()).to.contain('WebView');
+    expect(instance.html()).to.contain('<View');
   });
 });
