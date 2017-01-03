@@ -8,24 +8,21 @@
  *
  * @flow
  */
-'use strict';
 
-const ListViewDataSource = require('ListViewDataSource');
-const React = require('React');
-const ScrollView = require('ScrollView');
-const StaticRenderer = require('StaticRenderer');
-const View = require('View');
+/* eslint-disable react/prop-types */
+
+const React = require('react');
+const ScrollView = require('ScrollView');  // eslint-disable-line import/no-unresolved
+const StaticRenderer = require('StaticRenderer'); // eslint-disable-line import/no-unresolved
+const View = require('View'); // eslint-disable-line import/no-unresolved
 
 class ListViewMock extends React.Component {
-  static latestRef: ?ListViewMock;
-  static defaultProps = {
-    renderScrollComponent: (props) => <ScrollView {...props} />,
-  }
   componentDidMount() {
     ListViewMock.latestRef = this;
   }
+
   render() {
-    const {dataSource, renderFooter, renderHeader} = this.props;
+    const { dataSource, renderFooter, renderHeader } = this.props;
     const rows = [renderHeader && renderHeader()];
     const allRowIDs = dataSource.rowIdentities;
     for (let sectionIdx = 0; sectionIdx < allRowIDs.length; sectionIdx++) {
@@ -35,8 +32,8 @@ class ListViewMock extends React.Component {
         const rowID = rowIDs[rowIdx];
         rows.push(
           <StaticRenderer
+            shouldUpdate
             key={rowID}
-            shouldUpdate={true}
             render={this.props.renderRow.bind(
               null,
               dataSource.getRowData(sectionIdx, rowIdx),
@@ -47,14 +44,21 @@ class ListViewMock extends React.Component {
         );
       }
     }
+
     renderFooter && rows.push(renderFooter());
+
     return (
       <View>
-        {this.props.renderScrollComponent({children: rows})}
+        {this.props.renderScrollComponent({ children: rows })}
       </View>
     );
   }
-  static DataSource = ListViewDataSource;
 }
+
+ListViewMock.defaultProps = {
+  renderScrollComponent: (props) => <ScrollView {...props} />
+};
+
+ListViewMock.DataSource = require('ListViewDataSource'); // eslint-disable-line import/no-unresolved
 
 module.exports = ListViewMock;
