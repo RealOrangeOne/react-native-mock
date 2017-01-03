@@ -49,11 +49,10 @@ export const MOCK_COMPONENTS = [
   'ScrollView'
 ];
 
-_.forEach(MOCK_COMPONENTS, function (component) {
-  mockery.registerMock(component, createMockComponent(component));
-});
-
 mockery.registerMock('ListViewDataSource', require('./mocks/ListViewDataSource'));
 mockery.registerMock('ListView', require('./mocks/ListView'));
 
+_.forEach(MOCK_COMPONENTS, function (component) {
+  mockery.registerMock(component, createMockComponent(component));
+});
 require('./image-compiler');
