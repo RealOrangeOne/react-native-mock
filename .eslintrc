@@ -22,6 +22,8 @@
     "no-unused-expressions": 0,
     "vars-on-top": 0,
     "react/jsx-no-bind": 0,
+    "one-var": 0,
+    "one-var-declaration-per-line": 0,
     "max-len": [
       2,
       120,
