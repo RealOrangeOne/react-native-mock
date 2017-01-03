@@ -1,1 +1,1 @@
-module.exports = require('react-native/package.json').version;
+module.exports = require('react-native/package').version;
