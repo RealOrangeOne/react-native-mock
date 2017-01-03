@@ -53,6 +53,15 @@ describe('Components', function () {
     expect(handleRenderNavigationView).to.have.been.calledOnce;
   });
 
+  it('should have DrawerLayoutAndroid with static properties for the positions', () => {
+    const { DrawerLayoutAndroid } = ReactNative;
+    expect(DrawerLayoutAndroid.positions).to.be.an.object;
+    expect(DrawerLayoutAndroid.positions).to.deep.equal({
+      Left: 'LEFT',
+      Right: 'RIGHT'
+    });
+  });
+
   it('should render ListView', function () {
     const { ListView } = ReactNative;
     const dataSource = new ListView.DataSource({
