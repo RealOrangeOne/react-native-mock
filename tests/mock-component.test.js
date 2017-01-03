@@ -52,13 +52,12 @@ describe('Mock Component', function () {
   });
 
   describe('Native Components', function () {
-    const componentRegex = /<(.*?)><\/.*?>/i;
     MOCK_COMPONENTS.forEach(function (component) {
       it('should require ' + component, function () {
         const Component = require(component);
         expect(Component).to.be.a('function');
         const instance = shallow(<Component />);
-        expect([component, 'Component']).to.include(componentRegex.exec(instance.html())[1]);
+        expect(instance.html()).to.include(component);
       });
     });
   });
