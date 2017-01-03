@@ -32,8 +32,8 @@
     "glob": "7.1.1",
     "mockery": "2.0.0",
     "promise": "7.1.1",
-    "react-dom": "^15.4.1",
-    "regenerator-runtime": "^0.10.1",
+    "react-dom": "^15.4.0",
+    "regenerator-runtime": "0.10.1",
     "sinon": "1.17.7",
     "underscore": "1.8.3"
   },
@@ -49,12 +49,11 @@
     "eslint-plugin-react-native": "1.0.2",
     "jsdom": "9.9.1",
     "mocha": "3.2.0",
-    "mocka": "0.0.1",
     "nyc": "10.0.0",
-    "react": "^15.4.1",
-    "react-addons-test-utils": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-native": "^0.39.0",
+    "react": "^15.4.0",
+    "react-addons-test-utils": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "react-native": "^0.38.0",
     "sinon-chai": "2.8.0"
   },
   "peerDependencies": {
