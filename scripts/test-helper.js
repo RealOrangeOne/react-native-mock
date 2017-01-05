@@ -20,3 +20,10 @@ Object.keys(window).forEach((key) => {
     global[key] = window[key];
   }
 });
+
+if (!global.navigator.userAgent || !global.window.navigator.userAgent) {
+  // react-dom needs a useragent
+  global.navigator = global.window.navigator = {
+    userAgent: 'node.js'
+  };
+}
