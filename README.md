@@ -1,9 +1,9 @@
 # React-Native-Mock
 
-[![Build Status](https://travis-ci.org/RealOrangeOne/react-native-mock.svg?branch=master)](https://travis-ci.org/RealOrangeOne/react-native-mock)
-[![npm](https://img.shields.io/npm/v/react-native-mock.svg)](https://www.npmjs.com/package/react-native-mock)
-[![npm](https://img.shields.io/npm/dm/react-native-mock.svg)]((https://www.npmjs.com/package/react-native-mock)
-[![Join the chat at https://gitter.im/RealOrangeOne/react-native-mock](https://badges.gitter.im/RealOrangeOne/react-native-mock.svg)](https://gitter.im/RealOrangeOne/react-native-mock?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Travis](https://img.shields.io/travis/RealOrangeOne/react-native-mock.svg?style=flat-square)](https://travis-ci.org/RealOrangeOne/react-native-mock)
+[![npm](https://img.shields.io/npm/dm/react-native-mock.svg?style=flat-square)](https://www.npmjs.com/package/react-native-mock)
+[![npm](https://img.shields.io/npm/v/react-native-mock.svg?style=flat-square)]((https://www.npmjs.com/package/react-native-mock)
+[![Gitter](https://img.shields.io/gitter/room/RealOrangeOne/react-native-mock.svg?style=flat-square)](https://gitter.im/RealOrangeOne/react-native-mock)
 
 A fully mocked and test-friendly version of react native
 
