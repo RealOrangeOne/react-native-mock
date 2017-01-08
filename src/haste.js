@@ -4,12 +4,16 @@ var fs = require('fs');
 var glob = require('glob');
 var path = require('path');
 var _ = require('underscore');
+var perfy = require('perfy');
 
 var providesRegex = /\r?\n \* @providesModule (\S+)(?=\r?\n)/;
 var validName = /^[a-z0-9-_].+$/i;
 var iosTest = /ios/gi;
 var androidTest = /android/gi;
 var CWD = process.cwd();
+var TIMER = 'time';
+
+perfy.start(TIMER);
 
 var data = {
   hasteMap: {},
@@ -33,3 +37,9 @@ _.forEach(files, function (file) {
 });
 
 fs.writeFileSync(path.join(CWD, 'haste-map.json'), JSON.stringify(data, null, 2));
+
+var results = perfy.end(TIMER);
+
+if (process.env.NODE_ENV !== 'test') {
+  console.log(results.summary);
+}

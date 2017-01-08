@@ -31,6 +31,7 @@
   "dependencies": {
     "glob": "7.1.1",
     "mockery": "2.0.0",
+    "perfy": "1.1.2",
     "promise": "7.1.1",
     "react-dom": "^15.4.0",
     "regenerator-runtime": "0.10.1",
