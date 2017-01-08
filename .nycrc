@@ -3,9 +3,6 @@
   "statements": 0,
   "functions": 0,
   "branches": 0,
-  "require": [
-    "./mock.js"
-  ],
   "include": [
     "src/**/*.js",
     "mock.js"
