@@ -41,5 +41,5 @@ fs.writeFileSync(path.join(CWD, 'haste-map.json'), JSON.stringify(data, null, 2)
 var results = perfy.end(TIMER);
 
 if (process.env.NODE_ENV !== 'test') {
-  console.log(results.summary);
+  console.log(results.summary);  // eslint-disable-line no-console
 }
