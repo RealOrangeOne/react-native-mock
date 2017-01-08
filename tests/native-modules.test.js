@@ -285,12 +285,12 @@ describe('Native Modules', function () {
 
       it('should have Version as spy', function () {
         expectSpy(NativeModules.Platform.Version);
-        expect(NativeModules.Platform.Version)
+        expect(NativeModules.Platform.Version);
       });
 
       it('should have select as spy', function () {
         expectSpy(NativeModules.Platform.select);
-        expect(NativeModules.Platform.select({ ios: 'ios', android: 'android' })).to.equal('ios')
+        expect(NativeModules.Platform.select({ ios: 'ios', android: 'android' })).to.equal('ios');
       });
     });
   });
