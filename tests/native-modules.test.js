@@ -248,7 +248,6 @@ describe('Native Modules', function () {
       });
     });
 
-
     describe('WebSocketModule', function () {
       it('should have connect as spy', function () {
         expectSpy(NativeModules.WebSocketModule.connect);
@@ -276,6 +275,22 @@ describe('Native Modules', function () {
 
       it('should have removeListeners as spy', function () {
         expectSpy(NativeModules.WebSocketModule.removeListeners);
+      });
+    });
+
+    describe('Platform', function () {
+      it('should OS that returns valid OS', function () {
+        expect(['ios', 'android']).to.include(NativeModules.Platform.OS);
+      });
+
+      it('should have Version as spy', function () {
+        expectSpy(NativeModules.Platform.Version);
+        expect(NativeModules.Platform.Version)
+      });
+
+      it('should have select as spy', function () {
+        expectSpy(NativeModules.Platform.select);
+        expect(NativeModules.Platform.select({ ios: 'ios', android: 'android' })).to.equal('ios')
       });
     });
   });

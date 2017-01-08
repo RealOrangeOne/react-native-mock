@@ -115,8 +115,8 @@ const mockNativeModules = {
   },
   Platform: { // https://github.com/facebook/react-native/pull/11651
     OS: 'ios',
-    Version: () => '',
-    select: (obj) => obj.ios
+    Version: sinon.spy(() => ''),
+    select: sinon.spy((obj) => obj.ios)
   }
 };
 
