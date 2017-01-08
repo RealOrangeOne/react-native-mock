@@ -2,7 +2,7 @@
   "name": "react-native-mock",
   "version": "1.0.0",
   "description": "A fully mocked and test-friendly version of react native",
-  "main": "build/react-native.js",
+  "main": "build/no-import.js",
   "scripts": {
     "prepublish": "npm run build",
     "postinstall": "node src/haste.js",
