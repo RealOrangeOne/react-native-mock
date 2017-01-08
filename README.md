@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/dm/react-native-mock.svg?style=flat-square)](https://www.npmjs.com/package/react-native-mock)
 [![npm](https://img.shields.io/npm/v/react-native-mock.svg?style=flat-square)]((https://www.npmjs.com/package/react-native-mock)
 [![Gitter](https://img.shields.io/gitter/room/RealOrangeOne/react-native-mock.svg?style=flat-square)](https://gitter.im/RealOrangeOne/react-native-mock)
-[![Codecov](https://img.shields.io/codecov/c/github/codecov/example-python.svg?style=flat-square)](https://codecov.io/gh/RealOrangeOne/react-native-mock)
+[![Codecov](https://img.shields.io/codecov/c/github/RealOrangeOne/react-native-mock.svg?style=flat-square)](https://codecov.io/gh/RealOrangeOne/react-native-mock)
 
 A fully mocked and test-friendly version of react native
 
