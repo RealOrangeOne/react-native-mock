@@ -33,7 +33,6 @@
     "mockery": "2.0.0",
     "perfy": "1.1.2",
     "promise": "7.1.1",
-    "react-dom": "^15.4.0",
     "regenerator-runtime": "0.10.1",
     "sinon": "1.17.7",
     "underscore": "1.8.3"

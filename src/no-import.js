@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 console.error(`
 Looks like you're trying to require react-native-mock directly.
 You dont need to do this to access the mocked version of react-native.
