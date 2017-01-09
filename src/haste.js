@@ -11,6 +11,8 @@ var validName = /^[a-z0-9-_].+$/i;
 var iosTest = /ios/gi;
 var androidTest = /android/gi;
 var CWD = process.cwd();
+var PROJECT_ROOT = path.join(CWD, '..', '..');
+var PROJECT_NODE_MODULES = path.join(PROJECT_ROOT, 'node_modules');
 var TIMER = 'time';
 
 perfy.start(TIMER);
@@ -20,7 +22,7 @@ var data = {
   version: require('./react-native-version')
 };
 
-var files = glob.sync('node_modules/**/*.js');
+var files = glob.sync(path.join(PROJECT_ROOT, 'node_modules/**/*.js'));
 
 _.forEach(files, function (file) {
   var matches = providesRegex.exec(fs.readFileSync(file).toString());
@@ -32,7 +34,7 @@ _.forEach(files, function (file) {
     if (component.match(androidTest) && file.endsWith('.ios.js')) {  // Dont add Android components if they end in ios.js
       return;
     }
-    data.hasteMap[component] = file.replace('node_modules/', '');
+    data.hasteMap[component] = file.replace(PROJECT_NODE_MODULES + '/', '');
   }
 });
 
