@@ -15,6 +15,7 @@ describe('Haste Map', function () {
     expect(HasteMap).to.have.all.keys('hasteMap', 'version');
     expect(HasteMap.hasteMap).to.be.an('object');
     expect(HasteMap.version).to.be.a('string');
+    expect(Object.keys(HasteMap.hasteMap)).to.have.length.above(1);
   });
 
   describe('Haste Map Builder', function () {
