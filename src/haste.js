@@ -15,6 +15,10 @@ var PROJECT_ROOT = path.join(CWD, '..', '..');
 var PROJECT_NODE_MODULES = path.join(PROJECT_ROOT, 'node_modules');
 var TIMER = 'time';
 
+if (!fs.existsSync(PROJECT_NODE_MODULES)) {
+  PROJECT_NODE_MODULES = path.join(CWD, 'node_modules');  // For tests
+}
+
 perfy.start(TIMER);
 
 var data = {
@@ -22,7 +26,7 @@ var data = {
   version: require('./react-native-version')
 };
 
-var files = glob.sync(path.join(PROJECT_ROOT, 'node_modules/**/*.js'));
+var files = glob.sync(path.join(PROJECT_NODE_MODULES, '**/*.js'));
 
 _.forEach(files, function (file) {
   var matches = providesRegex.exec(fs.readFileSync(file).toString());
