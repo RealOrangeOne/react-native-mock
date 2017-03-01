@@ -1,9 +1,11 @@
-const sinonChai = require('sinon-chai');
 const chai = require('chai');
+const sinonChai = require('sinon-chai');
+const chaiAsPromised = require('chai-as-promised');
 const jsdom = require('jsdom');
 
 chai.expect();
 chai.use(sinonChai);
+chai.use(chaiAsPromised);
 
 // Jsdom document & window
 const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');

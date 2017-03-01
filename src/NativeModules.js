@@ -14,6 +14,7 @@ const mockNativeModules = {
   AsyncLocalStorage: {
     clear: sinon.spy(),
     getItem: sinon.spy(),
+    multiGet: sinon.spy(),
     removeItem: sinon.spy(),
     setItem: sinon.spy()
   },

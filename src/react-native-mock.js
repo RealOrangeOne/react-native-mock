@@ -51,8 +51,10 @@ export const MOCK_COMPONENTS = [
 
 mockery.registerMock('ListViewDataSource', require('./mocks/ListViewDataSource'));
 mockery.registerMock('ListView', require('./mocks/ListView'));
+mockery.registerMock('AsyncStorage', require('./mocks/AsyncStorage'));
 
 _.forEach(MOCK_COMPONENTS, function (component) {
   mockery.registerMock(component, createMockComponent(component));
 });
+
 require('./image-compiler');
