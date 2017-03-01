@@ -8,7 +8,8 @@ const mockNativeModules = {
     alertWithArgs: sinon.spy()
   },
   AppState: {
-    addEventListener: sinon.spy()
+    addEventListener: sinon.spy(),
+    removeEventListener: sinon.spy()
   },
   AsyncLocalStorage: {
     clear: sinon.spy(),
