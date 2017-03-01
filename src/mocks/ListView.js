@@ -6,7 +6,6 @@
  * LICENSE file in the root directory of react-native. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @flow
  */
 
 /* eslint-disable react/prop-types */
