@@ -11,17 +11,17 @@ describe('Alert', () => {
       [
         {
           text: 'Ask me later',
-          onPress: () => console.log('Ask me later pressed')
+          onPress: () => {}
         },
         {
           text: 'Cancel',
-          onPress: () => console.log('Cancel Pressed'),
+          onPress: () => {},
           style: 'cancel'
         },
         {
           text: 'OK',
-          onPress: () => console.log('OK Pressed')
-        },
+          onPress: () => {}
+        }
       ],
       {
         cancelable: false

@@ -11,16 +11,17 @@ describe('AlertIOS', () => {
       [
         {
           text: 'Cancel',
-          onPress: () => console.log('Cancel Pressed'),
+          onPress: () => {},
           style: 'cancel'
         },
         {
           text: 'Install',
-          onPress: () => console.log('Install Pressed')
-        },
+          onPress: () => {}
+        }
       ]
     );
-    expect(alert).to.be.undefined
+
+    expect(alert).to.be.undefined;
   });
 
   it('should have prompt', function () {
@@ -30,12 +31,12 @@ describe('AlertIOS', () => {
       [
         {
           text: 'Cancel',
-          onPress: () => console.log('Cancel Pressed'),
+          onPress: () => {},
           style: 'cancel'
         },
         {
           text: 'OK',
-          onPress: password => console.log('OK Pressed, password: ' + password)
+          onPress: password => {}
         }
       ],
       'secure-text'
