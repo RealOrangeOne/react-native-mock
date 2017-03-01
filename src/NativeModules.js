@@ -23,7 +23,8 @@ const mockNativeModules = {
     buildVersion: '0'
   },
   Clipboard: {
-    setString: sinon.spy()
+    setString: sinon.spy(),
+    getString: sinon.spy()
   },
   DataManager: {
     queryData: sinon.spy()
