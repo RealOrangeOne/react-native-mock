@@ -65,6 +65,7 @@ const mockNativeModules = {
     scriptURL: null
   },
   StatusBarManager: {
+    setColor: sinon.spy(),
     setStyle: sinon.spy(),
     setHidden: sinon.spy(),
     setNetworkActivityIndicatorVisible: sinon.spy(),
@@ -76,6 +77,13 @@ const mockNativeModules = {
     deleteTimer: sinon.spy()
   },
   UIManager: {
+    createView: sinon.spy(),
+    removeRootView: sinon.spy(),
+    setChildren: sinon.spy(),
+    manageChildren: sinon.spy(),
+    updateView: sinon.spy(),
+    removeSubviewsFromContainerWithID: sinon.spy(),
+    replaceExistingNonRootView: sinon.spy(),
     customBubblingEventTypes: {},
     customDirectEventTypes: {},
     Dimensions: {
