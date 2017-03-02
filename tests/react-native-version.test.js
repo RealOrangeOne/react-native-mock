@@ -11,9 +11,7 @@ describe('React-Native version', function () {
 
   it('should be a valid version', function () {
     const version = require('../src/react-native-version');
-    const expectedVersion = require('../package').devDependencies['react-native'];
     expect(semver.valid(version)).to.equal(version);
     expect(semver.clean(version)).to.equal(version);
-    expect(semver.satisfies(version, expectedVersion)).to.be.true;
   });
 });
