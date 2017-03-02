@@ -5,5 +5,17 @@ node_js:
   - "4"
   - "6"
 
+env:
+  - REACT_NATIVE_VERSION=0.38 REACT_VERSION=15.4.0
+  - REACT_NATIVE_VERSION=0.39 REACT_VERSION=15.4.0-rc.4
+  - REACT_NATIVE_VERSION=0.40 REACT_VERSION=15.4.1
+
+
+before_script:
+  - npm uninstall react-native react react-dom react-addons-test-utils
+  - npm install react-native@$REACT_NATIVE_VERSION
+  - npm install react@$REACT_VERSION react-dom@$REACT_VERSION react-addons-test-utils@$REACT_VERSION
+
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
