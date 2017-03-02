@@ -1,6 +1,7 @@
 # React-Native-Mock
 
 [![Travis](https://img.shields.io/travis/RealOrangeOne/react-native-mock.svg?style=flat-square)](https://travis-ci.org/RealOrangeOne/react-native-mock)
+[![CircleCI](https://img.shields.io/circleci/project/github/RealOrangeOne/react-native-mock.svg?style=flat-square)](https://circleci.com/gh/RealOrangeOne/react-native-mock)
 [![npm](https://img.shields.io/npm/dm/react-native-mock.svg?style=flat-square)](https://www.npmjs.com/package/react-native-mock)
 [![npm](https://img.shields.io/npm/v/react-native-mock.svg?style=flat-square)](https://www.npmjs.com/package/react-native-mock)
 [![Gitter](https://img.shields.io/gitter/room/RealOrangeOne/react-native-mock.svg?style=flat-square)](https://gitter.im/RealOrangeOne/react-native-mock)
