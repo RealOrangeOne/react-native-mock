@@ -5,12 +5,13 @@
   "main": "build/no-import.js",
   "scripts": {
     "prepublish": "npm run build",
-    "postinstall": "node src/haste.js",
+    "postinstall": "npm run build-haste",
     "test": "npm run lint && npm run coverage",
     "mocha": "mocha --require mock.js --require scripts/test-helper.js --bail --timeout 20000 'tests/**/*.test.js'",
     "lint": "eslint 'src/' 'tests/' 'mock.js'",
     "coverage": "nyc npm run mocha",
-    "build": "babel src --out-dir build"
+    "build": "babel src --out-dir build",
+    "build-haste": "node src/haste.js"
   },
   "repository": {
     "type": "git",
