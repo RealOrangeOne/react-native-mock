@@ -26,6 +26,10 @@ describe('Native Modules', function () {
       it('should have addEventListener as spy', function () {
         expectSpy(NativeModules.AppState.addEventListener);
       });
+
+      it('should have removeEventListener as spy', function () {
+        expectSpy(NativeModules.AppState.removeEventListener);
+      });
     });
 
     describe('AsyncLocalStorage', function () {
@@ -44,6 +48,10 @@ describe('Native Modules', function () {
       it('should have setItem as spy', function () {
         expectSpy(NativeModules.AsyncLocalStorage.setItem);
       });
+
+      it('should have multiGet as spy', function () {
+        expectSpy(NativeModules.AsyncLocalStorage.multiGet);
+      });
     });
 
     describe('BuildInfo', function () {
@@ -56,6 +64,10 @@ describe('Native Modules', function () {
     describe('Clipboard', function () {
       it('should have setString as spy', function () {
         expectSpy(NativeModules.Clipboard.setString);
+      });
+
+      it('should have getString as spy', function () {
+        expectSpy(NativeModules.Clipboard.getString);
       });
     });
 
@@ -181,6 +193,10 @@ describe('Native Modules', function () {
         expectSpy(NativeModules.StatusBarManager.setStyle);
       });
 
+      it('should have setColor as spy', function () {
+        expectSpy(NativeModules.StatusBarManager.setColor);
+      });
+
       it('should have setHidden as spy', function () {
         expectSpy(NativeModules.StatusBarManager.setHidden);
       });
@@ -226,6 +242,34 @@ describe('Native Modules', function () {
           height: 1334,
           scale: 2,
           width: 750
+        });
+
+        it('should have createView as spy', function () {
+          expectSpy(NativeModules.UIManager.createView);
+        });
+
+        it('should have removeRootView as spy', function () {
+          expectSpy(NativeModules.UIManager.removeRootView);
+        });
+
+        it('should have setChildren as spy', function () {
+          expectSpy(NativeModules.UIManager.setChildren);
+        });
+
+        it('should have manageChildren as spy', function () {
+          expectSpy(NativeModules.UIManager.manageChildren);
+        });
+
+        it('should have updateView as spy', function () {
+          expectSpy(NativeModules.UIManager.updateView);
+        });
+
+        it('should have removeSubviewsFromContainerWithID as spy', function () {
+          expectSpy(NativeModules.UIManager.removeSubviewsFromContainerWithID);
+        });
+
+        it('should have replaceExistingNonRootView as spy', function () {
+          expectSpy(NativeModules.UIManager.replaceExistingNonRootView);
         });
       });
 
