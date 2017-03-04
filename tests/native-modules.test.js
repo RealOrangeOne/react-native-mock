@@ -131,6 +131,30 @@ describe('Native Modules', function () {
       });
     });
 
+    describe('ImagePickerIOS', function () {
+      it('should have canRecordVideos as spy', function () {
+        expectSpy(NativeModules.ImagePickerIOS.canRecordVideos);
+        const callback = sinon.spy();
+        NativeModules.ImagePickerIOS.canRecordVideos(callback);
+        expect(callback).to.have.been.called;
+      });
+
+      it('should have canUseCamera as spy', function () {
+        expectSpy(NativeModules.ImagePickerIOS.canUseCamera);
+        const callback = sinon.spy();
+        NativeModules.ImagePickerIOS.canUseCamera(callback);
+        expect(callback).to.have.been.called;
+      });
+
+      it('should have openCameraDialog as spy', function () {
+        expectSpy(NativeModules.ImagePickerIOS.openCameraDialog);
+      });
+
+      it('should have openSelectDialog as spy', function () {
+        expectSpy(NativeModules.ImagePickerIOS.openSelectDialog);
+      });
+    });
+
     describe('ImageViewManager', function () {
       it('should have getSize as spy', function (done) {
         expectSpy(NativeModules.ImageViewManager.getSize);

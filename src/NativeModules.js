@@ -49,6 +49,13 @@ const mockNativeModules = {
     getSize: sinon.spy((uri, success) => process.nextTick(() => success(320, 240))),
     prefetchImage: sinon.spy()
   },
+  ImagePickerIOS: {
+    canRecordVideos: sinon.spy(callback => callback()),
+    canUseCamera: sinon.spy(callback => callback()),
+    openCameraDialog: sinon.spy(),
+    openSelectDialog: sinon.spy()
+
+  },
   ImageViewManager: {
     getSize: sinon.spy((uri, success) => process.nextTick(() => success(320, 240))),
     prefetchImage: sinon.spy()
