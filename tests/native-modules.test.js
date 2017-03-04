@@ -182,6 +182,20 @@ describe('Native Modules', function () {
       });
     });
 
+    describe('LocationObserver', function () {
+      it('should have getCurrentPosition as spy', function () {
+        expectSpy(NativeModules.LocationObserver.getCurrentPosition);
+      });
+
+      it('should have startObserving as spy', function () {
+        expectSpy(NativeModules.LocationObserver.startObserving);
+      });
+
+      it('should have stopObserving as spy', function () {
+        expectSpy(NativeModules.LocationObserver.stopObserving);
+      });
+    });
+
     describe('SourceCode', function () {
       it('should have null scriptUrl', function () {
         expect(NativeModules.SourceCode.scriptURL).to.be.null;

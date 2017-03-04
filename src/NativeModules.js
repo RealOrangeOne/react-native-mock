@@ -64,6 +64,11 @@ const mockNativeModules = {
     addListener: sinon.spy(),
     removeListeners: sinon.spy()
   },
+  LocationObserver: {
+    getCurrentPosition: sinon.spy(),
+    startObserving: sinon.spy(),
+    stopObserving: sinon.spy()
+  },
   SourceCode: {
     scriptURL: null
   },

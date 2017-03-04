@@ -15,6 +15,11 @@ describe('Globals', function () {
     expect(global.__DEV__).to.be.true;
   });
 
+  it('should have global navigator', function () {
+    expect(global.navigator).to.exist;
+    expect(global.navigator).to.have.any.keys('geolocation');
+  });
+
   describe('describeGlobalProperty', function () {
     it('Should define property', function () {
       defineGlobalProperty('testKey1', 'testValue1');
