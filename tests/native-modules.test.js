@@ -360,19 +360,16 @@ describe('Native Modules', function () {
       });
     });
 
-    describe('Platform', function () {
-      it('should OS that returns valid OS', function () {
-        expect(['ios', 'android']).to.include(NativeModules.Platform.OS);
+    describe('PlatformConstants', function () {
+      it('should have necessary details', function () {
+        expect(NativeModules.PlatformConstants.osVersion).to.be.a('string');
+        expect(NativeModules.PlatformConstants.interfaceIdiom).to.be.a('string');
+        expect(NativeModules.PlatformConstants.isTesting).to.be.a('boolean');
+        expect(NativeModules.PlatformConstants.version).to.be.a('string');
       });
 
-      it('should have Version as spy', function () {
-        expectSpy(NativeModules.Platform.Version);
-        expect(NativeModules.Platform.Version);
-      });
-
-      it('should have select as spy', function () {
-        expectSpy(NativeModules.Platform.select);
-        expect(NativeModules.Platform.select({ ios: 'ios', android: 'android' })).to.equal('ios');
+      it('should have valid values', function () {
+        expect(NativeModules.PlatformConstants.isTesting).to.be.true;
       });
     });
   });

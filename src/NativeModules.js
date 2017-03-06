@@ -136,10 +136,11 @@ const mockNativeModules = {
     addListener: sinon.spy(),
     removeListeners: sinon.spy()
   },
-  Platform: { // https://github.com/facebook/react-native/pull/11651
-    OS: 'ios',
-    Version: sinon.spy(() => ''),
-    select: sinon.spy((obj) => obj.ios)
+  PlatformConstants: { // https://github.com/facebook/react-native/pull/11651
+    osVersion: '10',
+    interfaceIdiom: 'pad',
+    isTesting: true,
+    version: '7'
   }
 };
 
