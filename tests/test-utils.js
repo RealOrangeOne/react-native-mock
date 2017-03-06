@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
-
+import semver from 'semver';
 
 export const buildComponentHTML = (componentName) => `<${componentName}></${componentName}>`;
 
@@ -13,3 +13,6 @@ export const expectSpy = function isSpy(spy) {
   expect(spy.called).to.be.a('boolean');
   expect(spy.notCalled).to.be.a('boolean');
 };
+
+const version = require('../src/react-native-version');
+export const reactNativeVersion = semver.minor(version) / 100;

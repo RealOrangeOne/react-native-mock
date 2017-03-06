@@ -141,6 +141,15 @@ const mockNativeModules = {
     interfaceIdiom: 'pad',
     isTesting: true,
     version: '7'
+  },
+  AndroidConstants: {
+    Version: '7',
+    isTesting: true
+  },
+  IOSConstants: {
+    osVersion: '10',
+    interfaceIdiom: 'pad',
+    isTesting: true
   }
 };
 
