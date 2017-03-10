@@ -1,7 +1,7 @@
 import mockery from 'mockery';
 import _ from 'underscore';
 import defineGlobalProperty from './defineGlobalProperty';
-import createMockComponent from './createMockComponent';
+import createMockComponent, { MOCK_COMPONENTS } from './createMockComponent';
 import React from 'react';
 import sinon from 'sinon';
 
@@ -37,17 +37,6 @@ mockery.registerMock('ReactNativePropRegistry', {
 });
 
 mockery.registerMock('ErrorUtils', require('./mocks/ErrorUtils'));
-
-export const MOCK_COMPONENTS = [
-  'Image',
-  'Text',
-  'TextInput',
-  'Modal',
-  'View',
-  'ActivityIndicator',
-  'RefreshControl',
-  'ScrollView'
-];
 
 mockery.registerMock('ListViewDataSource', require('./mocks/ListViewDataSource'));
 mockery.registerMock('ListView', require('./mocks/ListView'));

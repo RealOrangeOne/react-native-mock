@@ -2,8 +2,7 @@ import React from 'react'; // eslint-disable-line no-unused-vars
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import mockery from 'mockery';
-import createMockComponent from '../src/createMockComponent';
-import { MOCK_COMPONENTS } from '../src/react-native-mock';
+import createMockComponent, { MOCK_COMPONENTS } from '../src/createMockComponent';
 
 describe('Mock Component', function () {
   const testComponent = React.Component;

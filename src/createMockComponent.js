@@ -20,3 +20,14 @@ export default name => {
 
   return Component;
 };
+
+export const MOCK_COMPONENTS = [
+  'Image',
+  'Text',
+  'TextInput',
+  'Modal',
+  'View',
+  'ActivityIndicator',
+  'RefreshControl',
+  'ScrollView'
+];
