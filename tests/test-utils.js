@@ -14,5 +14,4 @@ export const expectSpy = function isSpy(spy) {
   expect(spy.notCalled).to.be.a('boolean');
 };
 
-const version = require('../src/react-native-version');
-export const reactNativeVersion = semver.minor(version) / 100;
+export const reactNativeVersion = semver.minor(require('../src/react-native-version')) / 100;
