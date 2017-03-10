@@ -41,13 +41,13 @@ mockery.registerMock('ReactNativePropRegistry', {
 
 mockery.registerMock('ErrorUtils', require('./mocks/ErrorUtils'));
 
-mockery.registerMock('ListViewDataSource', require('./mocks/ListViewDataSource'));
-mockery.registerMock('ListView', require('./mocks/ListView'));
-mockery.registerMock('AsyncStorage', require('./mocks/AsyncStorage'));
-
 _.forEach(MOCK_COMPONENTS, function (component) {
   mockery.registerMock(component, createMockComponent(component));
 });
+
+mockery.registerMock('ListViewDataSource', require('./mocks/ListViewDataSource'));
+mockery.registerMock('ListView', require('./mocks/ListView'));
+mockery.registerMock('AsyncStorage', require('./mocks/AsyncStorage'));
 
 require('./image-compiler');
 
