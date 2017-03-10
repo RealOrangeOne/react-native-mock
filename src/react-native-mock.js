@@ -2,6 +2,7 @@ import mockery from 'mockery';
 import _ from 'underscore';
 import defineGlobalProperty from './defineGlobalProperty';
 import createMockComponent, { MOCK_COMPONENTS } from './createMockComponent';
+import mockNativeModules from './NativeModules';
 import React from 'react';
 import sinon from 'sinon';
 
@@ -13,8 +14,6 @@ mockery.enable({
 });
 
 defineGlobalProperty('__DEV__', true);
-defineGlobalProperty('Promise', require('promise'));
-defineGlobalProperty('regeneratorRuntime', require('regenerator-runtime/runtime'));
 
 mockery.registerMock('ensureComponentIsNative', () => true);
 
@@ -28,7 +27,11 @@ mockery.registerMock('requireNativeComponent', sinon.spy(viewName => props => Re
   props.children  // eslint-disable-line react/prop-types
 )));
 
-require('./NativeModules');
+_.forEach(Object.keys(mockNativeModules), function (mod) {
+  mockery.registerMock(mod, mockNativeModules[mod]);
+});
+
+mockery.registerMock('NativeModules', mockNativeModules);
 
 const mockPropRegistry = {};
 mockery.registerMock('ReactNativePropRegistry', {
@@ -47,3 +50,6 @@ _.forEach(MOCK_COMPONENTS, function (component) {
 });
 
 require('./image-compiler');
+
+defineGlobalProperty('Promise', require('promise'));
+defineGlobalProperty('regeneratorRuntime', require('regenerator-runtime/runtime'));

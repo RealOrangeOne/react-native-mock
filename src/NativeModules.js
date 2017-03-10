@@ -1,9 +1,6 @@
-import _ from 'underscore';
-import mockery from 'mockery';
 import sinon from 'sinon';
 
-
-const mockNativeModules = {
+module.exports = {
   AlertManager: {
     alertWithArgs: sinon.spy()
   },
@@ -152,11 +149,3 @@ const mockNativeModules = {
     isTesting: true
   }
 };
-
-_.forEach(Object.keys(mockNativeModules), function (mod) {
-  mockery.registerMock(mod, mockNativeModules[mod]);
-});
-
-mockery.registerMock('NativeModules', mockNativeModules);
-
-export default mockNativeModules;

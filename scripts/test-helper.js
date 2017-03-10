@@ -15,7 +15,6 @@ const win = doc.defaultView;
 global.document = doc;
 global.window = win;
 
-
 // Add window keys to global window
 Object.keys(window).forEach((key) => {
   if (!(key in global)) {

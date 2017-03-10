@@ -1,17 +1,17 @@
 import { expect } from 'chai';
-import NativeModules from '../src/NativeModules';
+const NativeModules = require('../src/NativeModules');
 import sinon from 'sinon';
 import { expectSpy } from './test-utils';
 
 describe('Native Modules', function () {
   it('Should be defined', function () {
-    expect(require('NativeModules')).to.deep.equal(NativeModules);  // eslint-disable-line import/no-unresolved
     expect(NativeModules).to.be.an('object');
+    expect(Object.keys(require('NativeModules'))).to.deep.equal(Object.keys(NativeModules));  // eslint-disable-line import/no-unresolved
   });
 
   it('should be requirable', function () {
     Object.keys(NativeModules).forEach(function (mod) {
-      expect(require(mod)).to.deep.equal(NativeModules[mod]);
+      expect(Object.keys(require(mod))).to.deep.equal(Object.keys(NativeModules[mod]));
     });
   });
 

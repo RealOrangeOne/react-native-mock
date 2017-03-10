@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import sinon from 'sinon';
 
 describe('ImageStore', () => {
   const { ImageStore } = require('react-native');

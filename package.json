@@ -7,7 +7,7 @@
     "prepublish": "npm run build",
     "postinstall": "npm run build-haste",
     "test": "npm run lint && npm run coverage",
-    "mocha": "mocha --require mock.js --require scripts/test-helper.js --bail --timeout 60000 'tests/**/*.test.js'",
+    "mocha": "mocha --require scripts/test-helper.js mock.js --bail --timeout 60000 'tests/**/*.test.js'",
     "lint": "eslint 'src/' 'tests/' 'mock.js'",
     "coverage": "nyc npm run mocha",
     "build": "babel src --out-dir build",

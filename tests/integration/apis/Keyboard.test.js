@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import sinon from 'sinon';
 
 describe('Keyboard', () => {
   const { Keyboard } = require('react-native');
