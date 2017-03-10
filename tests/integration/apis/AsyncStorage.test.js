@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+import MockAsyncStorage from '../../../src/mocks/AsyncStorage';
 
 
 describe('AsyncStorage', () => {
@@ -6,6 +7,10 @@ describe('AsyncStorage', () => {
 
   beforeEach(function (done) {
     AsyncStorage.clear(done);
+  });
+
+  it('should be the mock', function () {
+    expect(AsyncStorage).to.deep.equal(MockAsyncStorage);
   });
 
   it('should have right functions', function () {
