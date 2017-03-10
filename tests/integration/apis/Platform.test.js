@@ -14,7 +14,7 @@ describe('Platform', () => {
   });
 
   assuming(reactNativeVersion >= 0.42).it('should have testing check', function () {
-    expect(Platform.isTesting).to.be.false;
+    expect(Platform.isTesting).to.be.true;
   });
 
   assuming(reactNativeVersion >= 0.43).it('should have iPad check', function () {
