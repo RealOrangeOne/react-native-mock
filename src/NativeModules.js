@@ -61,6 +61,14 @@ module.exports = {
     addListener: sinon.spy(),
     removeListeners: sinon.spy()
   },
+  IntentAndroid: {
+    openURL: sinon.spy(),
+    canOpenURL: sinon.spy(url => new Promise((resolve) => resolve(true)))
+  },
+  LinkingManager: {
+    openURL: sinon.spy(),
+    canOpenURL: sinon.spy(url => new Promise((resolve) => resolve(true)))
+  },
   ModalFullscreenViewManager: {},
   Networking: {
     sendRequest: sinon.spy(),

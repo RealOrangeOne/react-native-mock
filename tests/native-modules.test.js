@@ -181,6 +181,28 @@ describe('Native Modules', function () {
       });
     });
 
+    describe('IntentAndroid', function () {
+      it('should have openURL as spy', function () {
+        expectSpy(NativeModules.IntentAndroid.openURL);
+      });
+
+      it('should have canOpenURL as spy', function (done) {
+        expectSpy(NativeModules.IntentAndroid.canOpenURL);
+        expect(NativeModules.IntentAndroid.canOpenURL('url')).to.eventually.equal(true).notify(done);
+      });
+    });
+
+    describe('LinkingManager', function () {
+      it('should have openURL as spy', function () {
+        expectSpy(NativeModules.LinkingManager.openURL);
+      });
+
+      it('should have canOpenURL as spy', function (done) {
+        expectSpy(NativeModules.LinkingManager.canOpenURL);
+        expect(NativeModules.LinkingManager.canOpenURL('url')).to.eventually.equal(true).notify(done);
+      });
+    });
+
     describe('ModalFullscreenViewManager', function () {
       it('should be empty', function () {
         expect(NativeModules.ModalFullscreenViewManager).to.be.an('object');
