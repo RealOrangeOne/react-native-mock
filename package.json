@@ -13,6 +13,9 @@
     "build": "babel src --out-dir build",
     "build-haste": "node src/haste.js"
   },
+  "jest": {
+    "preset": "react-native"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RealOrangeOne/react-native-mock.git"
