@@ -80,6 +80,7 @@ const ReactNative = {
   PixelRatio: require('./api/PixelRatio'),
   PushNotificationIOS: require('./api/PushNotificationIOS'),
   Settings: require('./api/Settings'),
+  Share: require('./api/Share'),
   StatusBarIOS: require('./api/StatusBarIOS'),
   StyleSheet: require('./api/StyleSheet'),
   TimePickerAndroid: require('./api/TimePickerAndroid'),
