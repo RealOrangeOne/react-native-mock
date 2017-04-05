@@ -5,9 +5,13 @@ class Share {
     return Promise.resolve('sharedAction');
   }
 
-  static get sharedAction() { return 'sharedAction'; }
+  static get sharedAction() {
+    return 'sharedAction';
+  }
 
-  static get dismissedAction() { return 'dismissedAction'; }
-};
+  static get dismissedAction() {
+    return 'dismissedAction';
+  }
+}
 
 module.exports = Share;
