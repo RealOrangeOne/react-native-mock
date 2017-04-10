@@ -1,10 +1,7 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/View/View.js
  */
-import React from 'react';
-import PropTypes from 'prop-types';
-import styleSheetPropType from '../propTypes/StyleSheetPropType';
-import ViewStylePropTypes from '../propTypes/ViewStylePropTypes';
+import createReactClass from 'create-react-class';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import ViewPropTypes from '../propTypes/ViewPropTypes';
 import ViewAccessibility from './ViewAccessibility';
@@ -23,7 +20,7 @@ const statics = {
   forceTouchAvailable,
 };
 
-const View = React.createClass({
+const View = createReactClass({
   propTypes: ViewPropTypes,
 
   mixins: [NativeMethodsMixin],

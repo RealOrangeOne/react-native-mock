@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import createReactClass from 'create-react-class';
 import TimerMixin from 'react-timer-mixin';
 import ScrollResponder from '../mixins/ScrollResponder';
 import ListViewDataSource from '../api/ListViewDataSource';
@@ -7,7 +8,7 @@ import ScrollView from './ScrollView';
 
 const SCROLLVIEW_REF = 'listviewscroll';
 
-const ListView = React.createClass({
+const ListView = createReactClass({
   propTypes: {
     ...ScrollView.propTypes,
 

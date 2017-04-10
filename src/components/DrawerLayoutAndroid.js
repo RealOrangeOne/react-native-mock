@@ -1,8 +1,8 @@
 /**
  *https://github.com/facebook/react-native/blob/master/Libraries/Components/DrawerAndroid/DrawerLayoutAndroid.android.js
  */
-import React from 'react';
 import PropTypes from 'prop-types';
+import createReactClass from 'create-react-class';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import UIManager from '../NativeModules/UIManager';
 import ColorPropType from '../propTypes/ColorPropType';
@@ -10,7 +10,7 @@ import View from './View';
 
 const DrawerConsts = UIManager.AndroidDrawerLayout.Constants;
 
-const DrawerLayoutAndroid = React.createClass({
+const DrawerLayoutAndroid = createReactClass({
 
   propTypes: {
     ...View.propTypes,

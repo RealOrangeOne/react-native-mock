@@ -1,8 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import createReactClass from 'create-react-class';
 import TouchableWithoutFeedback from './TouchableWithoutFeedback';
 
-const TouchableNativeFeedback = React.createClass({
+const TouchableNativeFeedback = createReactClass({
   propTypes: {
     ...TouchableWithoutFeedback.propTypes,
 
