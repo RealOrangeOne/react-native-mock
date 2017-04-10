@@ -2,9 +2,12 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/View/View.js
  */
 import React from 'react';
-import ViewAccessibility from './ViewAccessibility';
+import PropTypes from 'prop-types';
+import styleSheetPropType from '../propTypes/StyleSheetPropType';
+import ViewStylePropTypes from '../propTypes/ViewStylePropTypes';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import ViewPropTypes from '../propTypes/ViewPropTypes';
+import ViewAccessibility from './ViewAccessibility';
 
 const { AccessibilityTraits, AccessibilityComponentTypes } = ViewAccessibility;
 

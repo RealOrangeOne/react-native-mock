@@ -1,13 +1,11 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/View/ViewStylePropTypes.js
  */
-import React from 'react';
+import PropTypes from 'prop-types';
 import ColorPropType from './ColorPropType';
 import LayoutPropTypes from './LayoutPropTypes';
 import ShadowPropTypesIOS from './ShadowPropTypesIOS';
 import TransformPropTypes from './TransformPropTypes';
-
-const { PropTypes } = React;
 
 /**
  * Warning: Some of these properties may not be supported in all releases.

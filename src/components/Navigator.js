@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import createMockComponent from './createMockComponent';
 import View from './View';
 
@@ -7,7 +8,7 @@ const NavigatorSceneConfigType = PropTypes.shape({
   springFriction: PropTypes.number,
   springTension: PropTypes.number,
   defaultTransitionVelocity: PropTypes.number,
-  animationInterpolators: React.PropTypes.object,
+  animationInterpolators: PropTypes.object,
 });
 
 const NavigatorSceneConfigs = {

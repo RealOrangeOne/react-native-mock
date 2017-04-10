@@ -1,10 +1,9 @@
-import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import React from 'react';
-import View from './View';
-import ScrollView from './ScrollView';
+import PropTypes from 'prop-types';
+import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import WebViewManager from '../NativeModules/WebViewManager';
-
-const { PropTypes } = React;
+import ScrollView from './ScrollView';
+import View from './View';
 
 const RCT_WEBVIEW_REF = 'webview';
 

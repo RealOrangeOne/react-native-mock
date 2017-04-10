@@ -1,13 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import PointPropType from '../propTypes/PointPropType';
 import ScrollResponder from '../mixins/ScrollResponder';
-import View from './View';
 import ViewStylePropTypes from '../propTypes/ViewStylePropTypes';
 import ScrollViewManager from '../NativeModules/ScrollViewManager';
 import styleSheetPropType from '../propTypes/StyleSheetPropType';
-
-const { PropTypes } = React;
+import View from './View';
 
 const SCROLLVIEW = 'ScrollView';
 const INNERVIEW = 'InnerScrollView';
