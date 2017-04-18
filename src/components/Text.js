@@ -46,7 +46,7 @@ const Text = React.createClass({
   mixins: [NativeMethodsMixin],
 
   render() {
-    return null;
+    return this.props.children;
   },
 });
 
