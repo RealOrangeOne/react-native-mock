@@ -1,6 +1,6 @@
 {
-  "name": "react-native-mock",
-  "version": "0.3.1",
+  "name": "@nerdwallet/react-native-mock",
+  "version": "0.3.2",
   "description": "A fully mocked and test-friendly version of react native",
   "main": "build/react-native.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RealOrangeOne/react-native-mock.git"
+    "url": "git+https://github.com/NerdWallet/react-native-mock.git"
   },
   "keywords": [
     "react",
