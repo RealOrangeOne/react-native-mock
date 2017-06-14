@@ -1,4 +1,9 @@
-# react-native-mock [![Build Status](https://travis-ci.org/RealOrangeOne/react-native-mock.svg?branch=master)](https://travis-ci.org/RealOrangeOne/react-native-mock)
+# Why is this forked?
+We need to fork this in order for our unit-tests to run in https://github.com/NerdWallet/mobile-creditcards
+For more context, we need to use React 16 for the newer versions of React Native. However, this library does not support that yet.
+See https://github.com/RealOrangeOne/react-native-mock/pull/130, https://github.com/RealOrangeOne/react-native-mock/issues/129, and https://github.com/airbnb/enzyme/issues/928
+Once these have been resolved, we can point back to the original repo. If these issues are not resolved soon, then we probably need to switch testing frameworks.
+
 
 [![Join the chat at https://gitter.im/RealOrangeOne/react-native-mock](https://badges.gitter.im/RealOrangeOne/react-native-mock.svg)](https://gitter.im/RealOrangeOne/react-native-mock?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 A fully mocked and test-friendly version of react native
