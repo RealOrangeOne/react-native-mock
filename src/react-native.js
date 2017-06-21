@@ -101,6 +101,7 @@ const ReactNative = {
   EdgeInsetsPropType: require('./propTypes/EdgeInsetsPropType'),
   PointPropType: require('./propTypes/PointPropType'),
   NavigationExperimental: require('./Libraries/NavigationExperimental'),
+  ViewPropTypes: require('./propTypes/ViewPropTypes'),
 };
 
 
