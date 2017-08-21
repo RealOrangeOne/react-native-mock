@@ -1,6 +1,6 @@
 {
   "name": "react-native-mock",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A fully mocked and test-friendly version of react native",
   "main": "build/react-native.js",
   "scripts": {
@@ -45,18 +45,18 @@
     "react-native": "^0.38.0"
   },
   "dependencies": {
-    "cubic-bezier": "^0.1.2",
-    "invariant": "^2.2.1",
-    "keymirror": "^0.1.1",
-    "raf": "^3.2.0",
-    "react-addons-create-fragment": "^15.4.0",
-    "react-addons-perf": "^15.4.0",
-    "react-addons-pure-render-mixin": "^15.4.0",
-    "react-addons-test-utils": "^15.4.0",
-    "react-addons-update": "^15.4.0",
-    "react-dom": "^15.4.0",
-    "react-timer-mixin": "^0.13.3",
-    "warning": "^2.1.0"
+    "cubic-bezier": "0.1.2",
+    "invariant": "2.2.1",
+    "keymirror": "0.1.1",
+    "raf": "3.2.0",
+    "react-addons-create-fragment": "15.4.0",
+    "react-addons-perf": "15.4.0",
+    "react-addons-pure-render-mixin": "15.4.0",
+    "react-addons-test-utils": "15.4.0",
+    "react-addons-update": "15.4.0",
+    "react-dom": "15.4.0",
+    "react-timer-mixin": "0.13.3",
+    "warning": "2.1.0"
   },
   "peerDependencies": {
     "react": "*",
