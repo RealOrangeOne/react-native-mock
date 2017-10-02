@@ -2,15 +2,13 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/View/ViewPropTypes.js
  */
 
-import React from 'react';
+import PropTypes from 'prop-types';
 import EdgeInsetsPropType from './EdgeInsetsPropType';
 import styleSheetPropType from './StyleSheetPropType';
 import ViewStylePropTypes from './ViewStylePropTypes';
 import { AccessibilityComponentTypes, AccessibilityTraits } from '../components/ViewAccessibility';
 
 const stylePropType = styleSheetPropType(ViewStylePropTypes);
-
-const { PropTypes } = React;
 
 const ViewPropTypes = {
   /**
