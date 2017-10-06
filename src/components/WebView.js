@@ -4,6 +4,7 @@ import View from './View';
 import ScrollView from './ScrollView';
 import WebViewManager from '../NativeModules/WebViewManager';
 import PropTypes from 'prop-types';
+import createReactClass from 'create-react-class';
 
 const RCT_WEBVIEW_REF = 'webview';
 
@@ -18,7 +19,7 @@ const NavigationType = {
 
 const JSNavigationScheme = WebViewManager.JSNavigationScheme;
 
-const WebView = React.createClass({
+const WebView = createReactClass({
   propTypes: {
     ...View.propTypes,
     url: PropTypes.string,

@@ -1,6 +1,6 @@
 {
-  "name": "react-native-mock",
-  "version": "0.3.1",
+  "name": "@edtechfoundry/react-native-mock",
+  "version": "0.4.1",
   "description": "A fully mocked and test-friendly version of react native",
   "main": "build/react-native.js",
   "scripts": {
@@ -45,6 +45,7 @@
     "react-native": "^0.38.0"
   },
   "dependencies": {
+    "create-react-class": "^15.6.2",
     "cubic-bezier": "^0.1.2",
     "invariant": "^2.2.1",
     "keymirror": "^0.1.1",
