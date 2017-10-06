@@ -4,7 +4,7 @@
 import createMockComponent from '../../components/createMockComponent';
 import StateUtils from './NavigationStateUtils';
 import Card from './NavigationCard';
-import PropTypes from './NavigationPropTypes';
+import NavigationPropTypes from './NavigationPropTypes';
 
 module.exports = {
   StateUtils,
@@ -16,5 +16,5 @@ module.exports = {
   CardStack: createMockComponent('NavigationCardStack'),
   Header: createMockComponent('NavigationHeader'),
 
-  PropTypes,
+  NavigationPropTypes,
 };

@@ -2,12 +2,13 @@
 import React from 'react';
 
 import TouchableWithoutFeedback from './TouchableWithoutFeedback';
+import PropTypes from 'prop-types';
 
 const TouchableNativeFeedback = React.createClass({
   propTypes: {
     ...TouchableWithoutFeedback.propTypes,
 
-    background: React.PropTypes.object
+    background: PropTypes.object
   },
   statics: {
     SelectableBackground() {},
