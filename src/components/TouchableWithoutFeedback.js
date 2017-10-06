@@ -1,7 +1,6 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/Touchable/TouchableWithoutFeedback.js
  */
-import React from 'react';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import View from './View';
 import PropTypes from 'prop-types';
@@ -13,7 +12,7 @@ const TouchableWithoutFeedback = createReactClass({
     accessibilityComponentType: PropTypes.oneOf(View.AccessibilityComponentType),
     accessibilityTraits: PropTypes.oneOfType([
       PropTypes.oneOf(View.AccessibilityTraits),
-      PropTypes.arrayOf(React.PropTypes.oneOf(View.AccessibilityTraits)),
+      PropTypes.arrayOf(PropTypes.oneOf(View.AccessibilityTraits)),
     ]),
     /**
      * If true, disable all interactions for this component.
