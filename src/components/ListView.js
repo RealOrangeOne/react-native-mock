@@ -4,7 +4,7 @@ import TimerMixin from 'react-timer-mixin';
 import ScrollView from './ScrollView';
 import ListViewDataSource from '../api/ListViewDataSource';
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 const SCROLLVIEW_REF = 'listviewscroll';
 
 

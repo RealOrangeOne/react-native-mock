@@ -4,7 +4,7 @@ import View from './View';
 import ScrollView from './ScrollView';
 import WebViewManager from '../NativeModules/WebViewManager';
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 const RCT_WEBVIEW_REF = 'webview';
 

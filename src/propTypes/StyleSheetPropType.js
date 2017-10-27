@@ -1,10 +1,9 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/StyleSheet/StyleSheetPropType.js
  */
-import React from 'react';
 import flattenStyle from './flattenStyle';
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 function StyleSheetPropType(shape) {
   const shapePropType = PropTypes.shape(shape);

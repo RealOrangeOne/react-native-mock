@@ -7,7 +7,7 @@ import ViewStylePropTypes from '../propTypes/ViewStylePropTypes';
 import ScrollViewManager from '../NativeModules/ScrollViewManager';
 import styleSheetPropType from '../propTypes/StyleSheetPropType';
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 const SCROLLVIEW = 'ScrollView';
 const INNERVIEW = 'InnerScrollView';
