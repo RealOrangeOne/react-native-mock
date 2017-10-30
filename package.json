@@ -41,20 +41,23 @@
     "eslint-plugin-react": "5.1.1",
     "eslint-plugin-react-native": "1.0.2",
     "mocha": "2.5.3",
-    "react": "^15.4.0",
-    "react-native": "^0.38.0"
+    "react": "~15.4.1",
+    "react-dom": "^15.4.2",
+    "react-native": "^0.42.0"
   },
   "dependencies": {
     "cubic-bezier": "^0.1.2",
     "invariant": "^2.2.1",
     "keymirror": "^0.1.1",
+    "prop-types": "^15.6.0",
     "raf": "^3.2.0",
     "react-addons-create-fragment": "^15.4.0",
     "react-addons-perf": "^15.4.0",
     "react-addons-pure-render-mixin": "^15.4.0",
     "react-addons-test-utils": "^15.4.0",
     "react-addons-update": "^15.4.0",
-    "react-dom": "^15.4.0",
+    "react-dom": "~15.4.1",
+    "react-mixin": "^2.0.2",
     "react-timer-mixin": "^0.13.3",
     "warning": "^2.1.0"
   },

@@ -1,12 +1,12 @@
 import React from 'react';
 
 function createMockComponent(displayName) {
-  return React.createClass({
-    displayName,
+  return class extends React.Component {
+    static displayName = displayName;
     render() {
       return null;
-    },
-  });
+    }
+  };
 }
 
 module.exports = createMockComponent;
