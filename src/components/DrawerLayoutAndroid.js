@@ -6,13 +6,14 @@ import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
 import UIManager from '../NativeModules/UIManager';
 import ColorPropType from '../propTypes/ColorPropType';
+import ReactPropTypes from 'prop-types';
+import reactMixin from 'react-mixin';
 
-const ReactPropTypes = React.PropTypes;
 const DrawerConsts = UIManager.AndroidDrawerLayout.Constants;
 
-const DrawerLayoutAndroid = React.createClass({
+class DrawerLayoutAndroid extends React.Component {
 
-  propTypes: {
+  static propTypes = {
     ...View.propTypes,
     /**
      * Determines whether the keyboard gets dismissed in response to a drag.
@@ -90,26 +91,23 @@ const DrawerLayoutAndroid = React.createClass({
      * effect on API 21+.
      */
     statusBarBackgroundColor: ColorPropType,
-  },
+  };
 
-  mixins: [NativeMethodsMixin],
-
-  statics: {
-    positions: DrawerConsts.DrawerPosition
-  },
+  static positions = DrawerConsts.DrawerPosition;
 
   openDrawer() {
     // do nothing
-  },
+  }
 
   closeDrawer() {
     // do nothing
-  },
+  }
 
   render() {
     return null;
   }
+}
 
-});
+reactMixin(DrawerLayoutAndroid.prototype, NativeMethodsMixin);
 
 module.exports = DrawerLayoutAndroid;

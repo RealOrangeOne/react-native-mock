@@ -4,47 +4,48 @@
 import React from 'react';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import View from './View';
+import PropTypes from 'prop-types';
 
-const TouchableWithoutFeedback = React.createClass({
-  propTypes: {
-    accessible: React.PropTypes.bool,
-    accessibilityComponentType: React.PropTypes.oneOf(View.AccessibilityComponentType),
-    accessibilityTraits: React.PropTypes.oneOfType([
-      React.PropTypes.oneOf(View.AccessibilityTraits),
-      React.PropTypes.arrayOf(React.PropTypes.oneOf(View.AccessibilityTraits)),
+class TouchableWithoutFeedback extends React.Component {
+  static propTypes = {
+    accessible: PropTypes.bool,
+    accessibilityComponentType: PropTypes.oneOf(View.AccessibilityComponentType),
+    accessibilityTraits: PropTypes.oneOfType([
+      PropTypes.oneOf(View.AccessibilityTraits),
+      PropTypes.arrayOf(PropTypes.oneOf(View.AccessibilityTraits)),
     ]),
     /**
      * If true, disable all interactions for this component.
      */
-    disabled: React.PropTypes.bool,
+    disabled: PropTypes.bool,
     /**
      * Called when the touch is released, but not if cancelled (e.g. by a scroll
      * that steals the responder lock).
      */
-    onPress: React.PropTypes.func,
-    onPressIn: React.PropTypes.func,
-    onPressOut: React.PropTypes.func,
+    onPress: PropTypes.func,
+    onPressIn: PropTypes.func,
+    onPressOut: PropTypes.func,
     /**
      * Invoked on mount and layout changes with
      *
      *   `{nativeEvent: {layout: {x, y, width, height}}}`
      */
-    onLayout: React.PropTypes.func,
+    onLayout: PropTypes.func,
 
-    onLongPress: React.PropTypes.func,
+    onLongPress: PropTypes.func,
 
     /**
      * Delay in ms, from the start of the touch, before onPressIn is called.
      */
-    delayPressIn: React.PropTypes.number,
+    delayPressIn: PropTypes.number,
     /**
      * Delay in ms, from the release of the touch, before onPressOut is called.
      */
-    delayPressOut: React.PropTypes.number,
+    delayPressOut: PropTypes.number,
     /**
      * Delay in ms, from onPressIn, before onLongPress is called.
      */
-    delayLongPress: React.PropTypes.number,
+    delayLongPress: PropTypes.number,
     /**
      * When the scroll view is disabled, this defines how far your touch may
      * move off of the button, before deactivating the button. Once deactivated,
@@ -62,10 +63,10 @@ const TouchableWithoutFeedback = React.createClass({
      * views.
      */
     hitSlop: EdgeInsetsPropType,
-  },
+  };
   render() {
     return null;
-  },
-});
+  }
+}
 
 module.exports = TouchableWithoutFeedback;

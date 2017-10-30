@@ -4,12 +4,12 @@
 import React from 'react';
 
 function requireNativeComponent(viewName, componentInterface, extraConfig) {
-  return React.createClass({
-    displayName: viewName,
+  return class extends React.Component {
+    static displayName = viewName;
     render() {
       return null;
-    },
-  });
+    }
+  };
 }
 
 module.exports = requireNativeComponent;

@@ -7,11 +7,11 @@ import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import ImageStylePropTypes from '../propTypes/ImageStylePropTypes';
 import ImageResizeMode from '../propTypes/ImageResizeMode';
-
 import PropTypes from 'prop-types';
+import reactMixin from 'react-mixin';
 
-const Image = React.createClass({
-  propTypes: {
+class Image extends React.Component {
+  static propTypes = {
     style: styleSheetPropType(ImageStylePropTypes),
     /**
      * `uri` is a string representing the resource identifier for the image, which
@@ -108,20 +108,15 @@ const Image = React.createClass({
      * Invoked when load either succeeds or fails
      */
     onLoadEnd: PropTypes.func,
-  },
-  mixins: [NativeMethodsMixin],
-  statics: {
-    resizeMode: ImageResizeMode,
-    getSize(uri, success, failure) {
-
-    },
-    prefetch(uri) {
-
-    }
-  },
+  };
+  static resizeMode = ImageResizeMode;
+  static getSize(uri, success, failure) {}
+  static prefetch(uri) {}
   render() {
     return null;
-  },
-});
+  }
+}
+
+reactMixin(Image.prototype, NativeMethodsMixin);
 
 module.exports = Image;

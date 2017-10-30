@@ -3,7 +3,6 @@ import React from 'react';
 import View from './View';
 import ScrollView from './ScrollView';
 import WebViewManager from '../NativeModules/WebViewManager';
-
 import PropTypes from 'prop-types';
 
 const RCT_WEBVIEW_REF = 'webview';
@@ -19,8 +18,8 @@ const NavigationType = {
 
 const JSNavigationScheme = WebViewManager.JSNavigationScheme;
 
-const WebView = React.createClass({
-  propTypes: {
+class WebView extends React.Component {
+  static propTypes = {
     ...View.propTypes,
     url: PropTypes.string,
     html: PropTypes.string,
@@ -113,33 +112,31 @@ const WebView = React.createClass({
      * @platform ios
      */
     allowsInlineMediaPlayback: PropTypes.bool,
-  },
+  };
 
-  statics: {
-    JSNavigationScheme,
-    NavigationType,
-  },
+  static JSNavigationScheme = JSNavigationScheme;
+  static NavigationType = NavigationType;
 
   getWebViewHandle() {
     // TODO(lmr): React.findNodeHandle
     return React.findNodeHandle(this.refs[RCT_WEBVIEW_REF]);
-  },
+  }
 
   reload() {
     // do nothing
-  },
+  }
 
   goForward() {
     // do nothing
-  },
+  }
 
   goBack() {
     // do nothing
-  },
+  }
 
   render() {
     return null;
-  },
-});
+  }
+}
 
 module.exports = WebView;

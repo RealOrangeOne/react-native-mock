@@ -5,11 +5,11 @@ import React from 'react';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
 import ColorPropType from '../propTypes/ColorPropType';
-
 import PropTypes from 'prop-types';
+import reactMixin from 'react-mixin';
 
-const ActivityIndicator = React.createClass({
-  propTypes: {
+class ActivityIndicator extends React.Component {
+  static propTypes = {
     ...View.propTypes,
     /**
      * Whether to show the indicator (true, the default) or hide it (false).
@@ -36,11 +36,12 @@ const ActivityIndicator = React.createClass({
      *   {nativeEvent: { layout: {x, y, width, height}}}.
      */
     onLayout: PropTypes.func,
-  },
-  mixins: [NativeMethodsMixin],
+  };
   render() {
     return null;
-  },
-});
+  }
+}
+
+reactMixin(ActivityIndicator.prototype, NativeMethodsMixin);
 
 module.exports = ActivityIndicator;
