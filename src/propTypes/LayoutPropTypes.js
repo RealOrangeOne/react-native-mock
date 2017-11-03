@@ -18,26 +18,26 @@ const { PropTypes } = React;
  * algorithm and affect the positioning and sizing of views.
  */
 const LayoutPropTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  top: PropTypes.number,
-  left: PropTypes.number,
-  right: PropTypes.number,
-  bottom: PropTypes.number,
-  margin: PropTypes.number,
-  marginVertical: PropTypes.number,
-  marginHorizontal: PropTypes.number,
-  marginTop: PropTypes.number,
-  marginBottom: PropTypes.number,
-  marginLeft: PropTypes.number,
-  marginRight: PropTypes.number,
-  padding: PropTypes.number,
-  paddingVertical: PropTypes.number,
-  paddingHorizontal: PropTypes.number,
-  paddingTop: PropTypes.number,
-  paddingBottom: PropTypes.number,
-  paddingLeft: PropTypes.number,
-  paddingRight: PropTypes.number,
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  left: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  right: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  bottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  marginVertical: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  marginHorizontal: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  marginTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  marginBottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  marginLeft: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  marginRight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  padding: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  paddingVertical: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  paddingHorizontal: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  paddingTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  paddingBottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  paddingLeft: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  paddingRight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   borderWidth: PropTypes.number,
   borderTopWidth: PropTypes.number,
   borderRightWidth: PropTypes.number,
@@ -52,7 +52,9 @@ const LayoutPropTypes = {
   // https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
   flexDirection: PropTypes.oneOf([
     'row',
-    'column'
+    'row-reverse',
+    'column',
+    'column-reverse'
   ]),
 
   // https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
