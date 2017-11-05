@@ -113,7 +113,7 @@ describe('Components', function () {
   it('should render ProgressBarAndroid', function () {
     const { ProgressBarAndroid } = ReactNative;
     const instance = shallow(<ProgressBarAndroid />);
-    expect(instance.html()).to.include('<AndroidProgressBar');
+    expect(instance.html()).to.include('<ActivityIndicator');
   });
 
   it('should render ProgressViewIOS', function () {

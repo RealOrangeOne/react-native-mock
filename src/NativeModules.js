@@ -1,4 +1,5 @@
 import sinon from 'sinon';
+const ReactNativeVersion = require('react-native/Libraries/Core/ReactNativeVersion');
 
 module.exports = {
   AlertManager: {
@@ -145,7 +146,8 @@ module.exports = {
     osVersion: '10',
     interfaceIdiom: 'pad',
     isTesting: true,
-    version: '7'
+    version: '7',
+    reactNativeVersion: ReactNativeVersion.version
   },
   AndroidConstants: {
     Version: '7',
@@ -155,5 +157,15 @@ module.exports = {
     osVersion: '10',
     interfaceIdiom: 'pad',
     isTesting: true
+  },
+  DeviceInfo: {
+    Dimensions: {
+      windowPhysicalPixels: { // iPhone 6
+        fontScale: 2,
+        height: 1334,
+        scale: 2,
+        width: 750
+      }
+    }
   }
 };
