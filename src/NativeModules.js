@@ -159,13 +159,6 @@ module.exports = {
     isTesting: true
   },
   DeviceInfo: {
-    Dimensions: {
-      windowPhysicalPixels: { // iPhone 6
-        fontScale: 2,
-        height: 1334,
-        scale: 2,
-        width: 750
-      }
-    }
+    Dimensions: []
   }
 };
