@@ -55,7 +55,6 @@ describe('Components', function () {
 
   it('should have DrawerLayoutAndroid with static properties for the positions', () => {
     const { DrawerLayoutAndroid } = ReactNative;
-    expect(DrawerLayoutAndroid.positions).to.be.an.object;
     expect(DrawerLayoutAndroid.positions).to.deep.equal({
       Left: 'LEFT',
       Right: 'RIGHT'
