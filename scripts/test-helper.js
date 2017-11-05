@@ -11,11 +11,12 @@ chai.use(sinonChai);
 chai.use(chaiAsPromised);
 
 // Jsdom document & window
-const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
-const win = doc.defaultView;
+const { JSDOM } = jsdom;
+const dom = new JSDOM('<!doctype html><html><body></body></html>');
+const win = dom.window;
 
 // Add to global
-global.document = doc;
+global.document = win.document;
 global.window = win;
 
 // Add window keys to global window
