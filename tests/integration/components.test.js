@@ -23,7 +23,7 @@ describe('Components', function () {
     it(`should render ${component}`, function () {
       const Component = ReactNative[component];
       const instance = shallow(<Component />);
-      expect(instance.html()).to.equal(buildComponentHTML(component));
+      expect(instance.html()).to.include(`<${component}`);
     });
   });
 
@@ -75,7 +75,7 @@ describe('Components', function () {
   it('should render KeyboardAvoidingView', function () {
     const { KeyboardAvoidingView } = ReactNative;
     const instance = shallow(<KeyboardAvoidingView />);
-    expect(instance.html()).to.equal(buildComponentHTML('View'));
+    expect(instance.html()).to.include('<View');
   });
 
   it('should render NavigatorIOS', function () {
@@ -165,13 +165,13 @@ describe('Components', function () {
     const { TouchableOpacity, Text } = ReactNative;
     const instance = shallow(<TouchableOpacity><Text /></TouchableOpacity>);
     expect(instance.html()).to.include('<View');
-    expect(instance.html()).to.include(buildComponentHTML('Text'));
+    expect(instance.html()).to.include('<Text');
   });
 
   it('should render TouchableWithoutFeedback', function () {
     const { TouchableWithoutFeedback, Text } = ReactNative;
     const instance = shallow(<TouchableWithoutFeedback><Text /></TouchableWithoutFeedback>);
-    expect(instance.html()).to.equal(buildComponentHTML('Text'));
+    expect(instance.html()).to.include('<Text');
   });
 
   it('should render ViewPagerAndroid', function () {
