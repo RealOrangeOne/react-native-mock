@@ -159,6 +159,13 @@ module.exports = {
     isTesting: true
   },
   DeviceInfo: {
-    Dimensions: []
+    Dimensions: {
+      windowPhysicalPixels: {
+        fontScale: 2,
+        height: 1334,
+        scale: 2,
+        width: 750
+      }
+    }
   }
 };
