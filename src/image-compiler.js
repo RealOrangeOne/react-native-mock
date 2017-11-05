@@ -4,6 +4,7 @@
 */
 
 const m = require('module');
+
 const originalLoader = m._load;
 
 m._load = function hookedLoader(request, parent, isMain) {

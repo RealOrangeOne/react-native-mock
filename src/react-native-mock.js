@@ -33,7 +33,7 @@ mockery.registerMock('ensureComponentIsNative', () => true);
 mockery.registerMock('requireNativeComponent', sinon.spy(viewName => props => React.createElement(
   viewName,
   props,
-  props.children  // eslint-disable-line react/prop-types
+  props.children // eslint-disable-line react/prop-types
 )));
 mockery.registerMock('ErrorUtils', require('./mocks/ErrorUtils'));
 

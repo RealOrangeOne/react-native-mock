@@ -3,7 +3,7 @@ import { expect } from 'chai';
 
 describe('Image Compiler', function () {
   it('should require a jpg image', function () {
-    expect(require('foo.jpg')).to.deep.equal({ uri: 'foo.jpg' });  // eslint-disable-line import/no-unresolved
+    expect(require('foo.jpg')).to.deep.equal({ uri: 'foo.jpg' }); // eslint-disable-line import/no-unresolved
   });
 
   it('should require a jpeg image', function () {

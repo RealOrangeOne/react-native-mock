@@ -32,6 +32,11 @@
         "ignoreComments": true
       }
     ],
-    "no-multiple-empty-lines": [2, {"max": 3}]
+    "no-multiple-empty-lines": [2, {"max": 3}],
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-filename-extension": 0,
+    "import/no-dynamic-require": 0,
+    "no-multi-assign": 0,
+    "o-undef": 0,
   }
 }

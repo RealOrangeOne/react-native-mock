@@ -1,4 +1,5 @@
 import sinon from 'sinon';
+
 const ReactNativeVersion = require('react-native/Libraries/Core/ReactNativeVersion');
 
 module.exports = {
@@ -64,11 +65,11 @@ module.exports = {
   },
   IntentAndroid: {
     openURL: sinon.spy(),
-    canOpenURL: sinon.spy(url => new Promise((resolve) => resolve(true)))
+    canOpenURL: sinon.spy(url => new Promise(resolve => resolve(true)))
   },
   LinkingManager: {
     openURL: sinon.spy(),
-    canOpenURL: sinon.spy(url => new Promise((resolve) => resolve(true)))
+    canOpenURL: sinon.spy(url => new Promise(resolve => resolve(true)))
   },
   ModalFullscreenViewManager: {},
   Networking: {

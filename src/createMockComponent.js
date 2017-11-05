@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default name => {
+export default (name) => {
   const RealComponent = require(name);
   const realComponentName = RealComponent.name === 'Component' ? name : RealComponent.name;
   const componentName = (RealComponent.displayName || realComponentName || name).replace(/^(RCT|RK)/, '');
 
-  const Component = class extends RealComponent {  // eslint-disable-line react/prefer-stateless-function
+  const Component = class extends RealComponent { // eslint-disable-line react/prefer-stateless-function
     render() {
       return React.createElement(
         componentName,

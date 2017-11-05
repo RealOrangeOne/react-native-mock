@@ -45,7 +45,7 @@ describe('Mock Component', function () {
   });
 
   it('should be accessible globally', function () {
-    const RequiredComponent = require('requireNativeComponent')('test');  // eslint-disable-line import/no-unresolved
+    const RequiredComponent = require('requireNativeComponent')('test'); // eslint-disable-line import/no-unresolved
     const Component = createMockComponent('test');
     expect(shallow(<Component />).html()).to.equal(shallow(<RequiredComponent />).html());
   });
