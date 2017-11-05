@@ -78,15 +78,6 @@ describe('Components', function () {
     expect(instance.html()).to.equal(buildComponentHTML('View'));
   });
 
-  it('should render Navigator', function () {
-    const { Navigator, Text } = ReactNative;
-    const renderScene = sinon.spy((route, navigator) => <Text>Hello!</Text>);
-    const instance = shallow(<Navigator initialRoute={{}} renderScene={renderScene} />);
-    expect(instance.html()).to.include('View');
-    expect(instance.html()).to.include('<Text>Hello!</Text>');
-    expect(renderScene).to.have.been.called;
-  });
-
   it('should render NavigatorIOS', function () {
     const { NavigatorIOS, Text } = ReactNative;
     const initialRoute = {
