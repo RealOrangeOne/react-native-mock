@@ -1,9 +1,9 @@
 import { expect } from 'chai';
+import sinon from 'sinon';
+
+import { expectSpy } from './test-utils';
 
 const NativeModules = require('../src/NativeModules');
-
-import sinon from 'sinon';
-import { expectSpy } from './test-utils';
 
 describe('Native Modules', function () {
   it('Should be defined', function () {

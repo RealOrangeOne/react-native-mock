@@ -21,9 +21,9 @@ global.document = win.document;
 global.window = win;
 
 // Add window keys to global window
-Object.keys(window).forEach((key) => {
+Object.keys(window).forEach((key) => { // eslint-disable-line no-undef
   if (!(key in global)) {
-    global[key] = window[key];
+    global[key] = window[key]; // eslint-disable-line no-undef
   }
 });
 

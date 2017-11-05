@@ -1,10 +1,11 @@
 import mockery from 'mockery';
 import _ from 'underscore';
+import React from 'react';
+import sinon from 'sinon';
+
 import defineGlobalProperty from './defineGlobalProperty';
 import createMockComponent, { MOCK_COMPONENTS } from './createMockComponent';
 import mockNativeModules from './NativeModules';
-import React from 'react';
-import sinon from 'sinon';
 
 
 // Setup babel to build react-native source

@@ -1,8 +1,8 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import { buildComponentHTML } from '../test-utils';
 import sinon from 'sinon';
+import { buildComponentHTML } from '../test-utils';
 
 const COMPONENTS = [
   'Image',

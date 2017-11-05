@@ -24,10 +24,10 @@ class ListViewMock extends React.Component {
     const { dataSource, renderFooter, renderHeader } = this.props;
     const rows = [renderHeader && renderHeader()];
     const allRowIDs = dataSource.rowIdentities;
-    for (let sectionIdx = 0; sectionIdx < allRowIDs.length; sectionIdx++) {
+    for (let sectionIdx = 0; sectionIdx < allRowIDs.length; sectionIdx += 1) {
       const sectionID = dataSource.sectionIdentities[sectionIdx];
       const rowIDs = allRowIDs[sectionIdx];
-      for (let rowIdx = 0; rowIdx < rowIDs.length; rowIdx++) {
+      for (let rowIdx = 0; rowIdx < rowIDs.length; rowIdx += 1) {
         const rowID = rowIDs[rowIdx];
         rows.push(<StaticRenderer
           shouldUpdate

@@ -14,7 +14,7 @@ import { expect } from 'chai';
 describe('Easing', () => {
   const { Easing } = require('react-native');
 
-  it('should have all functions', function () {
+  it('should have all functions', () => {
     expect(Easing.step0).to.be.a('function');
     expect(Easing.step1).to.be.a('function');
     expect(Easing.linear).to.be.a('function');
@@ -34,8 +34,8 @@ describe('Easing', () => {
     expect(Easing.inOut).to.be.a('function');
   });
 
-  describe('linear', function () {
-    it('should work', function () {
+  describe('linear', () => {
+    it('should work', () => {
       const easing = Easing.linear;
 
       expect(easing(0)).to.equal(0);
@@ -44,7 +44,7 @@ describe('Easing', () => {
       expect(easing(1)).to.equal(1);
     });
 
-    it('should work with ease in', function () {
+    it('should work with ease in', () => {
       const easing = Easing.in(Easing.linear);
       expect(easing(0)).to.equal(0);
       expect(easing(0.5)).to.equal(0.5);
@@ -52,7 +52,7 @@ describe('Easing', () => {
       expect(easing(1)).to.equal(1);
     });
 
-    it('should work with ease out', function () {
+    it('should work with ease out', () => {
       const easing = Easing.out(Easing.linear);
       expect(easing(0)).to.equal(0);
       expect(easing(0.5)).to.equal(0.5);
@@ -61,7 +61,7 @@ describe('Easing', () => {
     });
   });
 
-  describe('quad', function () {
+  describe('quad', () => {
     it('should work with ease in', () => {
       function easeInQuad(t) {
         return t * t;
@@ -87,7 +87,7 @@ describe('Easing', () => {
         if (t < 1) {
           return 0.5 * t * t;
         }
-        return -((t - 1) * (t - 3) - 1) / 2;
+        return -(((t - 1) * (t - 3)) - 1) / 2;
       }
       const easing = Easing.inOut(Easing.quad);
       for (let t = -0.5; t < 1.5; t += 0.1) {
@@ -104,12 +104,12 @@ describe('Easing', () => {
     }
   });
 
-  describe('samples', function () {
+  describe('samples', () => {
     function sampleEasingFunction(easing) {
       const DURATION = 300;
-      const tickCount = Math.round(DURATION * 60 / 1000);
+      const tickCount = Math.round((DURATION * 60) / 1000);
       const samples = [];
-      for (let i = 0; i <= tickCount; i++) {
+      for (let i = 0; i <= tickCount; i += 1) {
         samples.push(easing(i / tickCount));
       }
       return samples;
@@ -135,8 +135,8 @@ describe('Easing', () => {
       out_back_: [2.220446049250313e-16, 0.24189928326474652, 0.44705229080932807, 0.6182384259259258, 0.7582370919067215, 0.8698276920438959, 0.9557896296296297, 1.0189023079561044, 1.0619451303155008, 1.0876975, 1.0989388203017834, 1.0984484945130315, 1.089005925925926, 1.0733905178326475, 1.0543816735253773, 1.0347587962962963, 1.0173012894375857, 1.0047885562414267, 1] // eslint-disable-line max-len
     };
 
-    Object.keys(SAMPLES).forEach(function (type) {
-      it('should ease ' + type, function () {
+    Object.keys(SAMPLES).forEach((type) => {
+      it(`should ease ${type}`, () => {
         const [modeName, easingName, isFunction] = type.split('_');
         let easing = Easing[easingName];
         if (isFunction !== undefined) {
