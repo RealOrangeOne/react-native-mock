@@ -8,7 +8,6 @@ node_js:
 
 # values taken from react-native's package.json
 env:
-  - REACT_NATIVE_VERSION=0.49 REACT_VERSION=16.0.0-beta.5
   - REACT_NATIVE_VERSION=0.50 REACT_VERSION=16.0.0
 
 
