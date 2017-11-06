@@ -11,8 +11,8 @@ node_js:
 env:
   - REACT_NATIVE_VERSION=0.50 REACT_VERSION=16.0.0
 
+before_install:
+  - npm install react@~$REACT_VERSION react-dom@~$REACT_VERSION react-native@~$REACT_NATIVE_VERSION
 
 before_script:
-  - npm uninstall react-native react react-dom react-addons-test-utils
-  - npm install react@~$REACT_VERSION react-dom@~$REACT_VERSION react-native@~$REACT_NATIVE_VERSION
   - npm run build-haste
