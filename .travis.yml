@@ -4,6 +4,7 @@ node_js:
   - "6.0.0"
   - "4"
   - "6"
+  - "8"
 
 
 # values taken from react-native's package.json
