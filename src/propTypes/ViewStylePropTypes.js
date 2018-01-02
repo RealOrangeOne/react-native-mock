@@ -7,7 +7,7 @@ import LayoutPropTypes from './LayoutPropTypes';
 import ShadowPropTypesIOS from './ShadowPropTypesIOS';
 import TransformPropTypes from './TransformPropTypes';
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 /**
  * Warning: Some of these properties may not be supported in all releases.

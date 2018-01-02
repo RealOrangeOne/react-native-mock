@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 /**
  * React Native's layout system is based on Flexbox and is powered both
