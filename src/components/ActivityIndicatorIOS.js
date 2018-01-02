@@ -5,7 +5,7 @@ import React from 'react';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 const ActivityIndicatorIOS = React.createClass({
   propTypes: {

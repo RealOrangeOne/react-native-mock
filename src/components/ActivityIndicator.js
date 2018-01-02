@@ -6,7 +6,7 @@ import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
 import ColorPropType from '../propTypes/ColorPropType';
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 const ActivityIndicator = React.createClass({
   propTypes: {
