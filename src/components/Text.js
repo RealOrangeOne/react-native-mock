@@ -2,13 +2,14 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/Text/Text.js
  */
 import React from 'react';
+import createClass from 'create-react-class';
 import styleSheetPropType from '../propTypes/StyleSheetPropType';
 import TextStylePropTypes from '../propTypes/TextStylePropTypes';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 
 const stylePropType = styleSheetPropType(TextStylePropTypes);
 
-const Text = React.createClass({
+const Text = createClass({
   propTypes: {
     /**
      * Used to truncate the text with an ellipsis after computing the text

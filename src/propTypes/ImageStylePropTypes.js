@@ -2,13 +2,14 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/Image/ImageStylePropTypes.js
  */
 import React from 'react';
+import createClass from 'create-react-class';
 import ColorPropType from './ColorPropType';
 import TransformPropTypes from './TransformPropTypes';
 import ShadowPropTypesIOS from './ShadowPropTypesIOS';
 import LayoutPropTypes from './LayoutPropTypes';
 import ImageResizeMode from './ImageResizeMode';
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 const ImageStylePropTypes = {
   ...LayoutPropTypes,

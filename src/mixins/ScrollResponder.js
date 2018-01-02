@@ -3,6 +3,7 @@ import Platform from '../plugins/Platform';
 import Dimensions from '../api/Dimensions';
 import DeviceEventEmitter from '../plugins/DeviceEventEmitter';
 import React from 'react';
+import createClass from 'create-react-class';
 import invariant from 'invariant';
 import warning from 'warning';
 import TextInputState from '../api/TextInputState';

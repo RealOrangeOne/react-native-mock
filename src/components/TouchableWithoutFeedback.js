@@ -2,10 +2,11 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/Touchable/TouchableWithoutFeedback.js
  */
 import React from 'react';
+import createClass from 'create-react-class';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import View from './View';
 
-const TouchableWithoutFeedback = React.createClass({
+const TouchableWithoutFeedback = createClass({
   propTypes: {
     accessible: React.PropTypes.bool,
     accessibilityComponentType: React.PropTypes.oneOf(View.AccessibilityComponentType),

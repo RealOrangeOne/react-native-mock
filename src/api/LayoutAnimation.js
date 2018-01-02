@@ -1,8 +1,9 @@
 import React from 'react';
+import createClass from 'create-react-class';
 import UIManager from '../NativeModules/UIManager';
 import keyMirror from 'keymirror';
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 const TypesEnum = {
   spring: true,
