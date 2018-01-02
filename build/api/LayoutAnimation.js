@@ -1,8 +1,8 @@
 var _react=require('react');var _react2=_interopRequireDefault(_react);
 var _UIManager=require('../NativeModules/UIManager');var _UIManager2=_interopRequireDefault(_UIManager);
-var _keymirror=require('keymirror');var _keymirror2=_interopRequireDefault(_keymirror);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}var
+var _keymirror=require('keymirror');var _keymirror2=_interopRequireDefault(_keymirror);
 
-PropTypes=_react2['default'].PropTypes;
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}
 
 var TypesEnum={
 spring:true,
@@ -22,21 +22,21 @@ scaleXY:true};
 
 var Properties=(0,_keymirror2['default'])(PropertiesEnum);
 
-var animChecker=PropTypes.shape({
-duration:PropTypes.number,
-delay:PropTypes.number,
-springDamping:PropTypes.number,
-initialVelocity:PropTypes.number,
-type:PropTypes.oneOf(
+var animChecker=_propTypes2['default'].shape({
+duration:_propTypes2['default'].number,
+delay:_propTypes2['default'].number,
+springDamping:_propTypes2['default'].number,
+initialVelocity:_propTypes2['default'].number,
+type:_propTypes2['default'].oneOf(
 Object.keys(Types)),
 
-property:PropTypes.oneOf(// Only applies to create/delete
+property:_propTypes2['default'].oneOf(// Only applies to create/delete
 Object.keys(Properties))});
 
 
 
-var configChecker=PropTypes.shape({
-duration:PropTypes.number.isRequired,
+var configChecker=_propTypes2['default'].shape({
+duration:_propTypes2['default'].number.isRequired,
 create:animChecker,
 update:animChecker,
 'delete':animChecker});

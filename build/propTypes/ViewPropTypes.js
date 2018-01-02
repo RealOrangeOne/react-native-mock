@@ -6,25 +6,25 @@ var _react=require('react');var _react2=_interopRequireDefault(_react);
 var _EdgeInsetsPropType=require('./EdgeInsetsPropType');var _EdgeInsetsPropType2=_interopRequireDefault(_EdgeInsetsPropType);
 var _StyleSheetPropType=require('./StyleSheetPropType');var _StyleSheetPropType2=_interopRequireDefault(_StyleSheetPropType);
 var _ViewStylePropTypes=require('./ViewStylePropTypes');var _ViewStylePropTypes2=_interopRequireDefault(_ViewStylePropTypes);
-var _ViewAccessibility=require('../components/ViewAccessibility');function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}
+var _ViewAccessibility=require('../components/ViewAccessibility');
 
-var stylePropType=(0,_StyleSheetPropType2['default'])(_ViewStylePropTypes2['default']);/**
+
+
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}var stylePropType=(0,_StyleSheetPropType2['default'])(_ViewStylePropTypes2['default']);/**
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/View/ViewPropTypes.js
- */var PropTypes=_react2['default'].PropTypes;
-
-var ViewPropTypes={
+ */var ViewPropTypes={
 /**
    * When `true`, indicates that the view is an accessibility element. By default,
    * all the touchable elements are accessible.
    */
-accessible:PropTypes.bool,
+accessible:_propTypes2['default'].bool,
 
 /**
    * Overrides the text that's read by the screen reader when the user interacts
    * with the element. By default, the label is constructed by traversing all the
    * children and accumulating all the `Text` nodes separated by space.
    */
-accessibilityLabel:PropTypes.node,
+accessibilityLabel:_propTypes2['default'].node,
 
 /**
    * Indicates to accessibility services to treat UI component like a
@@ -39,7 +39,7 @@ accessibilityLabel:PropTypes.node,
    *
    * @platform android
    */
-accessibilityComponentType:PropTypes.oneOf(_ViewAccessibility.AccessibilityComponentTypes),
+accessibilityComponentType:_propTypes2['default'].oneOf(_ViewAccessibility.AccessibilityComponentTypes),
 
 /**
    * Indicates to accessibility services whether the user should be notified
@@ -55,7 +55,7 @@ accessibilityComponentType:PropTypes.oneOf(_ViewAccessibility.AccessibilityCompo
    *
    * @platform android
    */
-accessibilityLiveRegion:PropTypes.oneOf([
+accessibilityLiveRegion:_propTypes2['default'].oneOf([
 'none',
 'polite',
 'assertive']),
@@ -80,7 +80,7 @@ accessibilityLiveRegion:PropTypes.oneOf([
    *
    * @platform android
    */
-importantForAccessibility:PropTypes.oneOf([
+importantForAccessibility:_propTypes2['default'].oneOf([
 'auto',
 'yes',
 'no',
@@ -118,9 +118,9 @@ importantForAccessibility:PropTypes.oneOf([
    *
    * @platform ios
    */
-accessibilityTraits:PropTypes.oneOfType([
-PropTypes.oneOf(_ViewAccessibility.AccessibilityTraits),
-PropTypes.arrayOf(PropTypes.oneOf(_ViewAccessibility.AccessibilityTraits))]),
+accessibilityTraits:_propTypes2['default'].oneOfType([
+_propTypes2['default'].oneOf(_ViewAccessibility.AccessibilityTraits),
+_propTypes2['default'].arrayOf(_propTypes2['default'].oneOf(_ViewAccessibility.AccessibilityTraits))]),
 
 
 /**
@@ -133,26 +133,26 @@ PropTypes.arrayOf(PropTypes.oneOf(_ViewAccessibility.AccessibilityTraits))]),
    *
    * @platform ios
    */
-accessibilityViewIsModal:PropTypes.bool,
+accessibilityViewIsModal:_propTypes2['default'].bool,
 
 /**
    * When `accessible` is true, the system will try to invoke this function
    * when the user performs accessibility tap gesture.
    */
-onAccessibilityTap:PropTypes.func,
+onAccessibilityTap:_propTypes2['default'].func,
 
 /**
    * When `accessible` is `true`, the system will invoke this function when the
    * user performs the magic tap gesture.
    */
-onMagicTap:PropTypes.func,
+onMagicTap:_propTypes2['default'].func,
 
 /**
    * Used to locate this view in end-to-end tests.
    *
    * > This disables the 'layout-only view removal' optimization for this view!
    */
-testID:PropTypes.string,
+testID:_propTypes2['default'].string,
 
 /**
    * Used to locate this view from native classes.
@@ -161,7 +161,7 @@ testID:PropTypes.string,
    *
    * @platform android
    */
-nativeID:PropTypes.string,
+nativeID:_propTypes2['default'].string,
 
 /**
    * For most touch interactions, you'll simply want to wrap your component in
@@ -176,7 +176,7 @@ nativeID:PropTypes.string,
    * `View.props.onResponderGrant: (event) => {}`, where `event` is a synthetic touch event as
    * described above.
    */
-onResponderGrant:PropTypes.func,
+onResponderGrant:_propTypes2['default'].func,
 
 /**
    * The user is moving their finger.
@@ -184,7 +184,7 @@ onResponderGrant:PropTypes.func,
    * `View.props.onResponderMove: (event) => {}`, where `event` is a synthetic touch event as
    * described above.
    */
-onResponderMove:PropTypes.func,
+onResponderMove:_propTypes2['default'].func,
 
 /**
    * Another responder is already active and will not release it to that `View` asking to be
@@ -193,7 +193,7 @@ onResponderMove:PropTypes.func,
    * `View.props.onResponderReject: (event) => {}`, where `event` is a synthetic touch event as
    * described above.
    */
-onResponderReject:PropTypes.func,
+onResponderReject:_propTypes2['default'].func,
 
 /**
    * Fired at the end of the touch.
@@ -201,7 +201,7 @@ onResponderReject:PropTypes.func,
    * `View.props.onResponderRelease: (event) => {}`, where `event` is a synthetic touch event as
    * described above.
    */
-onResponderRelease:PropTypes.func,
+onResponderRelease:_propTypes2['default'].func,
 
 /**
    * The responder has been taken from the `View`. Might be taken by other views after a call to
@@ -211,7 +211,7 @@ onResponderRelease:PropTypes.func,
    * `View.props.onResponderTerminate: (event) => {}`, where `event` is a synthetic touch event as
    * described above.
    */
-onResponderTerminate:PropTypes.func,
+onResponderTerminate:_propTypes2['default'].func,
 
 /**
    * Some other `View` wants to become responder and is asking this `View` to release its
@@ -220,7 +220,7 @@ onResponderTerminate:PropTypes.func,
    * `View.props.onResponderTerminationRequest: (event) => {}`, where `event` is a synthetic touch
    * event as described above.
    */
-onResponderTerminationRequest:PropTypes.func,
+onResponderTerminationRequest:_propTypes2['default'].func,
 
 /**
    * Does this view want to become responder on the start of a touch?
@@ -228,7 +228,7 @@ onResponderTerminationRequest:PropTypes.func,
    * `View.props.onStartShouldSetResponder: (event) => [true | false]`, where `event` is a
    * synthetic touch event as described above.
    */
-onStartShouldSetResponder:PropTypes.func,
+onStartShouldSetResponder:_propTypes2['default'].func,
 
 /**
    * If a parent `View` wants to prevent a child `View` from becoming responder on a touch start,
@@ -237,7 +237,7 @@ onStartShouldSetResponder:PropTypes.func,
    * `View.props.onStartShouldSetResponderCapture: (event) => [true | false]`, where `event` is a
    * synthetic touch event as described above.
    */
-onStartShouldSetResponderCapture:PropTypes.func,
+onStartShouldSetResponderCapture:_propTypes2['default'].func,
 
 /**
    * Does this view want to "claim" touch responsiveness? This is called for every touch move on
@@ -246,7 +246,7 @@ onStartShouldSetResponderCapture:PropTypes.func,
    * `View.props.onMoveShouldSetResponder: (event) => [true | false]`, where `event` is a
    * synthetic touch event as described above.
    */
-onMoveShouldSetResponder:PropTypes.func,
+onMoveShouldSetResponder:_propTypes2['default'].func,
 
 /**
    * If a parent `View` wants to prevent a child `View` from becoming responder on a move,
@@ -255,7 +255,7 @@ onMoveShouldSetResponder:PropTypes.func,
    * `View.props.onMoveShouldSetResponderCapture: (event) => [true | false]`, where `event` is a
    * synthetic touch event as described above.
    */
-onMoveShouldSetResponderCapture:PropTypes.func,
+onMoveShouldSetResponderCapture:_propTypes2['default'].func,
 
 /**
    * This defines how far a touch event can start away from the view.
@@ -280,7 +280,7 @@ hitSlop:_EdgeInsetsPropType2['default'],
    * the new layout may not yet be reflected on the screen at the time the
    * event is received, especially if a layout animation is in progress.
    */
-onLayout:PropTypes.func,
+onLayout:_propTypes2['default'].func,
 
 /**
    * Controls whether the `View` can be the target of touch events.
@@ -315,7 +315,7 @@ onLayout:PropTypes.func,
    * > implement it as a `className` anyways. Using `style` or not is an
    * > implementation detail of the platform.
    */
-pointerEvents:PropTypes.oneOf([
+pointerEvents:_propTypes2['default'].oneOf([
 'box-none',
 'none',
 'box-only',
@@ -331,7 +331,7 @@ style:stylePropType,
    * subviews must also have `overflow: hidden`, as should the containing view
    * (or one of its superviews).
    */
-removeClippedSubviews:PropTypes.bool,
+removeClippedSubviews:_propTypes2['default'].bool,
 
 /**
    * Whether this `View` should render itself (and all of its children) into a
@@ -347,7 +347,7 @@ removeClippedSubviews:PropTypes.bool,
    *
    * @platform android
    */
-renderToHardwareTextureAndroid:PropTypes.bool,
+renderToHardwareTextureAndroid:_propTypes2['default'].bool,
 
 /**
    * Whether this `View` should be rendered as a bitmap before compositing.
@@ -363,7 +363,7 @@ renderToHardwareTextureAndroid:PropTypes.bool,
    *
    * @platform ios
    */
-shouldRasterizeIOS:PropTypes.bool,
+shouldRasterizeIOS:_propTypes2['default'].bool,
 
 /**
    * Views that are only used to layout their children or otherwise don't draw
@@ -373,7 +373,7 @@ shouldRasterizeIOS:PropTypes.bool,
    *
    * @platform android
    */
-collapsable:PropTypes.bool,
+collapsable:_propTypes2['default'].bool,
 
 /**
    * Whether this `View` needs to rendered offscreen and composited with an alpha
@@ -396,7 +396,7 @@ collapsable:PropTypes.bool,
    *
    * @platform android
    */
-needsOffscreenAlphaCompositing:PropTypes.bool};
+needsOffscreenAlphaCompositing:_propTypes2['default'].bool};
 
 
 module.exports=ViewPropTypes;

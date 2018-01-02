@@ -1,42 +1,42 @@
 
 
-var _react=require('react');var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}var Animated=function(){function Animated(){_classCallCheck(this,Animated);}return Animated;}();var
+var _react=require('react');var _react2=_interopRequireDefault(_react);
 
-PropTypes=_react2['default'].PropTypes;
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}var Animated=function(){function Animated(){_classCallCheck(this,Animated);}return Animated;}();
 
 /* NavigationAction */
-var action=PropTypes.shape({
-type:PropTypes.string.isRequired});
+var action=_propTypes2['default'].shape({
+type:_propTypes2['default'].string.isRequired});
 
 
 /* NavigationAnimatedValue  */
-var animatedValue=PropTypes.instanceOf(Animated.Value);
+var animatedValue=_propTypes2['default'].instanceOf(Animated.Value);
 
 /* NavigationRoute  */
-var navigationRoute=PropTypes.shape({
-key:PropTypes.string.isRequired});
+var navigationRoute=_propTypes2['default'].shape({
+key:_propTypes2['default'].string.isRequired});
 
 
 /* navigationRoute  */
-var navigationState=PropTypes.shape({
-index:PropTypes.number.isRequired,
-routes:PropTypes.arrayOf(navigationRoute)});
+var navigationState=_propTypes2['default'].shape({
+index:_propTypes2['default'].number.isRequired,
+routes:_propTypes2['default'].arrayOf(navigationRoute)});
 
 
 /* NavigationLayout */
-var layout=PropTypes.shape({
+var layout=_propTypes2['default'].shape({
 height:animatedValue,
-initHeight:PropTypes.number.isRequired,
-initWidth:PropTypes.number.isRequired,
-isMeasured:PropTypes.bool.isRequired,
+initHeight:_propTypes2['default'].number.isRequired,
+initWidth:_propTypes2['default'].number.isRequired,
+isMeasured:_propTypes2['default'].bool.isRequired,
 width:animatedValue});
 
 
 /* NavigationScene */
-var scene=PropTypes.shape({
-index:PropTypes.number.isRequired,
-isStale:PropTypes.bool.isRequired,
-key:PropTypes.string.isRequired,
+var scene=_propTypes2['default'].shape({
+index:_propTypes2['default'].number.isRequired,
+isStale:_propTypes2['default'].bool.isRequired,
+key:_propTypes2['default'].string.isRequired,
 route:navigationRoute.isRequired});
 
 
@@ -47,25 +47,25 @@ navigationState:navigationState.isRequired,
 position:animatedValue.isRequired,
 progress:animatedValue.isRequired,
 scene:scene.isRequired,
-scenes:PropTypes.arrayOf(scene).isRequired};
+scenes:_propTypes2['default'].arrayOf(scene).isRequired};
 
 
-var SceneRenderer=PropTypes.shape(SceneRendererProps);
+var SceneRenderer=_propTypes2['default'].shape(SceneRendererProps);
 
 /* NavigationPanPanHandlers */
-var panHandlers=PropTypes.shape({
-onMoveShouldSetResponder:PropTypes.func.isRequired,
-onMoveShouldSetResponderCapture:PropTypes.func.isRequired,
-onResponderEnd:PropTypes.func.isRequired,
-onResponderGrant:PropTypes.func.isRequired,
-onResponderMove:PropTypes.func.isRequired,
-onResponderReject:PropTypes.func.isRequired,
-onResponderRelease:PropTypes.func.isRequired,
-onResponderStart:PropTypes.func.isRequired,
-onResponderTerminate:PropTypes.func.isRequired,
-onResponderTerminationRequest:PropTypes.func.isRequired,
-onStartShouldSetResponder:PropTypes.func.isRequired,
-onStartShouldSetResponderCapture:PropTypes.func.isRequired});
+var panHandlers=_propTypes2['default'].shape({
+onMoveShouldSetResponder:_propTypes2['default'].func.isRequired,
+onMoveShouldSetResponderCapture:_propTypes2['default'].func.isRequired,
+onResponderEnd:_propTypes2['default'].func.isRequired,
+onResponderGrant:_propTypes2['default'].func.isRequired,
+onResponderMove:_propTypes2['default'].func.isRequired,
+onResponderReject:_propTypes2['default'].func.isRequired,
+onResponderRelease:_propTypes2['default'].func.isRequired,
+onResponderStart:_propTypes2['default'].func.isRequired,
+onResponderTerminate:_propTypes2['default'].func.isRequired,
+onResponderTerminationRequest:_propTypes2['default'].func.isRequired,
+onStartShouldSetResponder:_propTypes2['default'].func.isRequired,
+onStartShouldSetResponderCapture:_propTypes2['default'].func.isRequired});
 
 
 /**

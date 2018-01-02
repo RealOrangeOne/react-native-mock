@@ -6,21 +6,21 @@ var _ColorPropType=require('./ColorPropType');var _ColorPropType2=_interopRequir
 var _TransformPropTypes=require('./TransformPropTypes');var _TransformPropTypes2=_interopRequireDefault(_TransformPropTypes);
 var _ShadowPropTypesIOS=require('./ShadowPropTypesIOS');var _ShadowPropTypesIOS2=_interopRequireDefault(_ShadowPropTypesIOS);
 var _LayoutPropTypes=require('./LayoutPropTypes');var _LayoutPropTypes2=_interopRequireDefault(_LayoutPropTypes);
-var _ImageResizeMode=require('./ImageResizeMode');var _ImageResizeMode2=_interopRequireDefault(_ImageResizeMode);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}var
+var _ImageResizeMode=require('./ImageResizeMode');var _ImageResizeMode2=_interopRequireDefault(_ImageResizeMode);
 
-PropTypes=_react2['default'].PropTypes;
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}
 
 var ImageStylePropTypes=_extends({},_LayoutPropTypes2['default'],_ShadowPropTypesIOS2['default'],_TransformPropTypes2['default'],{
 
 
 
-resizeMode:PropTypes.oneOf(_ImageResizeMode2['default']),
-backfaceVisibility:PropTypes.oneOf(['visible','hidden']),
+resizeMode:_propTypes2['default'].oneOf(_ImageResizeMode2['default']),
+backfaceVisibility:_propTypes2['default'].oneOf(['visible','hidden']),
 backgroundColor:_ColorPropType2['default'],
 borderColor:_ColorPropType2['default'],
-borderWidth:PropTypes.number,
-borderRadius:PropTypes.number,
-overflow:PropTypes.oneOf(['visible','hidden']),
+borderWidth:_propTypes2['default'].number,
+borderRadius:_propTypes2['default'].number,
+overflow:_propTypes2['default'].oneOf(['visible','hidden']),
 
 /**
    * iOS-Specific style to "tint" an image.
@@ -28,7 +28,7 @@ overflow:PropTypes.oneOf(['visible','hidden']),
    * @platform ios
    */
 tintColor:_ColorPropType2['default'],
-opacity:PropTypes.number,
+opacity:_propTypes2['default'].number,
 /**
    * When the image has rounded corners, specifying an overlayColor will
    * cause the remaining space in the corners to be filled with a solid color.
@@ -46,7 +46,7 @@ opacity:PropTypes.number,
    *
    * @platform android
    */
-overlayColor:PropTypes.string});
+overlayColor:_propTypes2['default'].string});
 
 
 module.exports=ImageStylePropTypes;

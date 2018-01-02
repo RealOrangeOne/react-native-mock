@@ -3,9 +3,9 @@ var _TextInputState=require('../api/TextInputState');var _TextInputState2=_inter
 var _reactTimerMixin=require('react-timer-mixin');var _reactTimerMixin2=_interopRequireDefault(_reactTimerMixin);
 var _NativeMethodsMixin=require('../mixins/NativeMethodsMixin');var _NativeMethodsMixin2=_interopRequireDefault(_NativeMethodsMixin);
 var _View=require('./View');var _View2=_interopRequireDefault(_View);
-var _Text=require('./Text');var _Text2=_interopRequireDefault(_Text);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}var
+var _Text=require('./Text');var _Text2=_interopRequireDefault(_Text);
 
-PropTypes=_react2['default'].PropTypes;
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}
 
 var TextInput=_react2['default'].createClass({displayName:'TextInput',
 propTypes:_extends({},
@@ -18,7 +18,7 @@ _View2['default'].propTypes,{
      * - sentences: first letter of each sentence (default)
      * - none: don't auto capitalize anything
      */
-autoCapitalize:PropTypes.oneOf([
+autoCapitalize:_propTypes2['default'].oneOf([
 'none',
 'sentences',
 'words',
@@ -27,16 +27,16 @@ autoCapitalize:PropTypes.oneOf([
 /**
      * If false, disables auto-correct. The default value is true.
      */
-autoCorrect:PropTypes.bool,
+autoCorrect:_propTypes2['default'].bool,
 /**
      * If true, focuses the input on componentDidMount.
      * The default value is false.
      */
-autoFocus:PropTypes.bool,
+autoFocus:_propTypes2['default'].bool,
 /**
      * If false, text is not editable. The default value is true.
      */
-editable:PropTypes.bool,
+editable:_propTypes2['default'].bool,
 /**
      * Determines which keyboard to open, e.g.`numeric`.
      *
@@ -45,7 +45,7 @@ editable:PropTypes.bool,
      * - numeric
      * - email-address
      */
-keyboardType:PropTypes.oneOf([
+keyboardType:_propTypes2['default'].oneOf([
 // Cross-platform
 'default',
 'email-address',
@@ -65,7 +65,7 @@ keyboardType:PropTypes.oneOf([
      * Determines the color of the keyboard.
      * @platform ios
      */
-keyboardAppearance:PropTypes.oneOf([
+keyboardAppearance:_propTypes2['default'].oneOf([
 'default',
 'light',
 'dark']),
@@ -74,7 +74,7 @@ keyboardAppearance:PropTypes.oneOf([
      * Determines how the return key should look.
      * @platform ios
      */
-returnKeyType:PropTypes.oneOf([
+returnKeyType:_propTypes2['default'].oneOf([
 'default',
 'go',
 'google',
@@ -91,78 +91,78 @@ returnKeyType:PropTypes.oneOf([
      * Limits the maximum number of characters that can be entered. Use this
      * instead of implementing the logic in JS to avoid flicker.
      */
-maxLength:PropTypes.number,
+maxLength:_propTypes2['default'].number,
 /**
      * Sets the number of lines for a TextInput. Use it with multiline set to
      * true to be able to fill the lines.
      * @platform android
      */
-numberOfLines:PropTypes.number,
+numberOfLines:_propTypes2['default'].number,
 /**
      * If true, the keyboard disables the return key when there is no text and
      * automatically enables it when there is text. The default value is false.
      * @platform ios
      */
-enablesReturnKeyAutomatically:PropTypes.bool,
+enablesReturnKeyAutomatically:_propTypes2['default'].bool,
 /**
      * If true, the text input can be multiple lines.
      * The default value is false.
      */
-multiline:PropTypes.bool,
+multiline:_propTypes2['default'].bool,
 /**
      * Callback that is called when the text input is blurred
      */
-onBlur:PropTypes.func,
+onBlur:_propTypes2['default'].func,
 /**
      * Callback that is called when the text input is focused
      */
-onFocus:PropTypes.func,
+onFocus:_propTypes2['default'].func,
 /**
      * Callback that is called when the text input's text changes.
      */
-onChange:PropTypes.func,
+onChange:_propTypes2['default'].func,
 /**
      * Callback that is called when the text input's text changes.
      * Changed text is passed as an argument to the callback handler.
      */
-onChangeText:PropTypes.func,
+onChangeText:_propTypes2['default'].func,
 /**
      * Callback that is called when text input ends.
      */
-onEndEditing:PropTypes.func,
+onEndEditing:_propTypes2['default'].func,
 /**
      * Callback that is called when the text input selection is changed
      */
-onSelectionChange:PropTypes.func,
+onSelectionChange:_propTypes2['default'].func,
 /**
      * Callback that is called when the text input's submit button is pressed.
      * Invalid if multiline={true} is specified.
      */
-onSubmitEditing:PropTypes.func,
+onSubmitEditing:_propTypes2['default'].func,
 /**
      * Callback that is called when a key is pressed.
      * Pressed key value is passed as an argument to the callback handler.
      * Fires before onChange callbacks.
      * @platform ios
      */
-onKeyPress:PropTypes.func,
+onKeyPress:_propTypes2['default'].func,
 /**
      * Invoked on mount and layout changes with `{x, y, width, height}`.
      */
-onLayout:PropTypes.func,
+onLayout:_propTypes2['default'].func,
 /**
      * The string that will be rendered before text input has been entered
      */
-placeholder:PropTypes.string,
+placeholder:_propTypes2['default'].string,
 /**
      * The text color of the placeholder string
      */
-placeholderTextColor:PropTypes.string,
+placeholderTextColor:_propTypes2['default'].string,
 /**
      * If true, the text input obscures the text entered so that sensitive text
      * like passwords stay secure. The default value is false.
      */
-secureTextEntry:PropTypes.bool,
+secureTextEntry:_propTypes2['default'].bool,
 /**
      * See DocumentSelectionState.js, some state that is responsible for
      * maintaining selection information for a document
@@ -179,18 +179,18 @@ secureTextEntry:PropTypes.bool,
      * either set `editable={false}`, or set/update `maxLength` to prevent
      * unwanted edits without flicker.
      */
-value:PropTypes.string,
+value:_propTypes2['default'].string,
 /**
      * Provides an initial value that will change when the user starts typing.
      * Useful for simple use-cases where you don't want to deal with listening
      * to events and updating the value prop to keep the controlled state in sync.
      */
-defaultValue:PropTypes.string,
+defaultValue:_propTypes2['default'].string,
 /**
      * When the clear button should appear on the right side of the text view
      * @platform ios
      */
-clearButtonMode:PropTypes.oneOf([
+clearButtonMode:_propTypes2['default'].oneOf([
 'never',
 'while-editing',
 'unless-editing',
@@ -200,12 +200,12 @@ clearButtonMode:PropTypes.oneOf([
      * If true, clears the text field automatically when editing begins
      * @platform ios
      */
-clearTextOnFocus:PropTypes.bool,
+clearTextOnFocus:_propTypes2['default'].bool,
 /**
      * If true, all text will automatically be selected on focus
      * @platform ios
      */
-selectTextOnFocus:PropTypes.bool,
+selectTextOnFocus:_propTypes2['default'].bool,
 /**
      * If true, the text field will blur when submitted.
      * The default value is true for single-line fields and false for
@@ -214,7 +214,7 @@ selectTextOnFocus:PropTypes.bool,
      * onSubmitEditing event instead of inserting a newline into the field.
      * @platform ios
      */
-blurOnSubmit:PropTypes.bool,
+blurOnSubmit:_propTypes2['default'].bool,
 /**
      * Styles
      */
@@ -222,12 +222,12 @@ style:_Text2['default'].propTypes.style,
 /**
      * Used to locate this view in end-to-end tests
      */
-testID:PropTypes.string,
+testID:_propTypes2['default'].string,
 /**
      * The color of the textInput underline.
      * @platform android
      */
-underlineColorAndroid:PropTypes.string}),
+underlineColorAndroid:_propTypes2['default'].string}),
 
 mixins:[_NativeMethodsMixin2['default'],_reactTimerMixin2['default']],
 statics:{

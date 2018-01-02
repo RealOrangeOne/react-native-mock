@@ -6,9 +6,9 @@ var _StyleSheetPropType=require('../propTypes/StyleSheetPropType');var _StyleShe
 var _NativeMethodsMixin=require('../mixins/NativeMethodsMixin');var _NativeMethodsMixin2=_interopRequireDefault(_NativeMethodsMixin);
 var _EdgeInsetsPropType=require('../propTypes/EdgeInsetsPropType');var _EdgeInsetsPropType2=_interopRequireDefault(_EdgeInsetsPropType);
 var _ImageStylePropTypes=require('../propTypes/ImageStylePropTypes');var _ImageStylePropTypes2=_interopRequireDefault(_ImageStylePropTypes);
-var _ImageResizeMode=require('../propTypes/ImageResizeMode');var _ImageResizeMode2=_interopRequireDefault(_ImageResizeMode);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}/**
- * https://github.com/facebook/react-native/blob/master/Libraries/Image/Image.ios.js
- */var PropTypes=_react2['default'].PropTypes;
+var _ImageResizeMode=require('../propTypes/ImageResizeMode');var _ImageResizeMode2=_interopRequireDefault(_ImageResizeMode);
+
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}
 
 var Image=_react2['default'].createClass({displayName:'Image',
 propTypes:{
@@ -18,35 +18,35 @@ style:(0,_StyleSheetPropType2['default'])(_ImageStylePropTypes2['default']),
      * could be an http address, a local file path, or the name of a static image
      * resource (which should be wrapped in the `require('./path/to/image.png')` function).
      */
-source:PropTypes.oneOfType([
-PropTypes.shape({
-uri:PropTypes.string}),
+source:_propTypes2['default'].oneOfType([
+_propTypes2['default'].shape({
+uri:_propTypes2['default'].string}),
 
 // Opaque type returned by require('./image.jpg')
-PropTypes.number]),
+_propTypes2['default'].number]),
 
 /**
      * A static image to display while loading the image source.
      * @platform ios
      */
-defaultSource:PropTypes.oneOfType([
-PropTypes.shape({
-uri:PropTypes.string}),
+defaultSource:_propTypes2['default'].oneOfType([
+_propTypes2['default'].shape({
+uri:_propTypes2['default'].string}),
 
 // Opaque type returned by require('./image.jpg')
-PropTypes.number]),
+_propTypes2['default'].number]),
 
 /**
      * When true, indicates the image is an accessibility element.
      * @platform ios
      */
-accessible:PropTypes.bool,
+accessible:_propTypes2['default'].bool,
 /**
      * The text that's read by the screen reader when the user interacts with
      * the image.
      * @platform ios
      */
-accessibilityLabel:PropTypes.string,
+accessibilityLabel:_propTypes2['default'].string,
 /**
      * When the image is resized, the corners of the size specified
      * by capInsets will stay a fixed size, but the center content and borders
@@ -75,39 +75,39 @@ capInsets:_EdgeInsetsPropType2['default'],
      * image will keep it's size and aspect ratio. (iOS only)
      *
      */
-resizeMode:PropTypes.oneOf(_ImageResizeMode2['default']),
+resizeMode:_propTypes2['default'].oneOf(_ImageResizeMode2['default']),
 /**
      * A unique identifier for this element to be used in UI Automation
      * testing scripts.
      */
-testID:PropTypes.string,
+testID:_propTypes2['default'].string,
 /**
      * Invoked on mount and layout changes with
      * `{nativeEvent: {layout: {x, y, width, height}}}`.
      */
-onLayout:PropTypes.func,
+onLayout:_propTypes2['default'].func,
 /**
      * Invoked on load start
      */
-onLoadStart:PropTypes.func,
+onLoadStart:_propTypes2['default'].func,
 /**
      * Invoked on download progress with `{nativeEvent: {loaded, total}}`
      * @platform ios
      */
-onProgress:PropTypes.func,
+onProgress:_propTypes2['default'].func,
 /**
      * Invoked on load error with `{nativeEvent: {error}}`
      * @platform ios
      */
-onError:PropTypes.func,
+onError:_propTypes2['default'].func,
 /**
      * Invoked when load completes successfully
      */
-onLoad:PropTypes.func,
+onLoad:_propTypes2['default'].func,
 /**
      * Invoked when load either succeeds or fails
      */
-onLoadEnd:PropTypes.func},
+onLoadEnd:_propTypes2['default'].func},
 
 mixins:[_NativeMethodsMixin2['default']],
 statics:{
@@ -121,7 +121,7 @@ prefetch:function(){function prefetch(uri){
 
 render:function(){function render(){
 return null;
-}return render;}()});
-
-
+}return render;}()});/**
+ * https://github.com/facebook/react-native/blob/master/Libraries/Image/Image.ios.js
+ */
 module.exports=Image;

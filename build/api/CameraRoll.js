@@ -1,8 +1,8 @@
 var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _invariant=require('invariant');var _invariant2=_interopRequireDefault(_invariant);
 var _react=require('react');var _react2=_interopRequireDefault(_react);
-var _CameraRollManager=require('../NativeModules/CameraRollManager');var _CameraRollManager2=_interopRequireDefault(_CameraRollManager);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}var
+var _CameraRollManager=require('../NativeModules/CameraRollManager');var _CameraRollManager2=_interopRequireDefault(_CameraRollManager);
 
-PropTypes=_react2['default'].PropTypes;
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}
 
 var GROUP_TYPES_OPTIONS=[
 'Album',
@@ -23,39 +23,39 @@ var ASSET_TYPE_OPTIONS=[
 /**
  * Shape of the param arg for the `getPhotos` function.
  */
-var getPhotosParamChecker=PropTypes.shape({
+var getPhotosParamChecker=_propTypes2['default'].shape({
 /**
    * The number of photos wanted in reverse order of the photo application
    * (i.e. most recent first for SavedPhotos).
    */
-first:PropTypes.number.isRequired,
+first:_propTypes2['default'].number.isRequired,
 
 /**
    * A cursor that matches `page_info { end_cursor }` returned from a previous
    * call to `getPhotos`
    */
-after:PropTypes.string,
+after:_propTypes2['default'].string,
 
 /**
    * Specifies which group types to filter the results to.
    */
-groupTypes:PropTypes.oneOf(GROUP_TYPES_OPTIONS),
+groupTypes:_propTypes2['default'].oneOf(GROUP_TYPES_OPTIONS),
 
 /**
    * Specifies filter on group names, like 'Recent Photos' or custom album
    * titles.
    */
-groupName:PropTypes.string,
+groupName:_propTypes2['default'].string,
 
 /**
    * Specifies filter on asset type
    */
-assetType:PropTypes.oneOf(ASSET_TYPE_OPTIONS),
+assetType:_propTypes2['default'].oneOf(ASSET_TYPE_OPTIONS),
 
 /**
    * Filter by mimetype (e.g. image/jpeg).
    */
-mimeTypes:PropTypes.arrayOf(PropTypes.string)});var
+mimeTypes:_propTypes2['default'].arrayOf(_propTypes2['default'].string)});var
 
 
 CameraRoll=function(){function CameraRoll(){_classCallCheck(this,CameraRoll);}_createClass(CameraRoll,null,[{key:'saveImageWithTag',

@@ -5,9 +5,9 @@ var _ScrollResponder=require('../mixins/ScrollResponder');var _ScrollResponder2=
 var _View=require('./View');var _View2=_interopRequireDefault(_View);
 var _ViewStylePropTypes=require('../propTypes/ViewStylePropTypes');var _ViewStylePropTypes2=_interopRequireDefault(_ViewStylePropTypes);
 var _ScrollViewManager=require('../NativeModules/ScrollViewManager');var _ScrollViewManager2=_interopRequireDefault(_ScrollViewManager);
-var _StyleSheetPropType=require('../propTypes/StyleSheetPropType');var _StyleSheetPropType2=_interopRequireDefault(_StyleSheetPropType);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}var
+var _StyleSheetPropType=require('../propTypes/StyleSheetPropType');var _StyleSheetPropType2=_interopRequireDefault(_StyleSheetPropType);
 
-PropTypes=_react2['default'].PropTypes;
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}
 
 var SCROLLVIEW='ScrollView';
 var INNERVIEW='InnerScrollView';
@@ -21,7 +21,7 @@ _View2['default'].propTypes,{
      * tab bar/ toolbar. The default value is true.
      * @platform ios
      */
-automaticallyAdjustContentInsets:PropTypes.bool,
+automaticallyAdjustContentInsets:_propTypes2['default'].bool,
 /**
      * The amount by which the scroll view content is inset from the edges
      * of the scroll view. Defaults to `{0, 0, 0, 0}`.
@@ -41,28 +41,28 @@ contentOffset:_PointPropType2['default'],
      * the `alwaysBounce*` props are true. The default value is true.
      * @platform ios
      */
-bounces:PropTypes.bool,
+bounces:_propTypes2['default'].bool,
 /**
      * When true, gestures can drive zoom past min/max and the zoom will animate
      * to the min/max value at gesture end, otherwise the zoom will not exceed
      * the limits.
      * @platform ios
      */
-bouncesZoom:PropTypes.bool,
+bouncesZoom:_propTypes2['default'].bool,
 /**
      * When true, the scroll view bounces horizontally when it reaches the end
      * even if the content is smaller than the scroll view itself. The default
      * value is true when `horizontal={true}` and false otherwise.
      * @platform ios
      */
-alwaysBounceHorizontal:PropTypes.bool,
+alwaysBounceHorizontal:_propTypes2['default'].bool,
 /**
      * When true, the scroll view bounces vertically when it reaches the end
      * even if the content is smaller than the scroll view itself. The default
      * value is false when `horizontal={true}` and true otherwise.
      * @platform ios
      */
-alwaysBounceVertical:PropTypes.bool,
+alwaysBounceVertical:_propTypes2['default'].bool,
 /**
      * When true, the scroll view automatically centers the content when the
      * content is smaller than the scroll view bounds; when the content is
@@ -70,7 +70,7 @@ alwaysBounceVertical:PropTypes.bool,
      * value is false.
      * @platform ios
      */
-centerContent:PropTypes.bool,
+centerContent:_propTypes2['default'].bool,
 /**
      * These styles will be applied to the scroll view content container which
      * wraps all of the child views. Example:
@@ -97,15 +97,15 @@ contentContainerStyle:(0,_StyleSheetPropType2['default'])(_ViewStylePropTypes2['
      *   - Fast: 0.9
      * @platform ios
      */
-decelerationRate:PropTypes.oneOfType([
-PropTypes.oneOf(['fast','normal']),
-PropTypes.number]),
+decelerationRate:_propTypes2['default'].oneOfType([
+_propTypes2['default'].oneOf(['fast','normal']),
+_propTypes2['default'].number]),
 
 /**
      * When true, the scroll view's children are arranged horizontally in a row
      * instead of vertically in a column. The default value is false.
      */
-horizontal:PropTypes.bool,
+horizontal:_propTypes2['default'].bool,
 /**
      * The style of the scroll indicators.
      *   - `default` (the default), same as `black`.
@@ -113,7 +113,7 @@ horizontal:PropTypes.bool,
      *   - `white`, scroll indicator is white.
      * @platform ios
      */
-indicatorStyle:PropTypes.oneOf([
+indicatorStyle:_propTypes2['default'].oneOf([
 'default',// default
 'black',
 'white']),
@@ -123,13 +123,13 @@ indicatorStyle:PropTypes.oneOf([
      * scrolling while dragging.  The default value is false.
      * @platform ios
      */
-directionalLockEnabled:PropTypes.bool,
+directionalLockEnabled:_propTypes2['default'].bool,
 /**
      * When false, once tracking starts, won't try to drag if the touch moves.
      * The default value is true.
      * @platform ios
      */
-canCancelContentTouches:PropTypes.bool,
+canCancelContentTouches:_propTypes2['default'].bool,
 /**
      * Determines whether the keyboard gets dismissed in response to a drag.
      *   - 'none' (the default), drags do not dismiss the keyboard.
@@ -138,7 +138,7 @@ canCancelContentTouches:PropTypes.bool,
      *     synchrony with the touch; dragging upwards cancels the dismissal.
      *     On android this is not supported and it will have the same behavior as 'none'.
      */
-keyboardDismissMode:PropTypes.oneOf([
+keyboardDismissMode:_propTypes2['default'].oneOf([
 'none',// default
 'interactive',
 'on-drag']),
@@ -155,46 +155,46 @@ keyboardDismissMode:PropTypes.oneOf([
      *   - false, deprecated, use 'never' instead
      *   - true, deprecated, use 'always' instead
      */
-keyboardShouldPersistTaps:PropTypes.oneOf(['always','never','handled',false,true]),
+keyboardShouldPersistTaps:_propTypes2['default'].oneOf(['always','never','handled',false,true]),
 /**
      * The maximum allowed zoom scale. The default value is 1.0.
      * @platform ios
      */
-maximumZoomScale:PropTypes.number,
+maximumZoomScale:_propTypes2['default'].number,
 /**
      * The minimum allowed zoom scale. The default value is 1.0.
      * @platform ios
      */
-minimumZoomScale:PropTypes.number,
+minimumZoomScale:_propTypes2['default'].number,
 /**
      * Fires at most once per frame during scrolling. The frequency of the
      * events can be controlled using the `scrollEventThrottle` prop.
      */
-onScroll:PropTypes.func,
+onScroll:_propTypes2['default'].func,
 /**
      * Called when a scrolling animation ends.
      * @platform ios
      */
-onScrollAnimationEnd:PropTypes.func,
+onScrollAnimationEnd:_propTypes2['default'].func,
 /**
      * Called when scrollable content view of the ScrollView changes. It's
      * implemented using onLayout handler attached to the content container
      * which this ScrollView renders.
      */
-onContentSizeChange:PropTypes.func,
+onContentSizeChange:_propTypes2['default'].func,
 /**
      * When true, the scroll view stops on multiples of the scroll view's size
      * when scrolling. This can be used for horizontal pagination. The default
      * value is false.
      * @platform ios
      */
-pagingEnabled:PropTypes.bool,
+pagingEnabled:_propTypes2['default'].bool,
 /**
      * When false, the content does not scroll.
      * The default value is true.
      * @platform ios
      */
-scrollEnabled:PropTypes.bool,
+scrollEnabled:_propTypes2['default'].bool,
 /**
      * This controls how often the scroll event will be fired while scrolling
      * (in events per seconds). A higher number yields better accuracy for code
@@ -204,7 +204,7 @@ scrollEnabled:PropTypes.bool,
      * only once each time the view is scrolled.
      * @platform ios
      */
-scrollEventThrottle:PropTypes.number,
+scrollEventThrottle:_propTypes2['default'].number,
 /**
      * The amount by which the scroll view indicators are inset from the edges
      * of the scroll view. This should normally be set to the same value as
@@ -217,22 +217,22 @@ scrollIndicatorInsets:_EdgeInsetsPropType2['default'],
      * The default value is true.
      * @platform ios
      */
-scrollsToTop:PropTypes.bool,
+scrollsToTop:_propTypes2['default'].bool,
 /**
      * When true, momentum events will be sent from Android
      * This is internal and set automatically by the framework if you have
      * onMomentumScrollBegin or onMomentumScrollEnd set on your ScrollView
      * @platform android
      */
-sendMomentumEvents:PropTypes.bool,
+sendMomentumEvents:_propTypes2['default'].bool,
 /**
      * When true, shows a horizontal scroll indicator.
      */
-showsHorizontalScrollIndicator:PropTypes.bool,
+showsHorizontalScrollIndicator:_propTypes2['default'].bool,
 /**
      * When true, shows a vertical scroll indicator.
      */
-showsVerticalScrollIndicator:PropTypes.bool,
+showsVerticalScrollIndicator:_propTypes2['default'].bool,
 /**
      * An array of child indices determining which children get docked to the
      * top of the screen when scrolling. For example, passing
@@ -241,7 +241,7 @@ showsVerticalScrollIndicator:PropTypes.bool,
      * with `horizontal={true}`.
      * @platform ios
      */
-stickyHeaderIndices:PropTypes.arrayOf(PropTypes.number),
+stickyHeaderIndices:_propTypes2['default'].arrayOf(_propTypes2['default'].number),
 style:(0,_StyleSheetPropType2['default'])(_ViewStylePropTypes2['default']),
 /**
      * When set, causes the scroll view to stop at multiples of the value of
@@ -250,7 +250,7 @@ style:(0,_StyleSheetPropType2['default'])(_ViewStylePropTypes2['default']),
      * with `snapToAlignment`.
      * @platform ios
      */
-snapToInterval:PropTypes.number,
+snapToInterval:_propTypes2['default'].number,
 /**
      * When `snapToInterval` is set, `snapToAlignment` will define the relationship
      * of the the snapping to the scroll view.
@@ -259,7 +259,7 @@ snapToInterval:PropTypes.number,
      *   - `end` will align the snap at the right (horizontal) or bottom (vertical)
      * @platform ios
      */
-snapToAlignment:PropTypes.oneOf([
+snapToAlignment:_propTypes2['default'].oneOf([
 'start',// default
 'center',
 'end']),
@@ -270,12 +270,12 @@ snapToAlignment:PropTypes.oneOf([
      * This can improve scrolling performance on long lists. The default value is
      * true.
      */
-removeClippedSubviews:PropTypes.bool,
+removeClippedSubviews:_propTypes2['default'].bool,
 /**
      * The current scale of the scroll view content. The default value is 1.0.
      * @platform ios
      */
-zoomScale:PropTypes.number,
+zoomScale:_propTypes2['default'].number,
 
 /**
      * A RefreshControl component, used to provide pull-to-refresh
@@ -283,7 +283,7 @@ zoomScale:PropTypes.number,
      *
      * See [RefreshControl](http://facebook.github.io/react-native/docs/refreshcontrol.html).
      */
-refreshControl:PropTypes.element}),
+refreshControl:_propTypes2['default'].element}),
 
 
 mixins:[_ScrollResponder2['default'].Mixin],

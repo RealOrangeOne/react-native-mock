@@ -1,11 +1,11 @@
 
 
 
-var _react=require('react');var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}var
+var _react=require('react');var _react2=_interopRequireDefault(_react);
 
-PropTypes=_react2['default'].PropTypes;/**
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}/**
  * https://github.com/facebook/react-native/blob/master/Libraries/StyleSheet/TransformPropTypes.js
- */var arrayOfNumberPropType=PropTypes.arrayOf(PropTypes.number);
+ */var arrayOfNumberPropType=_propTypes2['default'].arrayOf(_propTypes2['default'].number);
 
 var transformMatrixPropType=function(){function transformMatrixPropType(props,propName,componentName){
 if(props.transform&&props.transformMatrix){
@@ -18,20 +18,20 @@ return arrayOfNumberPropType.apply(undefined,[props,propName,componentName].conc
 }return transformMatrixPropType;}();
 
 var transformPropTypes={
-transform:PropTypes.arrayOf(
-PropTypes.oneOfType([
-PropTypes.shape({perspective:PropTypes.number}),
-PropTypes.shape({rotate:PropTypes.string}),
-PropTypes.shape({rotateX:PropTypes.string}),
-PropTypes.shape({rotateY:PropTypes.string}),
-PropTypes.shape({rotateZ:PropTypes.string}),
-PropTypes.shape({scale:PropTypes.number}),
-PropTypes.shape({scaleX:PropTypes.number}),
-PropTypes.shape({scaleY:PropTypes.number}),
-PropTypes.shape({translateX:PropTypes.number}),
-PropTypes.shape({translateY:PropTypes.number}),
-PropTypes.shape({skewX:PropTypes.string}),
-PropTypes.shape({skewY:PropTypes.string})])),
+transform:_propTypes2['default'].arrayOf(
+_propTypes2['default'].oneOfType([
+_propTypes2['default'].shape({perspective:_propTypes2['default'].number}),
+_propTypes2['default'].shape({rotate:_propTypes2['default'].string}),
+_propTypes2['default'].shape({rotateX:_propTypes2['default'].string}),
+_propTypes2['default'].shape({rotateY:_propTypes2['default'].string}),
+_propTypes2['default'].shape({rotateZ:_propTypes2['default'].string}),
+_propTypes2['default'].shape({scale:_propTypes2['default'].number}),
+_propTypes2['default'].shape({scaleX:_propTypes2['default'].number}),
+_propTypes2['default'].shape({scaleY:_propTypes2['default'].number}),
+_propTypes2['default'].shape({translateX:_propTypes2['default'].number}),
+_propTypes2['default'].shape({translateY:_propTypes2['default'].number}),
+_propTypes2['default'].shape({skewX:_propTypes2['default'].string}),
+_propTypes2['default'].shape({skewY:_propTypes2['default'].string})])),
 
 
 transformMatrix:transformMatrixPropType};

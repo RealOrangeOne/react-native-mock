@@ -1,9 +1,9 @@
 
 
 
-var _react=require('react');var _react2=_interopRequireDefault(_react);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}var
+var _react=require('react');var _react2=_interopRequireDefault(_react);
 
-PropTypes=_react2['default'].PropTypes;
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}
 
 /**
  * React Native's layout system is based on Flexbox and is powered both
@@ -18,52 +18,52 @@ PropTypes=_react2['default'].PropTypes;
  * algorithm and affect the positioning and sizing of views.
  *//**
  * https://github.com/facebook/react-native/blob/master/Libraries/StyleSheet/LayoutPropTypes.js
- */var LayoutPropTypes={width:PropTypes.number,
-height:PropTypes.number,
-top:PropTypes.number,
-left:PropTypes.number,
-right:PropTypes.number,
-bottom:PropTypes.number,
-margin:PropTypes.number,
-marginVertical:PropTypes.number,
-marginHorizontal:PropTypes.number,
-marginTop:PropTypes.number,
-marginBottom:PropTypes.number,
-marginLeft:PropTypes.number,
-marginRight:PropTypes.number,
-padding:PropTypes.number,
-paddingVertical:PropTypes.number,
-paddingHorizontal:PropTypes.number,
-paddingTop:PropTypes.number,
-paddingBottom:PropTypes.number,
-paddingLeft:PropTypes.number,
-paddingRight:PropTypes.number,
-borderWidth:PropTypes.number,
-borderTopWidth:PropTypes.number,
-borderRightWidth:PropTypes.number,
-borderBottomWidth:PropTypes.number,
-borderLeftWidth:PropTypes.number,
+ */var LayoutPropTypes={width:_propTypes2['default'].number,
+height:_propTypes2['default'].number,
+top:_propTypes2['default'].number,
+left:_propTypes2['default'].number,
+right:_propTypes2['default'].number,
+bottom:_propTypes2['default'].number,
+margin:_propTypes2['default'].number,
+marginVertical:_propTypes2['default'].number,
+marginHorizontal:_propTypes2['default'].number,
+marginTop:_propTypes2['default'].number,
+marginBottom:_propTypes2['default'].number,
+marginLeft:_propTypes2['default'].number,
+marginRight:_propTypes2['default'].number,
+padding:_propTypes2['default'].number,
+paddingVertical:_propTypes2['default'].number,
+paddingHorizontal:_propTypes2['default'].number,
+paddingTop:_propTypes2['default'].number,
+paddingBottom:_propTypes2['default'].number,
+paddingLeft:_propTypes2['default'].number,
+paddingRight:_propTypes2['default'].number,
+borderWidth:_propTypes2['default'].number,
+borderTopWidth:_propTypes2['default'].number,
+borderRightWidth:_propTypes2['default'].number,
+borderBottomWidth:_propTypes2['default'].number,
+borderLeftWidth:_propTypes2['default'].number,
 
-position:PropTypes.oneOf([
+position:_propTypes2['default'].oneOf([
 'absolute',
 'relative']),
 
 
 // https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
-flexDirection:PropTypes.oneOf([
+flexDirection:_propTypes2['default'].oneOf([
 'row',
 'column']),
 
 
 // https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
-flexWrap:PropTypes.oneOf([
+flexWrap:_propTypes2['default'].oneOf([
 'wrap',
 'nowrap']),
 
 
 // How to align children in the main direction
 // https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
-justifyContent:PropTypes.oneOf([
+justifyContent:_propTypes2['default'].oneOf([
 'flex-start',
 'flex-end',
 'center',
@@ -73,7 +73,7 @@ justifyContent:PropTypes.oneOf([
 
 // How to align children in the cross direction
 // https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
-alignItems:PropTypes.oneOf([
+alignItems:_propTypes2['default'].oneOf([
 'flex-start',
 'flex-end',
 'center',
@@ -82,7 +82,7 @@ alignItems:PropTypes.oneOf([
 
 // How to align the element in the cross direction
 // https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
-alignSelf:PropTypes.oneOf([
+alignSelf:_propTypes2['default'].oneOf([
 'auto',
 'flex-start',
 'flex-end',
@@ -91,7 +91,7 @@ alignSelf:PropTypes.oneOf([
 
 
 // https://developer.mozilla.org/en-US/docs/Web/CSS/flex
-flex:PropTypes.number};
+flex:_propTypes2['default'].number};
 
 
 module.exports=LayoutPropTypes;

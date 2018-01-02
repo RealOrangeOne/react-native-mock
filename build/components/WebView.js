@@ -2,9 +2,9 @@ var _extends=Object.assign||function(target){for(var i=1;i<arguments.length;i++)
 var _react=require('react');var _react2=_interopRequireDefault(_react);
 var _View=require('./View');var _View2=_interopRequireDefault(_View);
 var _ScrollView=require('./ScrollView');var _ScrollView2=_interopRequireDefault(_ScrollView);
-var _WebViewManager=require('../NativeModules/WebViewManager');var _WebViewManager2=_interopRequireDefault(_WebViewManager);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}var
+var _WebViewManager=require('../NativeModules/WebViewManager');var _WebViewManager2=_interopRequireDefault(_WebViewManager);
 
-PropTypes=_react2['default'].PropTypes;
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}
 
 var RCT_WEBVIEW_REF='webview';
 
@@ -22,36 +22,36 @@ var JSNavigationScheme=_WebViewManager2['default'].JSNavigationScheme;
 var WebView=_react2['default'].createClass({displayName:'WebView',
 propTypes:_extends({},
 _View2['default'].propTypes,{
-url:PropTypes.string,
-html:PropTypes.string,
+url:_propTypes2['default'].string,
+html:_propTypes2['default'].string,
 /**
      * Function that returns a view to show if there's an error.
      */
-renderError:PropTypes.func,// view to show if there's an error
+renderError:_propTypes2['default'].func,// view to show if there's an error
 /**
      * Function that returns a loading indicator.
      */
-renderLoading:PropTypes.func,
+renderLoading:_propTypes2['default'].func,
 /**
      * Invoked when load finish
      */
-onLoad:PropTypes.func,
+onLoad:_propTypes2['default'].func,
 /**
      * Invoked when load either succeeds or fails
      */
-onLoadEnd:PropTypes.func,
+onLoadEnd:_propTypes2['default'].func,
 /**
      * Invoked on load start
      */
-onLoadStart:PropTypes.func,
+onLoadStart:_propTypes2['default'].func,
 /**
      * Invoked when load fails
      */
-onError:PropTypes.func,
+onError:_propTypes2['default'].func,
 /**
      * @platform ios
      */
-bounces:PropTypes.bool,
+bounces:_propTypes2['default'].bool,
 /**
      * A floating-point number that determines how quickly the scroll view
      * decelerates after the user lifts their finger. You may also use string
@@ -66,42 +66,42 @@ decelerationRate:_ScrollView2['default'].propTypes.decelerationRate,
 /**
      * @platform ios
      */
-scrollEnabled:PropTypes.bool,
-automaticallyAdjustContentInsets:PropTypes.bool,
+scrollEnabled:_propTypes2['default'].bool,
+automaticallyAdjustContentInsets:_propTypes2['default'].bool,
 contentInset:_EdgeInsetsPropType2['default'],
-onNavigationStateChange:PropTypes.func,
-startInLoadingState:PropTypes.bool,// force WebView to show loadingView on first load
+onNavigationStateChange:_propTypes2['default'].func,
+startInLoadingState:_propTypes2['default'].bool,// force WebView to show loadingView on first load
 style:_View2['default'].propTypes.style,
 
 /**
      * Used on Android only, JS is enabled by default for WebView on iOS
      * @platform android
      */
-javaScriptEnabled:PropTypes.bool,
+javaScriptEnabled:_propTypes2['default'].bool,
 
 /**
      * Used on Android only, controls whether DOM Storage is enabled or not
      * @platform android
      */
-domStorageEnabled:PropTypes.bool,
+domStorageEnabled:_propTypes2['default'].bool,
 
 /**
      * Sets the JS to be injected when the webpage loads.
      */
-injectedJavaScript:PropTypes.string,
+injectedJavaScript:_propTypes2['default'].string,
 
 /**
      * Sets whether the webpage scales to fit the view and the user can change the scale.
      * @platform ios
      */
-scalesPageToFit:PropTypes.bool,
+scalesPageToFit:_propTypes2['default'].bool,
 
 /**
      * Allows custom handling of any webview requests by a JS handler. Return true
      * or false from this method to continue loading the request.
      * @platform ios
      */
-onShouldStartLoadWithRequest:PropTypes.func,
+onShouldStartLoadWithRequest:_propTypes2['default'].func,
 
 /**
      * Determines whether HTML5 videos play inline or use the native full-screen
@@ -112,7 +112,7 @@ onShouldStartLoadWithRequest:PropTypes.func,
      * document must also include the webkit-playsinline attribute."
      * @platform ios
      */
-allowsInlineMediaPlayback:PropTypes.bool}),
+allowsInlineMediaPlayback:_propTypes2['default'].bool}),
 
 
 statics:{
