@@ -10,7 +10,7 @@ import { AccessibilityComponentTypes, AccessibilityTraits } from '../components/
 
 const stylePropType = styleSheetPropType(ViewStylePropTypes);
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 const ViewPropTypes = {
   /**

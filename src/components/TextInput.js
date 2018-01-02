@@ -5,7 +5,7 @@ import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
 import Text from './Text';
 
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 const TextInput = React.createClass({
   propTypes: {
