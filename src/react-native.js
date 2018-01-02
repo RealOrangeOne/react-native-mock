@@ -108,10 +108,10 @@ const ReactNative = {
 // See http://facebook.github.io/react/docs/addons.html
 const ReactNativeAddons = {
   // LinkedStateMixin: require('react-addons-linked-state-mixin') deprecated,
-  Perf: require('react-addons-perf'),
+  // Perf: require('react-addons-perf'),
   PureRenderMixin: require('react-addons-pure-render-mixin'),
   TestModule: require('./NativeModules/TestModule'),
-  TestUtils: require('react-addons-test-utils'),
+  // TestUtils: require('react-addons-test-utils'),
   // TODO(lmr): not sure where to find this
   // batchedUpdates: require('ReactUpdates').batchedUpdates, deprecated
   // cloneWithProps: require('react-addons-clone-with-props'), deprecated
