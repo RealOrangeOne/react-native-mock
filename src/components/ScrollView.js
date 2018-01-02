@@ -1,4 +1,5 @@
 import React from 'react';
+import createClass from 'create-react-class';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import PointPropType from '../propTypes/PointPropType';
 import ScrollResponder from '../mixins/ScrollResponder';
@@ -12,7 +13,7 @@ import PropTypes from 'prop-types';
 const SCROLLVIEW = 'ScrollView';
 const INNERVIEW = 'InnerScrollView';
 
-const ScrollView = React.createClass({
+const ScrollView = createClass({
   propTypes: {
     ...View.propTypes,
     /**

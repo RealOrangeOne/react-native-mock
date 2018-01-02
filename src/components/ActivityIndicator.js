@@ -2,13 +2,14 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/ActivityIndicator/ActivityIndicator.js
  */
 import React from 'react';
+import createClass from 'create-react-class';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
 import ColorPropType from '../propTypes/ColorPropType';
 
 import PropTypes from 'prop-types';
 
-const ActivityIndicator = React.createClass({
+const ActivityIndicator = createClass({
   propTypes: {
     ...View.propTypes,
     /**

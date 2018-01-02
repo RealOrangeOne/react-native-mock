@@ -45,6 +45,7 @@
     "react-native": "^0.38.0"
   },
   "dependencies": {
+    "create-react-class": "^15.6.2",
     "cubic-bezier": "^0.1.2",
     "invariant": "^2.2.1",
     "keymirror": "^0.1.1",

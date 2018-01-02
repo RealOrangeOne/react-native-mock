@@ -3,6 +3,7 @@
  */
 
 import React from 'react';
+import createClass from 'create-react-class';
 import EdgeInsetsPropType from './EdgeInsetsPropType';
 import styleSheetPropType from './StyleSheetPropType';
 import ViewStylePropTypes from './ViewStylePropTypes';

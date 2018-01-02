@@ -2,6 +2,7 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/react-native/react-native.js
  */
 import React from 'react';
+import createClass from 'create-react-class';
 
 import createMockComponent from './components/createMockComponent';
 import defineGlobalProperty from './defineGlobalProperty';

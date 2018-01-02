@@ -2,6 +2,7 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/StyleSheet/StyleSheetPropType.js
  */
 import React from 'react';
+import createClass from 'create-react-class';
 import flattenStyle from './flattenStyle';
 
 import PropTypes from 'prop-types';

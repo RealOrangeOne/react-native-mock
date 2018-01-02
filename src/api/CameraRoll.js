@@ -1,5 +1,6 @@
 import invariant from 'invariant';
 import React from 'react';
+import createClass from 'create-react-class';
 import CameraRollManager from '../NativeModules/CameraRollManager';
 
 import PropTypes from 'prop-types';

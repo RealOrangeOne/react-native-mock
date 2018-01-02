@@ -1,4 +1,5 @@
 import React from 'react';
+import createClass from 'create-react-class';
 
 function createAnimatedComponent(Component) {
   const refName = 'node';

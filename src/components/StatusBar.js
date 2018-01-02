@@ -2,6 +2,7 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/StatusBar/StatusBar.js
  */
 import React from 'react';
+import createClass from 'create-react-class';
 import ColorPropType from '../propTypes/ColorPropType';
 
 
@@ -11,7 +12,7 @@ let _hidden = false;
 let _networkActivityIndicatorVisible = false;
 let _translucent = false;
 
-const StatusBar = React.createClass({
+const StatusBar = createClass({
   propTypes: {
     animated: React.PropTypes.bool,
     barStyle: React.PropTypes.oneOf(['default', 'light-content']),

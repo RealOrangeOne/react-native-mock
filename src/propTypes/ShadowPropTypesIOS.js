@@ -1,4 +1,5 @@
 import React from 'react';
+import createClass from 'create-react-class';
 import ColorPropType from './ColorPropType';
 
 import PropTypes from 'prop-types';

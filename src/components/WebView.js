@@ -1,5 +1,6 @@
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import React from 'react';
+import createClass from 'create-react-class';
 import View from './View';
 import ScrollView from './ScrollView';
 import WebViewManager from '../NativeModules/WebViewManager';
@@ -19,7 +20,7 @@ const NavigationType = {
 
 const JSNavigationScheme = WebViewManager.JSNavigationScheme;
 
-const WebView = React.createClass({
+const WebView = createClass({
   propTypes: {
     ...View.propTypes,
     url: PropTypes.string,

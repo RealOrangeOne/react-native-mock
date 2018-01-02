@@ -1,4 +1,5 @@
 import React from 'react';
+import createClass from 'create-react-class';
 import UIManager from '../NativeModules/UIManager';
 import keyMirror from 'keymirror';
 

@@ -2,6 +2,7 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/StyleSheet/TransformPropTypes.js
  */
 import React from 'react';
+import createClass from 'create-react-class';
 
 import PropTypes from 'prop-types';
 

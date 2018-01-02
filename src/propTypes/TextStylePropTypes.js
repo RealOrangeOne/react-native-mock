@@ -2,6 +2,7 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/Text/TextStylePropTypes.js
  */
 import React from 'react';
+import createClass from 'create-react-class';
 import ColorPropType from './ColorPropType';
 import ViewStylePropTypes from './ViewStylePropTypes';
 

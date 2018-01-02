@@ -1,4 +1,5 @@
 import React from 'react';
+import createClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import createMockComponent from './createMockComponent';
 import View from './View';
@@ -24,7 +25,7 @@ const NavigatorSceneConfigs = {
   VerticalDownSwipeJump: NavigatorSceneConfigType
 };
 
-const Navigator = React.createClass({
+const Navigator = createClass({
   propTypes: {
     /**
      * Optional function that allows configuration about scene animations and
