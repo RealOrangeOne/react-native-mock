@@ -10,7 +10,7 @@
 A fully mocked and test-friendly version of react native
 
 ## Requirements
-- Node.js 4+
+- Node.js 6+ (dropping support for Node 4 as some dev dependencies don't support it)
 - The latest version of react-native
 
 __Note__: This library is designed to work with the most recent version of react-native. If you aren't using the most recent version, you will probably need to download an older version of this library, as the API is likely to be different, and the dependencies are likely to break.
