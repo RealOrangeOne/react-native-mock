@@ -7,10 +7,9 @@ import EdgeInsetsPropType from './EdgeInsetsPropType';
 import styleSheetPropType from './StyleSheetPropType';
 import ViewStylePropTypes from './ViewStylePropTypes';
 import { AccessibilityComponentTypes, AccessibilityTraits } from '../components/ViewAccessibility';
+import PropTypes from 'prop-types';
 
 const stylePropType = styleSheetPropType(ViewStylePropTypes);
-
-const { PropTypes } = React;
 
 const ViewPropTypes = {
   /**

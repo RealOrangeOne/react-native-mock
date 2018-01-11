@@ -7,8 +7,7 @@ import TransformPropTypes from './TransformPropTypes';
 import ShadowPropTypesIOS from './ShadowPropTypesIOS';
 import LayoutPropTypes from './LayoutPropTypes';
 import ImageResizeMode from './ImageResizeMode';
-
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 const ImageStylePropTypes = {
   ...LayoutPropTypes,

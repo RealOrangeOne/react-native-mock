@@ -5,10 +5,11 @@ import React from 'react';
 import styleSheetPropType from '../propTypes/StyleSheetPropType';
 import TextStylePropTypes from '../propTypes/TextStylePropTypes';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
+import createReactClass from 'create-react-class';
 
 const stylePropType = styleSheetPropType(TextStylePropTypes);
 
-const Text = React.createClass({
+const Text = createReactClass({
   propTypes: {
     /**
      * Used to truncate the text with an ellipsis after computing the text

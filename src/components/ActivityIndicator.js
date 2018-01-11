@@ -5,10 +5,10 @@ import React from 'react';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
 import ColorPropType from '../propTypes/ColorPropType';
+import PropTypes from 'prop-types';
+import createReactClass from 'create-react-class';
 
-const { PropTypes } = React;
-
-const ActivityIndicator = React.createClass({
+const ActivityIndicator = createReactClass({
   propTypes: {
     ...View.propTypes,
     /**

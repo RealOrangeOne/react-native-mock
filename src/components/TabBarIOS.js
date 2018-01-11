@@ -1,7 +1,8 @@
 import React from 'react';
 import createMockComponent from './createMockComponent';
+import createReactClass from 'create-react-class';
 
-const TabBarIOS = React.createClass({
+const TabBarIOS = createReactClass({
   propTypes: {
     children: React.PropTypes.node
   },

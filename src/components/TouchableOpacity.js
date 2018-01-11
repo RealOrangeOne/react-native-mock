@@ -2,10 +2,10 @@
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/Touchable/TouchableOpacity.js
  */
 import React from 'react';
-
+import createReactClass from 'create-react-class';
 import TouchableWithoutFeedback from './TouchableWithoutFeedback';
 
-const TouchableOpacity = React.createClass({
+const TouchableOpacity = createReactClass({
   propTypes: {
     ...TouchableWithoutFeedback.propTypes,
 
