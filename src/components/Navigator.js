@@ -9,7 +9,7 @@ const NavigatorSceneConfigType = PropTypes.shape({
   springFriction: PropTypes.number,
   springTension: PropTypes.number,
   defaultTransitionVelocity: PropTypes.number,
-  animationInterpolators: React.PropTypes.object,
+  animationInterpolators: PropTypes.object,
 });
 
 const NavigatorSceneConfigs = {

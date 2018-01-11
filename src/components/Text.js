@@ -6,6 +6,7 @@ import styleSheetPropType from '../propTypes/StyleSheetPropType';
 import TextStylePropTypes from '../propTypes/TextStylePropTypes';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import createReactClass from 'create-react-class';
+import PropTypes from 'prop-types';
 
 const stylePropType = styleSheetPropType(TextStylePropTypes);
 
@@ -16,33 +17,33 @@ const Text = createReactClass({
      * layout, including line wrapping, such that the total number of lines
      * does not exceed this number.
      */
-    numberOfLines: React.PropTypes.number,
+    numberOfLines: PropTypes.number,
     /**
      * Invoked on mount and layout changes with
      *
      *   `{nativeEvent: {layout: {x, y, width, height}}}`
      */
-    onLayout: React.PropTypes.func,
+    onLayout: PropTypes.func,
     /**
      * This function is called on press.
      */
-    onPress: React.PropTypes.func,
+    onPress: PropTypes.func,
     /**
      * When true, no visual change is made when text is pressed down. By
      * default, a gray oval highlights the text on press down.
      * @platform ios
      */
-    suppressHighlighting: React.PropTypes.bool,
+    suppressHighlighting: PropTypes.bool,
     style: stylePropType,
     /**
      * Used to locate this view in end-to-end tests.
      */
-    testID: React.PropTypes.string,
+    testID: PropTypes.string,
     /**
      * Specifies should fonts scale to respect Text Size accessibility setting on iOS.
      * @platform ios
      */
-    allowFontScaling: React.PropTypes.bool,
+    allowFontScaling: PropTypes.bool,
   },
   mixins: [NativeMethodsMixin],
 
