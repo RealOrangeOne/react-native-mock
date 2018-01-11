@@ -1,7 +1,6 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/Image/Image.ios.js
  */
-import React from 'react';
 import styleSheetPropType from '../propTypes/StyleSheetPropType';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';

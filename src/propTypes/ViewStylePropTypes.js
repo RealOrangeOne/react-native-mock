@@ -1,7 +1,6 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/View/ViewStylePropTypes.js
  */
-import React from 'react';
 import ColorPropType from './ColorPropType';
 import LayoutPropTypes from './LayoutPropTypes';
 import ShadowPropTypesIOS from './ShadowPropTypesIOS';

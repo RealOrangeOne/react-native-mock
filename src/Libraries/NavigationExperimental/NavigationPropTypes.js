@@ -1,6 +1,5 @@
 class Animated {}
 
-import React from 'react';
 import PropTypes from 'prop-types';
 
 /* NavigationAction */

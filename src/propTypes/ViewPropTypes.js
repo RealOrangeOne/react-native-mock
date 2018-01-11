@@ -1,8 +1,6 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/View/ViewPropTypes.js
  */
-
-import React from 'react';
 import EdgeInsetsPropType from './EdgeInsetsPropType';
 import styleSheetPropType from './StyleSheetPropType';
 import ViewStylePropTypes from './ViewStylePropTypes';

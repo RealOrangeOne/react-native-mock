@@ -1,7 +1,6 @@
 /**
  *https://github.com/facebook/react-native/blob/master/Libraries/Components/DrawerAndroid/DrawerLayoutAndroid.android.js
  */
-import React from 'react';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
 import UIManager from '../NativeModules/UIManager';

@@ -1,7 +1,6 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/StatusBar/StatusBar.js
  */
-import React from 'react';
 import ColorPropType from '../propTypes/ColorPropType';
 import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';

@@ -1,4 +1,3 @@
-import React from 'react';
 import UIManager from '../NativeModules/UIManager';
 import keyMirror from 'keymirror';
 import PropTypes from 'prop-types';

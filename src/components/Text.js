@@ -1,7 +1,6 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/Text/Text.js
  */
-import React from 'react';
 import styleSheetPropType from '../propTypes/StyleSheetPropType';
 import TextStylePropTypes from '../propTypes/TextStylePropTypes';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';

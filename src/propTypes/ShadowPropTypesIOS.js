@@ -1,4 +1,3 @@
-import React from 'react';
 import ColorPropType from './ColorPropType';
 import PropTypes from 'prop-types';
 
