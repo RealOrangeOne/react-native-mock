@@ -1,11 +1,9 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/Text/TextStylePropTypes.js
  */
-import React from 'react';
 import ColorPropType from './ColorPropType';
 import ViewStylePropTypes from './ViewStylePropTypes';
-
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 // TODO: use spread instead of Object.assign/create after #6560135 is fixed
 const TextStylePropTypes = Object.assign(Object.create(ViewStylePropTypes), {

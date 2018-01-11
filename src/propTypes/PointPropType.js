@@ -1,9 +1,7 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/StyleSheet/PointPropType.js
  */
-import React from 'react';
-
-const { PropTypes } = React;
+import PropTypes from 'prop-types';
 
 const PointPropType = PropTypes.shape({
   x: PropTypes.number,

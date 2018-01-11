@@ -1,7 +1,7 @@
-import React from 'react';
+import createReactClass from 'create-react-class';
 
 function createMockComponent(displayName) {
-  return React.createClass({
+  return createReactClass({
     displayName,
     render() {
       return null;

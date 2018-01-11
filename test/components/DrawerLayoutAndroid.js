@@ -2,12 +2,12 @@
 import React from 'react';
 import { DrawerLayoutAndroid } from '../../src/react-native';
 import { expect } from 'chai';
-import ReactTestUtils from 'react-addons-test-utils';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 describe('DrawerLayoutAndroid', () => {
   it('should render an empty DrawerLayoutAndroid', () => {
-    const renderer = ReactTestUtils.createRenderer();
-    const wrapper = renderer.getRenderOutput(<DrawerLayoutAndroid renderNavigationView={() => {}} />);
+    const renderer = new ShallowRenderer(<DrawerLayoutAndroid renderNavigationView={() => {}} />);
+    const wrapper = renderer.getRenderOutput();
     expect(wrapper).to.be.null;
   });
 
