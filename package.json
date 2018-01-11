@@ -46,13 +46,10 @@
   },
   "dependencies": {
     "cubic-bezier": "^0.1.2",
+    "immutability-helper": "^2.6.4",
     "invariant": "^2.2.1",
     "keymirror": "^0.1.1",
     "raf": "^3.2.0",
-    "react-addons-create-fragment": "^16.0.0-alpha.3",
-    "react-addons-perf": "^16.0.0-alpha.3",
-    "react-addons-pure-render-mixin": "^16.0.0-alpha.3",
-    "react-addons-update": "^16.0.0-alpha.3",
     "react-dom": "^16.0.0",
     "react-timer-mixin": "^0.13.3",
     "warning": "^2.1.0"
