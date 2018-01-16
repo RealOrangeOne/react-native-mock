@@ -1,10 +1,11 @@
 import mockery from 'mockery';
 import _ from 'underscore';
+import React from 'react';
+import sinon from 'sinon';
+
 import defineGlobalProperty from './defineGlobalProperty';
 import createMockComponent, { MOCK_COMPONENTS } from './createMockComponent';
 import mockNativeModules from './NativeModules';
-import React from 'react';
-import sinon from 'sinon';
 
 
 // Setup babel to build react-native source
@@ -33,7 +34,7 @@ mockery.registerMock('ensureComponentIsNative', () => true);
 mockery.registerMock('requireNativeComponent', sinon.spy(viewName => props => React.createElement(
   viewName,
   props,
-  props.children  // eslint-disable-line react/prop-types
+  props.children // eslint-disable-line react/prop-types
 )));
 mockery.registerMock('ErrorUtils', require('./mocks/ErrorUtils'));
 

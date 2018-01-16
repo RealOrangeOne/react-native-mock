@@ -36,7 +36,7 @@ describe('AlertIOS', () => {
         },
         {
           text: 'OK',
-          onPress: password => {}
+          onPress: (password) => {}
         }
       ],
       'secure-text'

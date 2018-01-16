@@ -1,4 +1,4 @@
-const AsyncStorage = require('AsyncStorage');  // eslint-disable-line import/no-unresolved
+const AsyncStorage = require('AsyncStorage'); // eslint-disable-line import/no-unresolved
 
 let _data = {};
 

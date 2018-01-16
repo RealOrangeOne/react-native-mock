@@ -1,5 +1,7 @@
 import sinon from 'sinon';
 
+const ReactNativeVersion = require('react-native/Libraries/Core/ReactNativeVersion');
+
 module.exports = {
   AlertManager: {
     alertWithArgs: sinon.spy()
@@ -63,11 +65,11 @@ module.exports = {
   },
   IntentAndroid: {
     openURL: sinon.spy(),
-    canOpenURL: sinon.spy(url => new Promise((resolve) => resolve(true)))
+    canOpenURL: sinon.spy(url => new Promise(resolve => resolve(true)))
   },
   LinkingManager: {
     openURL: sinon.spy(),
-    canOpenURL: sinon.spy(url => new Promise((resolve) => resolve(true)))
+    canOpenURL: sinon.spy(url => new Promise(resolve => resolve(true)))
   },
   ModalFullscreenViewManager: {},
   Networking: {
@@ -145,7 +147,8 @@ module.exports = {
     osVersion: '10',
     interfaceIdiom: 'pad',
     isTesting: true,
-    version: '7'
+    version: '7',
+    reactNativeVersion: ReactNativeVersion.version
   },
   AndroidConstants: {
     Version: '7',
@@ -155,5 +158,15 @@ module.exports = {
     osVersion: '10',
     interfaceIdiom: 'pad',
     isTesting: true
+  },
+  DeviceInfo: {
+    Dimensions: {
+      windowPhysicalPixels: {
+        fontScale: 2,
+        height: 1334,
+        scale: 2,
+        width: 750
+      }
+    }
   }
 };

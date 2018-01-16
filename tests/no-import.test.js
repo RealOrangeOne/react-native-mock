@@ -8,7 +8,7 @@ describe('React-Native-Mock import', function () {
   });
 
   it('should happen when requiring react-native-mock', function () {
-    const main = require('../package.json').main;
+    const { main } = require('../package.json');
     expect(() => require(path.join('..', main))).to.throw;
   });
 });

@@ -11,7 +11,7 @@
 /* eslint-disable react/prop-types */
 
 const React = require('react');
-const ScrollView = require('ScrollView');  // eslint-disable-line import/no-unresolved
+const ScrollView = require('ScrollView'); // eslint-disable-line import/no-unresolved
 const StaticRenderer = require('StaticRenderer'); // eslint-disable-line import/no-unresolved
 const View = require('View'); // eslint-disable-line import/no-unresolved
 
@@ -24,23 +24,21 @@ class ListViewMock extends React.Component {
     const { dataSource, renderFooter, renderHeader } = this.props;
     const rows = [renderHeader && renderHeader()];
     const allRowIDs = dataSource.rowIdentities;
-    for (let sectionIdx = 0; sectionIdx < allRowIDs.length; sectionIdx++) {
+    for (let sectionIdx = 0; sectionIdx < allRowIDs.length; sectionIdx += 1) {
       const sectionID = dataSource.sectionIdentities[sectionIdx];
       const rowIDs = allRowIDs[sectionIdx];
-      for (let rowIdx = 0; rowIdx < rowIDs.length; rowIdx++) {
+      for (let rowIdx = 0; rowIdx < rowIDs.length; rowIdx += 1) {
         const rowID = rowIDs[rowIdx];
-        rows.push(
-          <StaticRenderer
-            shouldUpdate
-            key={rowID}
-            render={this.props.renderRow.bind(
+        rows.push(<StaticRenderer
+          shouldUpdate
+          key={rowID}
+          render={this.props.renderRow.bind(
               null,
               dataSource.getRowData(sectionIdx, rowIdx),
               sectionID,
               rowID
             )}
-          />
-        );
+        />);
       }
     }
 
@@ -55,7 +53,7 @@ class ListViewMock extends React.Component {
 }
 
 ListViewMock.defaultProps = {
-  renderScrollComponent: (props) => <ScrollView {...props} />
+  renderScrollComponent: props => <ScrollView {...props} />
 };
 
 ListViewMock.DataSource = require('ListViewDataSource'); // eslint-disable-line import/no-unresolved

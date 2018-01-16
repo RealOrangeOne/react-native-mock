@@ -1,8 +1,8 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import { buildComponentHTML } from '../test-utils';
 import sinon from 'sinon';
+import { buildComponentHTML } from '../test-utils';
 
 const COMPONENTS = [
   'Image',
@@ -23,7 +23,7 @@ describe('Components', function () {
     it(`should render ${component}`, function () {
       const Component = ReactNative[component];
       const instance = shallow(<Component />);
-      expect(instance.html()).to.equal(buildComponentHTML(component));
+      expect(instance.html()).to.include(`<${component}`);
     });
   });
 
@@ -55,7 +55,6 @@ describe('Components', function () {
 
   it('should have DrawerLayoutAndroid with static properties for the positions', () => {
     const { DrawerLayoutAndroid } = ReactNative;
-    expect(DrawerLayoutAndroid.positions).to.be.an.object;
     expect(DrawerLayoutAndroid.positions).to.deep.equal({
       Left: 'LEFT',
       Right: 'RIGHT'
@@ -75,16 +74,7 @@ describe('Components', function () {
   it('should render KeyboardAvoidingView', function () {
     const { KeyboardAvoidingView } = ReactNative;
     const instance = shallow(<KeyboardAvoidingView />);
-    expect(instance.html()).to.equal(buildComponentHTML('View'));
-  });
-
-  it('should render Navigator', function () {
-    const { Navigator, Text } = ReactNative;
-    const renderScene = sinon.spy((route, navigator) => <Text>Hello!</Text>);
-    const instance = shallow(<Navigator initialRoute={{}} renderScene={renderScene} />);
-    expect(instance.html()).to.include('View');
-    expect(instance.html()).to.include('<Text>Hello!</Text>');
-    expect(renderScene).to.have.been.called;
+    expect(instance.html()).to.include('<View');
   });
 
   it('should render NavigatorIOS', function () {
@@ -174,13 +164,13 @@ describe('Components', function () {
     const { TouchableOpacity, Text } = ReactNative;
     const instance = shallow(<TouchableOpacity><Text /></TouchableOpacity>);
     expect(instance.html()).to.include('<View');
-    expect(instance.html()).to.include(buildComponentHTML('Text'));
+    expect(instance.html()).to.include('<Text');
   });
 
   it('should render TouchableWithoutFeedback', function () {
     const { TouchableWithoutFeedback, Text } = ReactNative;
     const instance = shallow(<TouchableWithoutFeedback><Text /></TouchableWithoutFeedback>);
-    expect(instance.html()).to.equal(buildComponentHTML('Text'));
+    expect(instance.html()).to.include('<Text');
   });
 
   it('should render ViewPagerAndroid', function () {

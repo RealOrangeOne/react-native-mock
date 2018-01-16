@@ -46,9 +46,7 @@ describe('StyleSheet', () => {
     });
 
     it('should flatten with nested array', () => {
-      const result = StyleSheet.flatten(
-        [styles.listItem, [styles.headerItem, styles.selectedListItem]]
-      );
+      const result = StyleSheet.flatten([styles.listItem, [styles.headerItem, styles.selectedListItem]]);
       expect(result).to.deep.equal({
         flex: 1,
         fontSize: 16,
