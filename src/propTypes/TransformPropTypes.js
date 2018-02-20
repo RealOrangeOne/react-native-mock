@@ -3,8 +3,6 @@
  */
 import PropTypes from 'prop-types';
 
-import React from 'react';
-
 const arrayOfNumberPropType = PropTypes.arrayOf(PropTypes.number);
 
 const transformMatrixPropType = function (props, propName, componentName, ...rest) {

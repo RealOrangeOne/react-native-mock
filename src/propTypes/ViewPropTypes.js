@@ -4,7 +4,6 @@
 
 import PropTypes from 'prop-types';
 
-import React from 'react';
 import EdgeInsetsPropType from './EdgeInsetsPropType';
 import styleSheetPropType from './StyleSheetPropType';
 import ViewStylePropTypes from './ViewStylePropTypes';

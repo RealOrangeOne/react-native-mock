@@ -3,7 +3,6 @@
  */
 import PropTypes from 'prop-types';
 
-import React from 'react';
 import ColorPropType from '../propTypes/ColorPropType';
 import createReactClass from 'create-react-class';
 

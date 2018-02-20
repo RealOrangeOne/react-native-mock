@@ -3,7 +3,6 @@
  */
 import PropTypes from 'prop-types';
 
-import React from 'react';
 import styleSheetPropType from '../propTypes/StyleSheetPropType';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';

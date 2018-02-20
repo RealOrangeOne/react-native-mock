@@ -3,8 +3,6 @@
  */
 import PropTypes from 'prop-types';
 
-import React from 'react';
-
 /**
  * React Native's layout system is based on Flexbox and is powered both
  * on iOS and Android by an open source project called css-layout:

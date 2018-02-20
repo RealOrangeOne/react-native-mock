@@ -2,8 +2,6 @@ class Animated {}
 
 import PropTypes from 'prop-types';
 
-import React from 'react';
-
 /* NavigationAction */
 const action = PropTypes.shape({
   type: PropTypes.string.isRequired,

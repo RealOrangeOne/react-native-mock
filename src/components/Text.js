@@ -3,7 +3,6 @@
  */
 import PropTypes from 'prop-types';
 
-import React from 'react';
 import styleSheetPropType from '../propTypes/StyleSheetPropType';
 import TextStylePropTypes from '../propTypes/TextStylePropTypes';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import TouchableWithoutFeedback from './TouchableWithoutFeedback';
 import createReactClass from 'create-react-class';

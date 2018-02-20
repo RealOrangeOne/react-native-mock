@@ -3,7 +3,6 @@
  */
 import PropTypes from 'prop-types';
 
-import React from 'react';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
 import ColorPropType from '../propTypes/ColorPropType';

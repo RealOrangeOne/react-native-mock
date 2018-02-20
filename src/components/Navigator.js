@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import createMockComponent from './createMockComponent';
 import View from './View';
 import createReactClass from 'create-react-class';

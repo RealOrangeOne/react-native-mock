@@ -3,7 +3,6 @@
  */
 import PropTypes from 'prop-types';
 
-import React from 'react';
 import ColorPropType from './ColorPropType';
 import TransformPropTypes from './TransformPropTypes';
 import ShadowPropTypesIOS from './ShadowPropTypesIOS';

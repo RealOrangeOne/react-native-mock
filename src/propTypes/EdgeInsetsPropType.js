@@ -3,8 +3,6 @@
  */
 import PropTypes from 'prop-types';
 
-import React from 'react';
-
 const EdgeInsetsPropType = PropTypes.shape({
   top: PropTypes.number,
   left: PropTypes.number,
