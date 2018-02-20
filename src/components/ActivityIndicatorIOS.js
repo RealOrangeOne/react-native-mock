@@ -1,11 +1,11 @@
 /**
  * https://github.com/facebook/react-native/blob/master/Libraries/Components/ActivityIndicator/ActivityIndicatorIOS.ios.js
  */
+import PropTypes from 'prop-types';
+
 import React from 'react';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
-
-const { PropTypes } = React;
 
 const ActivityIndicatorIOS = React.createClass({
   propTypes: {
