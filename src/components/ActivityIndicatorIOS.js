@@ -6,8 +6,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
+import createReactClass from 'create-react-class';
 
-const ActivityIndicatorIOS = React.createClass({
+const ActivityIndicatorIOS = createReactClass({
   propTypes: {
     ...View.propTypes,
     /**

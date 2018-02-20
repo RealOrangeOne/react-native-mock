@@ -5,6 +5,7 @@ import React from 'react';
 import ViewAccessibility from './ViewAccessibility';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import ViewPropTypes from '../propTypes/ViewPropTypes';
+import createReactClass from 'create-react-class';
 
 const { AccessibilityTraits, AccessibilityComponentTypes } = ViewAccessibility;
 
@@ -20,7 +21,7 @@ const statics = {
   forceTouchAvailable,
 };
 
-const View = React.createClass({
+const View = createReactClass({
   propTypes: ViewPropTypes,
 
   mixins: [NativeMethodsMixin],

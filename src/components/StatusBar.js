@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import React from 'react';
 import ColorPropType from '../propTypes/ColorPropType';
-
+import createReactClass from 'create-react-class';
 
 let _backgroundColor = '';
 let _barStyle = {};
@@ -13,7 +13,7 @@ let _hidden = false;
 let _networkActivityIndicatorVisible = false;
 let _translucent = false;
 
-const StatusBar = React.createClass({
+const StatusBar = createReactClass({
   propTypes: {
     animated: PropTypes.bool,
     barStyle: PropTypes.oneOf(['default', 'light-content']),

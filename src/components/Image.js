@@ -9,8 +9,9 @@ import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import ImageStylePropTypes from '../propTypes/ImageStylePropTypes';
 import ImageResizeMode from '../propTypes/ImageResizeMode';
+import createReactClass from 'create-react-class';
 
-const Image = React.createClass({
+const Image = createReactClass({
   propTypes: {
     style: styleSheetPropType(ImageStylePropTypes),
     /**

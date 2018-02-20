@@ -5,8 +5,9 @@ import TimerMixin from 'react-timer-mixin';
 import NativeMethodsMixin from '../mixins/NativeMethodsMixin';
 import View from './View';
 import Text from './Text';
+import createReactClass from 'create-react-class';
 
-const TextInput = React.createClass({
+const TextInput = createReactClass({
   propTypes: {
     ...View.propTypes,
     /**
