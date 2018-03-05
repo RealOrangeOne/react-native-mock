@@ -26,7 +26,9 @@ var data = {
   version: require('./react-native-version')
 };
 
-var files = glob.sync(path.join(PROJECT_NODE_MODULES, '**/*.js'));
+var files = glob.sync(path.join(PROJECT_NODE_MODULES, '**/*.js'), {
+  nodir: true
+});
 
 _.forEach(files, function (file) {
   var matches = providesRegex.exec(fs.readFileSync(file).toString());
