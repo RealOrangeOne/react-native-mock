@@ -1,12 +1,5 @@
-const ReactNativeMock = require('./build/react-native');
+/*
+  Shortcut file to allow use via `react-native-mock/mock`
+*/
 
-// the cache key that real react native would get
-const key = require.resolve('react-native');
-
-// make sure the cache is filled with our lib
-require.cache[key] = {
-  id: key,
-  filename: key,
-  loaded: true,
-  exports: ReactNativeMock,
-};
+module.exports = require('./build/react-native-mock.js');

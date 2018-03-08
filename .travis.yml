@@ -1,6 +1,17 @@
 language: node_js
 node_js:
-  - "4.0.0"
   - "6.0.0"
-  - "4"
   - "6"
+  - "8.9.1"
+  - "8"
+
+
+# values taken from react-native's package.json
+env:
+  - REACT_NATIVE_VERSION=0.50 REACT_VERSION=16.0.0
+
+before_install:
+  - npm install react@~$REACT_VERSION react-dom@~$REACT_VERSION react-native@~$REACT_NATIVE_VERSION
+
+before_script:
+  - npm run build-haste

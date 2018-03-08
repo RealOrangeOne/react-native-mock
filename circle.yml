@@ -1,0 +1,9 @@
+machine:
+  node:
+    version: 6
+
+test:
+  post:
+    - bash ./scripts/run_jest.sh
+    - bash <(curl -s https://codecov.io/bash)
+

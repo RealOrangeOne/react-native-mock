@@ -33,3 +33,5 @@ node_modules
 .node_repl_history
 
 /build
+haste-map.json
+.nyc_output/

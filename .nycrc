@@ -1,0 +1,23 @@
+{
+  "lines": 0,
+  "statements": 0,
+  "functions": 0,
+  "branches": 0,
+  "include": [
+    "src/**/*.js",
+    "mock.js"
+  ],
+  "extension": [
+    ".js"
+  ],
+  "reporter": [
+    "lcov",
+    "text",
+    "text-summary"
+  ],
+  "all": true,
+  "check-coverage": true,
+  "sourceMap": true,
+  "instrument": true,
+  "report-dir": "./coverage"
+}

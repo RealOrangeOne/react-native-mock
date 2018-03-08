@@ -7,10 +7,9 @@
   "env": {
     "mocha": true
   },
-  "parser": "babel-eslint",
   "rules": {
     "no-unused-vars": [2, {"vars": "all", "args": "none"}],
-    "comma-dangle": 0,
+    "comma-dangle": ["error", "never"],
     "func-names": 0,
     "prefer-arrow-callback": 0,
     "global-require": 0,
@@ -20,7 +19,11 @@
     "guard-for-in": 0,
     "no-restricted-syntax": 0,
     "prefer-template": 0,
-    "no-console": 0,
+    "no-unused-expressions": 0,
+    "vars-on-top": 0,
+    "react/jsx-no-bind": 0,
+    "one-var": 0,
+    "one-var-declaration-per-line": 0,
     "max-len": [
       2,
       120,
@@ -28,6 +31,12 @@
       {
         "ignoreComments": true
       }
-    ]
+    ],
+    "no-multiple-empty-lines": [2, {"max": 3}],
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-filename-extension": 0,
+    "import/no-dynamic-require": 0,
+    "no-multi-assign": 0,
+    "o-undef": 0,
   }
 }
