@@ -43,6 +43,8 @@
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-react-native": "^4.0.0",
     "chai": "4.1.2",
     "chai-as-promised": "7.1.1",
     "enzyme": "3.1.1",
@@ -57,6 +59,9 @@
     "mocha": "4.0.1",
     "mocha-assume": "1.0.0",
     "nyc": "11.3.0",
+    "react": "16.2",
+    "react-dom": "16.2",
+    "react-native": "0.52.0",
     "semver": "5.4.1",
     "sinon-chai": "2.14.0"
   },
