@@ -103,6 +103,7 @@ const ReactNative = {
   NavigationExperimental: require('./Libraries/NavigationExperimental'),
   ViewPropTypes: require('./propTypes/ViewPropTypes'),
 };
+  ReactNative.PickerIOS.Item = createMockComponent('PickerIOS.Item');
 
 
 // See http://facebook.github.io/react/docs/addons.html
