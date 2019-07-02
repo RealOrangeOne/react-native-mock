@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import EdgeInsetsPropType from '../propTypes/EdgeInsetsPropType';
 import PointPropType from '../propTypes/PointPropType';
@@ -6,13 +7,12 @@ import View from './View';
 import ViewStylePropTypes from '../propTypes/ViewStylePropTypes';
 import ScrollViewManager from '../NativeModules/ScrollViewManager';
 import styleSheetPropType from '../propTypes/StyleSheetPropType';
-
-const { PropTypes } = React;
+import createReactClass from 'create-react-class';
 
 const SCROLLVIEW = 'ScrollView';
 const INNERVIEW = 'InnerScrollView';
 
-const ScrollView = React.createClass({
+const ScrollView = createReactClass({
   propTypes: {
     ...View.propTypes,
     /**
